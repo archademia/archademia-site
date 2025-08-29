@@ -44,24 +44,6 @@
             color: #333;
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #007bff;
-        }
-        
         .nav-buttons {
             display: flex;
             gap: 1rem;
@@ -167,6 +149,21 @@
             margin-bottom: 2rem;
         }
         
+        .cta-btn {
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #333;
+        }
+        
         /* Stats Section */
         .stats {
             background: white;
@@ -228,44 +225,28 @@
             margin-bottom: 0.3rem;
         }
         
-        .cta-btn {
-            background: #000;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-        
-        .cta-btn:hover {
-            background: #333;
-        }
-        
-        /* Trending Courses Carousel */
-        .trending-courses {
-            padding: 8rem 2rem;
+        /* Simple Carousel Section */
+        .carousel-section {
+            padding: 6rem 0;
             background: #f8f9fa;
-            overflow-x: hidden;
         }
         
-        .trending-container {
-            max-width: 1400px;
+        .carousel-container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
         
-        .trending-header {
+        .carousel-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
-        .trending-header h2 {
+        .carousel-header h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin: 0;
         }
         
         .carousel-controls {
@@ -283,8 +264,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s;
             font-size: 1.2rem;
+            transition: all 0.3s;
         }
         
         .carousel-btn:hover {
@@ -298,50 +279,45 @@
         }
         
         .carousel-wrapper {
-            position: relative;
             overflow: hidden;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            padding: 0 2rem;
         }
         
-        .courses-carousel {
+        .carousel-track {
             display: flex;
             gap: 2rem;
             transition: transform 0.3s ease;
-            padding-bottom: 4rem;
+            width: fit-content;
         }
         
-        .course-card {
-            min-width: 320px;
+        .carousel-card {
+            width: 320px;
+            height: 400px;
             flex-shrink: 0;
             background: white;
             border-radius: 12px;
-            overflow: visible;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            position: relative;
+            display: flex;
+            flex-direction: column;
             text-align: center;
-            padding: 2rem 1.5rem 5rem 1.5rem;
-            height: 400px;
+            padding: 2rem 1.5rem 1rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
         }
         
-        .course-card:hover {
-            transform: translateY(-5px);
+        .carousel-card:hover {
+            transform: translateY(-8px);
         }
         
-        .course-image {
-            width: 280px;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .course-badge {
+        .card-badge {
             position: absolute;
             top: 1rem;
             left: 1rem;
@@ -350,9 +326,10 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 600;
+            color: #333;
         }
         
-        .course-duration {
+        .card-duration {
             position: absolute;
             top: 1rem;
             right: 1rem;
@@ -361,53 +338,52 @@
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+            font-weight: 600;
         }
         
-        .course-content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-        
-        .course-title {
-            font-size: 1.5rem;
+        .card-title {
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #333;
         }
         
-        .course-description {
+        .card-description {
             font-size: 0.9rem;
             color: #666;
             line-height: 1.4;
-            margin-bottom: 2rem;
-            max-width: 280px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1rem;
+            flex-grow: 1;
         }
         
-        .course-instructor {
+        .card-instructor {
             font-size: 0.9rem;
             color: #666;
-            margin-top: auto;
             font-weight: 600;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-image {
+            width: 260px;
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            position: relative;
+            top: 15px;
         }
         
         .carousel-pagination {
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            margin-top: 2rem;
         }
         
         .pagination-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: #ccc;
             cursor: pointer;
@@ -418,149 +394,276 @@
             background: #333;
         }
         
-        /* Large Feature Sections */
-        .large-feature {
-            padding: 6rem 2rem;
-        }
-        
-        .large-feature:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .large-feature-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+        /* Full Bleed Hero Section */
+        .full-bleed-hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23333"/><rect x="0" y="400" width="1920" height="400" fill="%23222"/><circle cx="400" cy="400" r="200" fill="%23444" opacity="0.5"/><rect x="600" y="200" width="800" height="400" fill="%23555" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
             align-items: center;
-        }
-        
-        .large-feature-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .large-feature-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .large-feature-image {
-            height: 400px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
+            justify-content: flex-start;
             position: relative;
-            overflow: hidden;
-        }
-        
-        /* Tutorials Section */
-        .tutorials {
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-        
-        .tutorials-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .tutorials h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .tutorials p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 3rem;
-        }
-        
-        .tutorial-categories {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .category-item {
-            text-align: center;
-        }
-        
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            background: #f0f0f0;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-        }
-        
-        .category-item h4 {
-            font-size: 0.9rem;
-            color: #333;
-        }
-        
-        /* Team Section */
-        .team {
-            padding: 6rem 2rem;
-            background: #1a1a1a;
             color: white;
         }
         
-        .team-container {
+        .full-bleed-content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 4rem;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .series-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .series-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .series-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .series-btn {
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(255,255,255,0.7);
+            background: transparent;
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .series-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: white;
+        }
+        
+        .full-bleed-hero h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+        
+        .full-bleed-hero p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+        
+        .explore-btn {
+            background: white;
+            color: #333;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .explore-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+        
+        /* Community Section */
+        .community-section {
+            padding: 3rem 0;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .community-container {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
             align-items: center;
+            gap: 0;
         }
         
-        .team-content h2 {
-            font-size: 2.5rem;
+        .community-image {
+            width: 100%;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><rect x="70" y="70" width="200" height="150" fill="%234a90e2" rx="8"/><rect x="290" y="80" width="240" height="15" fill="%23e9ecef" rx="4"/><rect x="290" y="110" width="180" height="12" fill="%23e9ecef" rx="4"/><rect x="290" y="140" width="200" height="12" fill="%23e9ecef" rx="4"/><rect x="70" y="240" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="300" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="360" width="460" height="40" fill="%23f8f9fa" rx="8"/></svg>') center/cover no-repeat;
+            border-radius: 16px;
+            margin-left: -2rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+        
+        .community-content {
+            padding: 4rem 4rem 4rem 6rem;
+        }
+        
+        .community-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
             margin-bottom: 2rem;
-            font-weight: 300;
+            color: #333;
         }
         
-        .team-content p {
+        .community-content p {
             font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.9;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        /* Professional Development Section */
+        .professional-section {
+            padding: 3rem 0;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .professional-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .professional-content {
+            padding: 4rem 6rem 4rem 4rem;
+            order: 1;
+        }
+        
+        .professional-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
             margin-bottom: 2rem;
+            color: #333;
         }
         
-        .team-members {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .member {
-            text-align: center;
-        }
-        
-        .member-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #333;
-            margin: 0 auto 1rem;
-        }
-        
-        .member h4 {
+        .professional-content p {
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 3rem;
         }
         
-        .member p {
-            font-size: 0.9rem;
-            opacity: 0.7;
+        .professional-image {
+            width: 100%;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><rect x="70" y="80" width="200" height="15" fill="%23333" rx="4"/><rect x="70" y="110" width="120" height="12" fill="%23ffc107" rx="4"/><rect x="70" y="140" width="460" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="160" width="300" height="8" fill="%23e9ecef" rx="4"/><circle cx="520" cy="120" r="30" fill="%23ffc107" opacity="0.8"/><circle cx="520" cy="180" r="25" fill="%2328a745" opacity="0.8"/><circle cx="460" cy="200" r="20" fill="%2317a2b8" opacity="0.8"/><rect x="70" y="220" width="460" height="1" fill="%23dee2e6"/><rect x="70" y="250" width="150" height="12" fill="%23333" rx="4"/><rect x="70" y="280" width="460" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="300" width="400" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="320" width="350" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="350" width="100" height="30" fill="%23007bff" rx="15"/></svg>') center/cover no-repeat;
+            border-radius: 16px;
+            margin-right: -2rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            order: 2;
         }
         
-        /* Footer */
+        /* Social Platform Section */
+        .social-section {
+            padding: 3rem 0;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .social-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .social-image {
+            width: 100%;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><circle cx="100" cy="100" r="20" fill="%23dee2e6"/><rect x="140" y="85" width="120" height="12" fill="%23333" rx="4"/><rect x="140" y="105" width="80" height="8" fill="%23999" rx="4"/><rect x="70" y="140" width="240" height="80" fill="%234a90e2" rx="8"/><rect x="320" y="140" width="110" height="80" fill="%23e76f51" rx="8"/><rect x="440" y="140" width="110" height="80" fill="%2328a745" rx="8"/><rect x="70" y="240" width="110" height="80" fill="%23ffc107" rx="8"/><rect x="190" y="240" width="120" height="80" fill="%2317a2b8" rx="8"/><rect x="320" y="240" width="230" height="80" fill="%23fd7e14" rx="8"/></svg>') center/cover no-repeat;
+            border-radius: 16px;
+            margin-left: -2rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+        
+        .social-content {
+            padding: 4rem 4rem 4rem 6rem;
+        }
+        
+        .social-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .social-content p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .professional-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .professional-content {
+                padding: 0 2rem;
+                order: 2;
+            }
+            
+            .professional-image {
+                margin-left: 2rem;
+                margin-right: 2rem;
+                height: 300px;
+                order: 1;
+            }
+            
+            .professional-content h2 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .community-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .community-image {
+                margin-left: 2rem;
+                margin-right: 2rem;
+                height: 300px;
+            }
+            
+            .community-content {
+                padding: 0 2rem;
+            }
+            
+            .community-content h2 {
+                font-size: 2rem;
+            }
+        }
         .footer {
             background: #000;
             color: white;
@@ -606,8 +709,8 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .nav-buttons {
+                gap: 0.5rem;
             }
             
             .hero-content h1 {
@@ -619,18 +722,9 @@
             }
             
             .stats-container,
-            .large-feature-container,
-            .team-container {
+            .large-feature-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .tutorial-categories {
-                grid-template-columns: repeat(3, 1fr);
             }
             
             .footer-container {
@@ -639,14 +733,6 @@
         }
         
         @media (max-width: 480px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tutorial-categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .footer-container {
                 grid-template-columns: 1fr;
             }
@@ -703,10 +789,10 @@
         </div>
     </section>
 
-    <!-- Trending Courses Carousel -->
-    <section class="trending-courses">
-        <div class="trending-container">
-            <div class="trending-header">
+    <!-- Simple Carousel Section -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-header">
                 <h2>Trending Courses</h2>
                 <div class="carousel-controls">
                     <button class="carousel-btn prev">‹</button>
@@ -714,71 +800,61 @@
                 </div>
             </div>
             
-            <div class="courses-carousel">
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Intermediate</div>
-                        <div class="course-duration">1hr 30min</div>
-                        <h3 class="course-title">Space by Sir Norman Foster</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">Foster & Partners</div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-card">
+                        <div class="card-badge">Intermediate</div>
+                        <div class="card-duration">1hr 30min</div>
+                        <h3 class="card-title">Space by Sir Norman Foster</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">Foster & Partners</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23e8f4fd%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%234a90e2%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%23e8f4fd%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%234a90e2%22/></svg>');"></div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Beginner</div>
-                        <div class="course-duration">1hr 30min</div>
-                        <h3 class="course-title">The Life and Work of Zaha Hadid</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">RiBA Publications</div>
+                    
+                    <div class="carousel-card">
+                        <div class="card-badge">Beginner</div>
+                        <div class="card-duration">1hr 30min</div>
+                        <h3 class="card-title">The Life and Work of Zaha Hadid</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">RiBA Publications</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23f5f5f5%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23333%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%23f5f5f5%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%23333%22/></svg>');"></div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Beginner</div>
-                        <div class="course-duration">1hr</div>
-                        <h3 class="course-title">Tall Buildings with Paul Falconer</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">Falconer Chester Hull</div>
+                    
+                    <div class="carousel-card">
+                        <div class="card-badge">Beginner</div>
+                        <div class="card-duration">1hr</div>
+                        <h3 class="card-title">Tall Buildings with Paul Falconer</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">Falconer Chester Hull</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23f4a261%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23e76f51%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%23f4a261%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%23e76f51%22/></svg>');"></div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Intermediate</div>
-                        <div class="course-duration">2hr</div>
-                        <h3 class="course-title">Contemporary Architecture</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">Modern Design Studio</div>
+                    
+                    <div class="carousel-card">
+                        <div class="card-badge">Intermediate</div>
+                        <div class="card-duration">2hr</div>
+                        <h3 class="card-title">Contemporary Architecture</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">Modern Design Studio</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%2343aa8b%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23277da1%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%2343aa8b%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%23277da1%22/></svg>');"></div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Advanced</div>
-                        <div class="course-duration">3hr 15min</div>
-                        <h3 class="course-title">Sustainable Design Principles</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">Green Architecture Institute</div>
+                    
+                    <div class="carousel-card">
+                        <div class="card-badge">Advanced</div>
+                        <div class="card-duration">3hr 15min</div>
+                        <h3 class="card-title">Sustainable Design Principles</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">Green Architecture Institute</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%2390c695%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%235a8a3a%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%2390c695%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%235a8a3a%22/></svg>');"></div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-content">
-                        <div class="course-badge">Beginner</div>
-                        <div class="course-duration">45min</div>
-                        <h3 class="course-title">Introduction to BIM</h3>
-                        <p class="course-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="course-instructor">BIM Academy</div>
+                    
+                    <div class="carousel-card">
+                        <div class="card-badge">Beginner</div>
+                        <div class="card-duration">45min</div>
+                        <h3 class="card-title">Introduction to BIM</h3>
+                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
+                        <div class="card-instructor">BIM Academy</div>
+                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23ffeaa7%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23fdcb6e%22/></svg>');"></div>
                     </div>
-                    <div class="course-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22200%22 viewBox=%220 0 280 200%22><rect width=%22280%22 height=%22200%22 fill=%22%23ffeaa7%22/><rect x=%2240%22 y=%2240%22 width=%22200%22 height=%22120%22 fill=%22%23fdcb6e%22/></svg>');"></div>
                 </div>
             </div>
             
@@ -786,130 +862,59 @@
                 <div class="pagination-dot active"></div>
                 <div class="pagination-dot"></div>
                 <div class="pagination-dot"></div>
+                <div class="pagination-dot"></div>
             </div>
         </div>
     </section>
 
-    <!-- Large Feature: Rhinoceros 3D -->
-    <section class="large-feature">
-        <div class="large-feature-container">
-            <div class="large-feature-content">
-                <h2>Master tools with Rhinoceros 3D</h2>
-                <p>Dive deep into advanced 3D modeling with our comprehensive Rhinoceros course. Learn from industry experts and master the tools that leading architectural firms rely on for their most complex projects.</p>
-                <a href="#" class="cta-btn">Explore Rhino Course</a>
+    <!-- Full Bleed Hero Section -->
+    <section class="full-bleed-hero">
+        <div class="full-bleed-content">
+            <div class="series-nav">
+                <span class="series-title">in Practice Series</span>
+                <div class="series-controls">
+                    <button class="series-btn">‹</button>
+                    <button class="series-btn">›</button>
+                </div>
             </div>
-            <div class="large-feature-image"></div>
+            <h2>Lightroom for Photography with MVRDV</h2>
+            <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autnndae ea estia cus et dolorem tiatia conemprci quia idest, temol.</p>
+            <a href="#" class="explore-btn">Explore today for FREE</a>
         </div>
     </section>
 
-    <!-- Large Feature: Community -->
-    <section class="large-feature">
-        <div class="large-feature-container">
-            <div class="large-feature-image"></div>
-            <div class="large-feature-content">
-                <h2>Community based learning for aspiring architects.</h2>
-                <p>Connect with thousands of architects worldwide. Share your projects, get feedback, and learn from peers who are facing the same challenges you are. Our community is your support network.</p>
-                <a href="#" class="cta-btn">Join Our Community</a>
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="community-container">
+            <div class="community-image"></div>
+            <div class="community-content">
+                <h2>Community based learning for aspiring and qualified architects.</h2>
+                <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
+                <a href="#" class="cta-btn">Sign up today for FREE</a>
             </div>
         </div>
     </section>
 
-    <!-- Large Feature: Professional Development -->
-    <section class="large-feature">
-        <div class="large-feature-container">
-            <div class="large-feature-content">
+    <!-- Professional Development Section -->
+    <section class="professional-section">
+        <div class="professional-container">
+            <div class="professional-content">
                 <h2>Track and maintain your continued professional development.</h2>
-                <p>Stay current with industry standards and maintain your professional credentials. Our structured learning paths help you meet CPD requirements while advancing your skills in areas that matter most to your career.</p>
-                <a href="#" class="cta-btn">View Learning Paths</a>
+                <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
+                <a href="#" class="cta-btn">Sign up today for FREE</a>
             </div>
-            <div class="large-feature-image"></div>
+            <div class="professional-image"></div>
         </div>
     </section>
 
-    <!-- Large Feature: Social Network -->
-    <section class="large-feature">
-        <div class="large-feature-container">
-            <div class="large-feature-image"></div>
-            <div class="large-feature-content">
-                <h2>Share and inspire through our social network, discussion board.</h2>
-                <p>Showcase your latest projects, engage in meaningful discussions about design trends, and inspire the next generation of architects. Our platform is built for architects, by architects.</p>
-                <a href="#" class="cta-btn">Join Discussions</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Large Feature: Share and Create -->
-    <section class="large-feature">
-        <div class="large-feature-container">
-            <div class="large-feature-content">
-                <h2>Share, Inspire and Create</h2>
-                <p>Upload your projects, create tutorials, and inspire others with your architectural journey. Whether you're a student or seasoned professional, your contributions help build a stronger architectural community.</p>
-                <a href="#" class="cta-btn">Start Creating</a>
-            </div>
-            <div class="large-feature-image"></div>
-        </div>
-    </section>
-
-    <!-- Tutorials Section -->
-    <section class="tutorials">
-        <div class="tutorials-container">
-            <h2>Thousands of tutorials at your fingertips.</h2>
-            <p>Access comprehensive learning materials across all major architectural software and design disciplines.</p>
-            
-            <div class="tutorial-categories">
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>SketchUp</h4>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>Revit</h4>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>AutoCAD</h4>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>Rhino</h4>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>Photoshop</h4>
-                </div>
-                <div class="category-item">
-                    <div class="category-icon"></div>
-                    <h4>Illustrator</h4>
-                </div>
-            </div>
-            
-            <a href="#" class="cta-btn">Browse All Tutorials</a>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team">
-        <div class="team-container">
-            <div class="team-content">
-                <h2>Example Name, Example Studio</h2>
-                <p>Founded by practicing architects with decades of combined experience in both education and professional practice. Our team understands the real-world challenges architects face and designs learning experiences that directly translate to career success.</p>
-            </div>
-            <div class="team-members">
-                <div class="member">
-                    <div class="member-photo"></div>
-                    <h4>Sarah Johnson</h4>
-                    <p>Founder & Lead Instructor</p>
-                </div>
-                <div class="member">
-                    <div class="member-photo"></div>
-                    <h4>Michael Chen</h4>
-                    <p>Technical Director</p>
-                </div>
-                <div class="member">
-                    <div class="member-photo"></div>
-                    <h4>Emma Rodriguez</h4>
-                    <p>Community Manager</p>
-                </div>
+    <!-- Social Platform Section -->
+    <section class="social-section">
+        <div class="social-container">
+            <div class="social-image"></div>
+            <div class="social-content">
+                <h2>Share and inspire through our social centrepiece, The Drawing Board.</h2>
+                <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis dipsa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
+                <a href="#" class="cta-btn">Sign up today for FREE</a>
             </div>
         </div>
     </section>
@@ -971,6 +976,98 @@
                     });
                 }
             });
+        });
+
+        // Infinite carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentIndex = 0;
+            const totalCards = 6;
+            const maxIndex = totalCards - 1;
+            
+            function updateCarousel() {
+                const carousel = document.getElementById('carouselTrack');
+                if (carousel) {
+                    const translateX = -currentIndex * 342; // 320px card + 22px gap
+                    carousel.style.transform = 'translateX(' + translateX + 'px)';
+                    
+                    // Update dots (cycle through 4 dots)
+                    const dots = document.querySelectorAll('.pagination-dot');
+                    dots.forEach(function(dot, index) {
+                        dot.classList.toggle('active', index === (currentIndex % 4));
+                    });
+                }
+            }
+            
+            // Previous button
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            if (prevBtn) {
+                prevBtn.onclick = function() {
+                    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+                    updateCarousel();
+                };
+            }
+            
+            // Next button
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            if (nextBtn) {
+                nextBtn.onclick = function() {
+                    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+                    updateCarousel();
+                };
+            }
+            
+            // Dot clicks
+            const dots = document.querySelectorAll('.pagination-dot');
+            dots.forEach(function(dot, index) {
+                dot.onclick = function() {
+                    currentIndex = index;
+                    updateCarousel();
+                };
+            });
+            
+            // Initialize
+            updateCarousel();
+            
+            // Modal functionality
+            const modal = document.getElementById('signupModal');
+            const closeModal = document.getElementById('closeModal');
+            const ctaButtons = document.querySelectorAll('.cta-btn, .signup-btn, .explore-btn');
+            
+            // Only proceed if modal elements exist
+            if (modal && closeModal && ctaButtons.length > 0) {
+                // Open modal when CTA buttons are clicked
+                ctaButtons.forEach(function(btn) {
+                    if (btn) {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            modal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        });
+                    }
+                });
+                
+                // Close modal when X is clicked
+                closeModal.addEventListener('click', function() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Close modal when clicking outside
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
         });
     </script>
 </body>
