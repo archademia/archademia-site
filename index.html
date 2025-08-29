@@ -285,7 +285,7 @@
         }
         
         .carousel-wrapper {
-            overflow: hidden;
+            overflow: visible;
             margin-bottom: 2rem;
             width: 100vw;
             position: relative;
@@ -305,14 +305,14 @@
         
         .carousel-card {
             width: 320px;
-            height: 400px;
+            height: 460px;
             flex-shrink: 0;
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             flex-direction: column;
             text-align: center;
-            padding: 2rem 1.5rem 1rem 1.5rem;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             position: relative;
             margin-bottom: 3rem;
@@ -325,60 +325,54 @@
         
         .card-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: rgba(255,255,255,0.9);
+            top: 1.5rem;
+            left: 1.5rem;
+            background: rgba(255,255,255,0.95);
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .card-duration {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(0,0,0,0.7);
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0,0,0,0.8);
             color: white;
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
         }
         
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin: 2.5rem 0 1.2rem 0;
             color: #333;
+            line-height: 1.3;
         }
         
         .card-description {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
             line-height: 1.4;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-grow: 1;
-        }
-        
-        .card-instructor {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            padding: 0 0.5rem;
         }
         
         .card-image {
-            width: 260px;
-            height: 160px;
+            width: 100%;
+            height: 180px;
             background-size: cover;
             background-position: center;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin: 0 auto;
-            position: relative;
-            top: 15px;
+            margin-top: auto;
         }
         
         .carousel-pagination {
@@ -1278,21 +1272,58 @@
 
         // Initialize all functionality when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
-            // Carousel functionality
+            // Carousel functionality with infinite loop
             let currentIndex = 0;
-            const totalCards = 6;
-            const maxIndex = totalCards - 1;
+            const originalCards = 6;
+            const cardWidth = 342; // 320px card + 22px gap
             
-            function updateCarousel() {
-                const carousel = document.getElementById('carouselTrack');
-                if (carousel) {
-                    const translateX = -currentIndex * 342; // 320px card + 22px gap
-                    carousel.style.transform = 'translateX(' + translateX + 'px)';
+            // Clone cards for infinite effect
+            const track = document.getElementById('carouselTrack');
+            if (track) {
+                const cards = track.children;
+                const cardArray = Array.from(cards);
+                
+                // Clone all cards and append to create seamless loop
+                cardArray.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    track.appendChild(clone);
+                });
+                
+                // Also prepend clones for smooth backward navigation
+                cardArray.reverse().forEach(card => {
+                    const clone = card.cloneNode(true);
+                    track.insertBefore(clone, track.firstChild);
+                });
+                
+                // Set initial position to show original cards
+                currentIndex = originalCards;
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+            
+            function updateCarousel(smooth = true) {
+                const track = document.getElementById('carouselTrack');
+                if (track) {
+                    track.style.transition = smooth ? 'transform 0.3s ease' : 'none';
+                    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
                     
-                    // Update dots (cycle through 4 dots)
+                    // Handle infinite loop reset
+                    setTimeout(() => {
+                        if (currentIndex >= originalCards * 2) {
+                            currentIndex = originalCards;
+                            track.style.transition = 'none';
+                            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                        } else if (currentIndex <= 0) {
+                            currentIndex = originalCards;
+                            track.style.transition = 'none';
+                            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                        }
+                    }, smooth ? 300 : 0);
+                    
+                    // Update dots (cycle through 4 dots based on position within original cards)
                     const dots = document.querySelectorAll('.pagination-dot');
+                    const actualPosition = ((currentIndex - originalCards) % originalCards + originalCards) % originalCards;
                     dots.forEach(function(dot, index) {
-                        dot.classList.toggle('active', index === (currentIndex % 4));
+                        dot.classList.toggle('active', index === (actualPosition % 4));
                     });
                 }
             }
@@ -1301,7 +1332,7 @@
             const prevBtn = document.querySelector('.carousel-btn.prev');
             if (prevBtn) {
                 prevBtn.onclick = function() {
-                    currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+                    currentIndex--;
                     updateCarousel();
                 };
             }
@@ -1310,7 +1341,7 @@
             const nextBtn = document.querySelector('.carousel-btn.next');
             if (nextBtn) {
                 nextBtn.onclick = function() {
-                    currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+                    currentIndex++;
                     updateCarousel();
                 };
             }
@@ -1319,13 +1350,13 @@
             const dots = document.querySelectorAll('.pagination-dot');
             dots.forEach(function(dot, index) {
                 dot.onclick = function() {
-                    currentIndex = index;
+                    currentIndex = originalCards + index;
                     updateCarousel();
                 };
             });
             
             // Initialize carousel
-            updateCarousel();
+            updateCarousel(false);
             
             // Modal event listeners - target all CTA buttons
             const modal = document.getElementById('signupModal');
