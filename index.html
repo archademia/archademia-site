@@ -973,45 +973,50 @@
             });
         });
 
-        // Working carousel functionality
+        // Simple working carousel
         document.addEventListener('DOMContentLoaded', function() {
             let currentIndex = 0;
-            const maxIndex = 3; // 4 positions total (0, 1, 2, 3)
+            const maxIndex = 3;
             
             function updateCarousel() {
-                const carousel = document.getElementById('coursesCarousel');
-                const translateX = -currentIndex * 322; // 300px card + 22px gap
-                carousel.style.transform = 'translateX(' + translateX + 'px)';
-                
-                // Update dots
-                document.querySelectorAll('.pagination-dot').forEach(function(dot, index) {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
+                const carousel = document.getElementById('basicCarousel');
+                if (carousel) {
+                    const translateX = -currentIndex * 322;
+                    carousel.style.transform = 'translateX(' + translateX + 'px)';
+                    
+                    // Update dots
+                    const dots = document.querySelectorAll('.pagination-dot');
+                    dots.forEach(function(dot, index) {
+                        if (index === currentIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
             }
             
             // Previous button
-            document.querySelector('.carousel-btn.prev').onclick = function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            };
-            
-            // Next button  
-            document.querySelector('.carousel-btn.next').onclick = function() {
-                if (currentIndex < maxIndex) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            };
-            
-            // Dot clicks
-            document.querySelectorAll('.pagination-dot').forEach(function(dot, index) {
-                dot.onclick = function() {
-                    currentIndex = index;
-                    updateCarousel();
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            if (prevBtn) {
+                prevBtn.onclick = function() {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
                 };
-            });
+            }
+            
+            // Next button
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            if (nextBtn) {
+                nextBtn.onclick = function() {
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                };
+            }
             
             // Initialize
             updateCarousel();
