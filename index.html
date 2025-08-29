@@ -99,6 +99,8 @@
             text-decoration: none;
             font-weight: 700;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .signup-btn:hover {
@@ -114,6 +116,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
+            cursor: pointer;
         }
         
         .login-btn:hover {
@@ -158,6 +161,9 @@
             font-weight: 700;
             display: inline-block;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .cta-btn:hover {
@@ -480,6 +486,8 @@
             display: inline-block;
             transition: all 0.3s;
             font-size: 1rem;
+            border: none;
+            cursor: pointer;
         }
         
         .explore-btn:hover {
@@ -621,49 +629,212 @@
             margin-bottom: 3rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .professional-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .professional-content {
-                padding: 0 2rem;
-                order: 2;
-            }
-            
-            .professional-image {
-                margin-left: 2rem;
-                margin-right: 2rem;
-                height: 300px;
-                order: 1;
-            }
-            
-            .professional-content h2 {
-                font-size: 2rem;
-            }
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(0px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
-        @media (max-width: 768px) {
-            .community-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .community-image {
-                margin-left: 2rem;
-                margin-right: 2rem;
-                height: 300px;
-            }
-            
-            .community-content {
-                padding: 0 2rem;
-            }
-            
-            .community-content h2 {
-                font-size: 2rem;
-            }
+        
+        .modal-overlay.active {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            opacity: 1;
+            visibility: visible;
         }
+        
+        .signup-modal {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.7) translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active .signup-modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #333;
+        }
+        
+        .modal-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+        
+        .signup-form {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .password-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        
+        .forgot-password {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .social-signup {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .social-text {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e9ecef;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            border-color: #007bff;
+        }
+        
+        .continue-btn {
+            width: 100%;
+            background: #000;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 1rem;
+        }
+        
+        .continue-btn:hover {
+            background: #333;
+        }
+        
+        .login-link {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
         .footer {
             background: #000;
             color: white;
@@ -721,14 +892,58 @@
                 font-size: 1.2rem;
             }
             
-            .stats-container,
-            .large-feature-container {
+            .stats-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .professional-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .professional-content {
+                padding: 0 2rem;
+                order: 2;
+            }
+            
+            .professional-image {
+                margin-left: 2rem;
+                margin-right: 2rem;
+                height: 300px;
+                order: 1;
+            }
+            
+            .professional-content h2 {
+                font-size: 2rem;
+            }
+            
+            .community-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .community-image {
+                margin-left: 2rem;
+                margin-right: 2rem;
+                height: 300px;
+            }
+            
+            .community-content {
+                padding: 0 2rem;
+            }
+            
+            .community-content h2 {
+                font-size: 2rem;
+            }
+            
+            .signup-modal {
+                margin: 1rem;
+                padding: 2rem;
             }
         }
         
@@ -753,8 +968,8 @@
                     <span>Browse</span>
                     <span class="browse-icon"></span>
                 </button>
-                <a href="#signup" class="signup-btn">Sign Up</a>
-                <a href="#login" class="login-btn">Login</a>
+                <button class="signup-btn">Sign Up</button>
+                <button class="login-btn">Login</button>
             </div>
         </nav>
     </header>
@@ -764,7 +979,7 @@
         <div class="hero-content">
             <h1>ArchAdemia.</h1>
             <p class="tagline">for Architects, by Architects</p>
-            <a href="#" class="cta-btn">Get Started Today</a>
+            <button class="cta-btn">Get Started Today</button>
         </div>
     </section>
 
@@ -784,7 +999,7 @@
                     <div>New classes added every month</div>
                     <div>Join aspiring and qualified professionals</div>
                 </div>
-                <a href="#" class="cta-btn">Sign up today for FREE</a>
+                <button class="cta-btn">Sign up today for FREE</button>
             </div>
         </div>
     </section>
@@ -879,7 +1094,7 @@
             </div>
             <h2>Lightroom for Photography with MVRDV</h2>
             <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autnndae ea estia cus et dolorem tiatia conemprci quia idest, temol.</p>
-            <a href="#" class="explore-btn">Explore today for FREE</a>
+            <button class="explore-btn">Explore today for FREE</button>
         </div>
     </section>
 
@@ -890,7 +1105,7 @@
             <div class="community-content">
                 <h2>Community based learning for aspiring and qualified architects.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <a href="#" class="cta-btn">Sign up today for FREE</a>
+                <button class="cta-btn">Sign up today for FREE</button>
             </div>
         </div>
     </section>
@@ -901,7 +1116,7 @@
             <div class="professional-content">
                 <h2>Track and maintain your continued professional development.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <a href="#" class="cta-btn">Sign up today for FREE</a>
+                <button class="cta-btn">Sign up today for FREE</button>
             </div>
             <div class="professional-image"></div>
         </div>
@@ -914,7 +1129,7 @@
             <div class="social-content">
                 <h2>Share and inspire through our social centrepiece, The Drawing Board.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis dipsa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <a href="#" class="cta-btn">Sign up today for FREE</a>
+                <button class="cta-btn">Sign up today for FREE</button>
             </div>
         </div>
     </section>
@@ -964,7 +1179,90 @@
         </div>
     </footer>
 
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="signup-modal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="modal-title">Welcome to ArchAdemia.</h2>
+            <p class="modal-description">Join thousands of architects advancing their careers through expert-led training and community collaboration.</p>
+            
+            <form class="signup-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="password-options">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="keepSignedIn">
+                            <label for="keepSignedIn">Keep me signed in</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgotten password?</a>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="social-signup">
+                <p class="social-text">Or continue with</p>
+                <div class="social-buttons">
+                    <button class="social-btn" onclick="socialLogin('facebook')">f</button>
+                    <button class="social-btn" onclick="socialLogin('apple')">🍎</button>
+                    <button class="social-btn" onclick="socialLogin('google')">G</button>
+                </div>
+            </div>
+            
+            <button class="continue-btn" onclick="handleSignup(event)">Continue</button>
+            
+            <p class="login-link">Already a member? <a href="#" onclick="switchToLogin()">Sign in here</a></p>
+        </div>
+    </div>
+
     <script>
+        // Modal functionality
+        function openModal() {
+            const modal = document.getElementById('signupModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('signupModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function handleSignup(event) {
+            if (event) event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Welcome to ArchAdemia! Your account has been created successfully.');
+                closeModal();
+                // Reset form
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+        
+        function socialLogin(provider) {
+            alert(`Signing up with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`);
+            closeModal();
+        }
+        
+        function switchToLogin() {
+            alert('Switching to login form...');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -978,8 +1276,9 @@
             });
         });
 
-        // Infinite carousel functionality
+        // Initialize all functionality when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality
             let currentIndex = 0;
             const totalCards = 6;
             const maxIndex = totalCards - 1;
@@ -1025,49 +1324,54 @@
                 };
             });
             
-            // Initialize
+            // Initialize carousel
             updateCarousel();
             
-            // Modal functionality
+            // Modal event listeners - target all CTA buttons
             const modal = document.getElementById('signupModal');
-            const closeModal = document.getElementById('closeModal');
-            const ctaButtons = document.querySelectorAll('.cta-btn, .signup-btn, .explore-btn');
+            const closeBtn = document.getElementById('closeModal');
             
-            // Only proceed if modal elements exist
-            if (modal && closeModal && ctaButtons.length > 0) {
-                // Open modal when CTA buttons are clicked
-                ctaButtons.forEach(function(btn) {
-                    if (btn) {
-                        btn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            modal.classList.add('active');
-                            document.body.style.overflow = 'hidden';
-                        });
-                    }
-                });
-                
-                // Close modal when X is clicked
-                closeModal.addEventListener('click', function() {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-                
-                // Close modal when clicking outside
+            // Get all CTA buttons
+            const allCtaButtons = [
+                document.querySelector('.hero .cta-btn'),
+                document.querySelector('.stats .cta-btn'),
+                document.querySelector('.explore-btn'),
+                document.querySelector('.signup-btn'),
+                document.querySelector('.community-content .cta-btn'),
+                document.querySelector('.professional-content .cta-btn'),
+                document.querySelector('.social-content .cta-btn')
+            ];
+            
+            // Add click handlers to each CTA button
+            allCtaButtons.forEach(function(btn) {
+                if (btn) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openModal();
+                    });
+                }
+            });
+            
+            // Close modal when clicking X button
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            
+            // Close modal when clicking outside
+            if (modal) {
                 modal.addEventListener('click', function(e) {
                     if (e.target === modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-                
-                // Close modal with Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && modal.classList.contains('active')) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
+                        closeModal();
                     }
                 });
             }
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>
