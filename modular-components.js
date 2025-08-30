@@ -60,7 +60,7 @@ function loadReviewsModule(category) {
             {
                 name: 'Michael Kim',
                 title: 'Practice Principal', 
-                text: 'Excellent practical course that I could apply immediately in our practice. The rendering quality we achieve now has significantly improved client presentations.',
+                text: 'Outstanding practical course that I could apply immediately in our practice. The rendering quality we achieve now has significantly improved client presentations.',
                 avatar: 'MK',
                 color: '#ffc107'
             }
@@ -99,7 +99,7 @@ function loadReviewsModule(category) {
             {
                 name: 'Maria Santos',
                 title: 'Architectural Technician', 
-                text: 'Excellent foundational course that gave me confidence in technical drafting. The instructor clearly understands real-world practice needs.',
+                text: 'The foundational course gave me confidence in technical drafting. The instructor clearly understands real-world practice needs.',
                 avatar: 'MS',
                 color: '#20c997'
             },
@@ -327,68 +327,6 @@ function loadLearningOutcomesModule(outcomes) {
     `;
 }
 
-// Page interaction functionality
-function initializeCoursePageFunctionality() {
-    // Chapter toggle functionality
-    window.toggleChapter = function(element) {
-        const chapterItem = element.parentElement;
-        const content = chapterItem.querySelector('.chapter-content');
-        const arrow = element.querySelector('.chapter-arrow');
-        
-        chapterItem.classList.toggle('active');
-        
-        if (chapterItem.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            arrow.style.transform = 'rotate(180deg)';
-        } else {
-            content.style.maxHeight = '0';
-            arrow.style.transform = 'rotate(0deg)';
-        }
-    };
-    
-    // FAQ toggle functionality
-    window.toggleFAQ = function(element) {
-        const faqItem = element.parentElement;
-        const answer = faqItem.querySelector('.faq-answer');
-        const arrow = element.querySelector('.faq-arrow');
-        
-        faqItem.classList.toggle('active');
-        
-        if (faqItem.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-            arrow.style.transform = 'rotate(180deg)';
-        } else {
-            answer.style.maxHeight = '0';
-            arrow.style.transform = 'rotate(0deg)';
-        }
-    };
-    
-    // Project slide functionality
-    window.currentSlide = function(n) {
-        const slides = document.querySelectorAll('.project-slide');
-        const dots = document.querySelectorAll('.dot');
-        
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        if (slides[n-1] && dots[n-1]) {
-            slides[n-1].classList.add('active');
-            dots[n-1].classList.add('active');
-        }
-    };
-    
-    // Read more functionality
-    window.toggleReadMore = function(element) {
-        const aboutSection = element.closest('.course-about');
-        const hiddenText = aboutSection.querySelector('.hidden-text');
-        
-        if (hiddenText) {
-            hiddenText.style.display = hiddenText.style.display === 'none' ? 'block' : 'none';
-            element.textContent = hiddenText.style.display === 'none' ? 'Read More' : 'Read Less';
-        }
-    };
-}
-
 // Global CTA button functionality
 function redirectToMembership() {
     window.location.href = '../../pricing/';
@@ -400,14 +338,4 @@ function redirectToLessons() {
 
 function redirectToResources() {
     window.location.href = '../../resources/';
-}
-
-// Helper function for testimonial rotation (if you want dynamic reviews)
-function rotateTestimonials(category, containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    
-    // This could be expanded to cycle through different review sets
-    const reviews = loadReviewsModule(category);
-    container.innerHTML = reviews;
 }
