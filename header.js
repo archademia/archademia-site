@@ -23,7 +23,7 @@ function loadHeader() {
                                     <div class="mega-menu-column">
                                         <h3>Drafting</h3>
                                         <ul>
-                                            <li><a href="#">AutoCAD Essentials</a></li>
+                                            <li><a href="/lessons/autocad/">AutoCAD Essentials</a></li>
                                             <li><a href="#">AutoCAD Architecture 3D Essentials</a></li>
                                             <li><a href="#">Complete Guide to AutoCAD</a></li>
                                             <li><a href="#">Site Plan Essentials</a></li>
@@ -81,8 +81,7 @@ function loadHeader() {
                                         
                                         <h3 style="margin-top: 2rem;">BIM</h3>
                                         <ul>
-                                            <li><a href="#">Area Plans & Schedules in Revit</a></li>
-                                            <li><a href="#">Autodesk Revit - Beginner Guide</a></li>
+                                            <li><a href="/lessons/autodesk-revit-for-beginners-online-course/">Autodesk Revit - Beginner Guide</a></li>
                                             <li><a href="#">Autodesk Revit - Intermediate Guide</a></li>
                                             <li><a href="#">Autodesk Revit - Complex Modelling Guide</a></li>
                                             <li><a href="#">BIM Collaboration in Revit</a></li>
@@ -99,7 +98,7 @@ function loadHeader() {
                                             <li><a href="#">Chaos Corona Exteriors</a></li>
                                             <li><a href="#">Chaos Corona Interiors</a></li>
                                             <li><a href="#">Chaos Corona for Cinema 4D</a></li>
-                                            <li><a href="#">Complete Guide to Vray for SketchUp</a></li>
+                                            <li><a href="/lessons/vray-training-course-vray-for-sketchup/">Complete Guide to Vray for SketchUp</a></li>
                                             <li><a href="#">Complete Guide to Vray for 3ds Max</a></li>
                                             <li><a href="#">Enscape to Vray Workflow</a></li>
                                             <li><a href="#">Furniture & Product Rendering</a></li>
@@ -120,7 +119,7 @@ function loadHeader() {
                                         <h3>Realtime Rendering</h3>
                                         <ul>
                                             <li><a href="#">Complete Guide to D5 Render</a></li>
-                                            <li><a href="#">Complete Guide to Enscape</a></li>
+                                            <li><a href="/lessons/enscape-online-course-complete-guide/">Complete Guide to Enscape</a></li>
                                             <li><a href="#">Complete Guide to Lumion</a></li>
                                             <li><a href="#">Enscape for Revit Essentials</a></li>
                                             <li><a href="#">Lumion Raytracing & Advanced Techniques</a></li>
