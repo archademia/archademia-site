@@ -225,7 +225,7 @@ function loadHeader() {
                 </ul>
                 
                 <div class="mobile-auth-buttons">
-                    <button class="theme-toggle" style="margin-bottom: 1rem; align-self: center;">
+                    <button class="theme-toggle">
                         <svg class="theme-icon" viewBox="0 0 24 24">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
