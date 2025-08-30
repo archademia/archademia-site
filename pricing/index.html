@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - ArchAdemia</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         /* Page-specific pricing styles */
         .main-content {
@@ -582,9 +582,9 @@
     </div>
 
     <!-- Load Components -->
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
-    <script src="modal.js"></script>
+    <script src="../header.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../modal.js"></script>
     
     <!-- Page-specific JavaScript -->
     <script>
@@ -593,8 +593,17 @@
             loadHeader();
             loadFooter();
             
-            // Initialize modal
-            initializeModal();
+            // Fix logo paths for subdirectory
+            const logoLight = document.querySelector('.logo-light');
+            const logoDark = document.querySelector('.logo-dark');
+            
+            if (logoLight) logoLight.src = '../logo-light.png';
+            if (logoDark) logoDark.src = '../logo-dark.png';
+            
+            // Initialize modal (if modal.js exists)
+            if (typeof initializeModal === 'function') {
+                initializeModal();
+            }
             
             // Add specific event listeners for pricing page buttons
             const getPlanButtons = document.querySelectorAll('.plan-button.primary, .plan-button.secondary');
