@@ -1,5 +1,5 @@
 function loadCourseTemplate(courseData) {
-    return `
+    return ` 
         <!-- Course Hero Section -->
         <section class="course-hero">
             <div class="course-hero-content">
