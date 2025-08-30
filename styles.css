@@ -93,6 +93,27 @@ body {
     color: var(--text-primary);
 }
 
+.logo img {
+    height: 28px;
+    transition: opacity 0.3s ease;
+}
+
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
