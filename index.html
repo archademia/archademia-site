@@ -48,7 +48,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* Apple-inspired Header with Frosted Glass */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -82,7 +82,6 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Apple-style Centered Navigation */
         .nav {
             display: flex;
             justify-content: center;
@@ -138,10 +137,6 @@
             transition: color 0.3s ease;
         }
         
-        .search-btn:hover {
-            color: #007AFF;
-        }
-        
         .search-icon {
             width: 16px;
             height: 16px;
@@ -176,11 +171,6 @@
             color: var(--text-primary);
         }
         
-        .theme-toggle:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-        
         .theme-icon {
             width: 14px;
             height: 14px;
@@ -192,17 +182,11 @@
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            text-decoration: none;
             font-weight: 500;
             font-size: 0.875rem;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-        }
-        
-        .signup-btn:hover {
-            background: #0056CC;
-            transform: translateY(-1px);
         }
         
         .login-btn {
@@ -211,16 +195,10 @@
             border: 1.5px solid var(--text-primary);
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            text-decoration: none;
             font-weight: 500;
             font-size: 0.875rem;
             transition: all 0.3s ease;
             cursor: pointer;
-        }
-        
-        .login-btn:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
         }
         
         .burger-menu {
@@ -239,38 +217,7 @@
             transition: all 0.3s ease;
         }
         
-        .burger-menu.active .burger-line:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .burger-menu.active .burger-line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .burger-menu.active .burger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        /* Apple-style Mobile Menu - Slide Down */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0,0,0,0);
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .mobile-menu-overlay.active {
-            background: rgba(0,0,0,0.2);
-            opacity: 1;
-            visibility: visible;
-        }
-        
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: -100%;
@@ -279,115 +226,17 @@
             height: 100vh;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-            z-index: 10001;
+            z-index: 999;
             padding: 8rem 2rem 2rem;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
             opacity: 0;
             visibility: hidden;
-        }
-        
-        [data-theme="dark"] .mobile-menu {
-            background: rgba(20, 20, 20, 0.95);
         }
         
         .mobile-menu.active {
             top: 0;
             opacity: 1;
             visibility: visible;
-        }
-        
-        .mobile-nav-links {
-            list-style: none;
-            margin-bottom: auto;
-            text-align: center;
-        }
-        
-        .mobile-nav-links li {
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .mobile-menu.active .mobile-nav-links li {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
-        
-        .mobile-nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: 600;
-            display: block;
-            padding: 1rem 0;
-            transition: color 0.3s ease;
-        }
-        
-        .mobile-nav-links a:hover {
-            color: #007AFF;
-        }
-        
-        .mobile-auth-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            transition-delay: 0.6s;
-        }
-        
-        .mobile-menu.active .mobile-auth-buttons {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mobile-signup-btn {
-            background: #007AFF;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .mobile-signup-btn:hover {
-            background: #0056CC;
-        }
-        
-        .mobile-login-btn {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1.5px solid var(--text-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .mobile-login-btn:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
         }
         
         /* Hero Section */
@@ -401,7 +250,6 @@
             justify-content: center;
             text-align: center;
             color: white;
-            position: relative;
         }
         
         .hero-content h1 {
@@ -423,18 +271,13 @@
             color: white;
             padding: 1rem 2rem;
             border-radius: 30px;
-            text-decoration: none;
             font-weight: 600;
             display: inline-block;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
-        }
-        
-        .cta-btn:hover {
-            background: #0056CC;
-            transform: translateY(-2px);
+            text-decoration: none;
         }
         
         /* Stats Section */
@@ -459,20 +302,6 @@
             color: var(--text-primary);
         }
         
-        .stats-content p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-        
-        .stats-numbers {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-        }
-        
         .counter {
             font-size: 4rem;
             font-weight: 700;
@@ -480,95 +309,17 @@
             color: var(--text-primary);
         }
         
-        .counter-label {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .pricing-features {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .pricing-features div {
-            margin-bottom: 0.3rem;
-        }
-        
-        /* Full-Bleed Carousel Section */
+        /* Carousel Section */
         .carousel-section {
             padding: 6rem 0;
             background: var(--bg-secondary);
             overflow: hidden;
         }
         
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .carousel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 2rem;
-        }
-        
-        .carousel-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        
-        .carousel-controls {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .carousel-btn {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--text-primary);
-            background: var(--bg-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            color: var(--text-primary);
-        }
-        
-        .carousel-btn:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-        
-        .carousel-btn.next {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-        
-        .carousel-wrapper {
-            overflow: hidden;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
         .carousel-track {
             display: flex;
             gap: 2rem;
             transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-            width: fit-content;
             padding-left: 2rem;
         }
         
@@ -578,98 +329,16 @@
             flex-shrink: 0;
             background: var(--card-bg);
             border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
             padding: 1.5rem;
-            box-shadow: 0 4px 20px var(--shadow);
             position: relative;
-            transition: transform 0.3s ease;
         }
         
-        .carousel-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .card-badge {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            background: rgba(255,255,255,0.95);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #333;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .card-duration {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 2.5rem 0 1.2rem 0;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-        
-        .card-description {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-            padding: 0 0.5rem;
-        }
-        
-        .card-image {
-            width: 100%;
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: auto;
-        }
-        
-        .carousel-pagination {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .pagination-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--text-light);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .pagination-dot.active {
-            background: var(--text-primary);
-        }
-        
-        /* Full Bleed Hero Section */
+        /* Full Bleed Hero Section - FIXED */
         .full-bleed-hero {
             height: 80vh;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
         
         .hero-slider {
@@ -684,109 +353,25 @@
             height: 100%;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            position: relative;
             color: white;
+            flex-shrink: 0;
+            position: relative;
         }
         
         .hero-slide.lightroom {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23333"/><rect x="0" y="400" width="1920" height="400" fill="%23222"/><circle cx="400" cy="400" r="200" fill="%23444" opacity="0.5"/><rect x="600" y="200" width="800" height="400" fill="%23555" opacity="0.3"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), #333;
         }
         
         .hero-slide.sketchup {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23f39c12"/><rect x="0" y="400" width="1920" height="400" fill="%23e67e22"/><circle cx="1200" cy="300" r="150" fill="%23d35400" opacity="0.6"/><rect x="200" y="150" width="600" height="300" fill="%23e74c3c" opacity="0.4"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), #f39c12;
         }
         
-        .full-bleed-content {
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 4rem;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .series-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .series-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-        
-        .series-controls {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .series-btn {
-            width: 32px;
-            height: 32px;
-            border: 2px solid rgba(255,255,255,0.7);
-            background: transparent;
-            color: white;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .series-btn:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: white;
-        }
-        
-        .full-bleed-hero h2 {
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-        }
-        
-        .full-bleed-hero p {
-            font-size: 1.2rem;
-            line-height: 1.4;
-            opacity: 0.9;
-            margin-bottom: 3rem;
-            max-width: 600px;
-        }
-        
-        .explore-btn {
-            background: #007AFF;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .explore-btn:hover {
-            background: #0056CC;
-            transform: translateY(-2px);
-        }
-        
-        /* Community Section */
+        /* Community Section - FIXED POSITIONING */
         .community-section {
-            padding: 3rem 0;
+            padding: 6rem 2rem;
             background: var(--bg-primary);
-            overflow: hidden;
+            position: relative;
+            z-index: 2;
         }
         
         .community-container {
@@ -795,20 +380,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 0;
-        }
-        
-        .community-image {
-            width: 100%;
-            height: 500px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><rect x="70" y="70" width="200" height="150" fill="%234a90e2" rx="8"/><rect x="290" y="80" width="240" height="15" fill="%23e9ecef" rx="4"/><rect x="290" y="110" width="180" height="12" fill="%23e9ecef" rx="4"/><rect x="290" y="140" width="200" height="12" fill="%23e9ecef" rx="4"/><rect x="70" y="240" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="300" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="360" width="460" height="40" fill="%23f8f9fa" rx="8"/></svg>') center/cover no-repeat;
-            border-radius: 16px;
-            margin-left: -2rem;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-        }
-        
-        .community-content {
-            padding: 4rem 4rem 4rem 6rem;
+            gap: 4rem;
         }
         
         .community-content h2 {
@@ -819,18 +391,12 @@
             color: var(--text-primary);
         }
         
-        .community-content p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-        }
-        
-        /* Professional Development Section */
+        /* Professional Section */
         .professional-section {
-            padding: 3rem 0;
+            padding: 6rem 2rem;
             background: var(--bg-primary);
-            overflow: hidden;
+            position: relative;
+            z-index: 2;
         }
         
         .professional-container {
@@ -839,44 +405,15 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 0;
+            gap: 4rem;
         }
         
-        .professional-content {
-            padding: 4rem 6rem 4rem 4rem;
-            order: 1;
-        }
-        
-        .professional-content h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-        
-        .professional-content p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-        }
-        
-        .professional-image {
-            width: 100%;
-            height: 500px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><rect x="70" y="80" width="200" height="15" fill="%23333" rx="4"/><rect x="70" y="110" width="120" height="12" fill="%23ffc107" rx="4"/><rect x="70" y="140" width="460" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="160" width="300" height="8" fill="%23e9ecef" rx="4"/><circle cx="520" cy="120" r="30" fill="%23ffc107" opacity="0.8"/><circle cx="520" cy="180" r="25" fill="%2328a745" opacity="0.8"/><circle cx="460" cy="200" r="20" fill="%2317a2b8" opacity="0.8"/><rect x="70" y="220" width="460" height="1" fill="%23dee2e6"/><rect x="70" y="250" width="150" height="12" fill="%23333" rx="4"/><rect x="70" y="280" width="460" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="300" width="400" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="320" width="350" height="8" fill="%23e9ecef" rx="4"/><rect x="70" y="350" width="100" height="30" fill="%23007bff" rx="15"/></svg>') center/cover no-repeat;
-            border-radius: 16px;
-            margin-right: -2rem;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-            order: 2;
-        }
-        
-        /* Social Platform Section */
+        /* Social Section */
         .social-section {
-            padding: 3rem 0;
+            padding: 6rem 2rem;
             background: var(--bg-primary);
-            overflow: hidden;
+            position: relative;
+            z-index: 2;
         }
         
         .social-container {
@@ -885,35 +422,17 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 0;
+            gap: 4rem;
         }
         
-        .social-image {
-            width: 100%;
-            height: 500px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><circle cx="100" cy="100" r="20" fill="%23dee2e6"/><rect x="140" y="85" width="120" height="12" fill="%23333" rx="4"/><rect x="140" y="105" width="80" height="8" fill="%23999" rx="4"/><rect x="70" y="140" width="240" height="80" fill="%234a90e2" rx="8"/><rect x="320" y="140" width="110" height="80" fill="%23e76f51" rx="8"/><rect x="440" y="140" width="110" height="80" fill="%2328a745" rx="8"/><rect x="70" y="240" width="110" height="80" fill="%23ffc107" rx="8"/><rect x="190" y="240" width="120" height="80" fill="%2317a2b8" rx="8"/><rect x="320" y="240" width="230" height="80" fill="%23fd7e14" rx="8"/></svg>') center/cover no-repeat;
-            border-radius: 16px;
-            margin-left: -2rem;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-        }
-        
-        .social-content {
-            padding: 4rem 4rem 4rem 6rem;
-        }
-        
-        .social-content h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-        
-        .social-content p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
+        /* Footer - ENSURE IT STAYS AT BOTTOM */
+        .footer {
+            background: var(--bg-tertiary);
+            color: var(--bg-primary);
+            padding: 3rem 2rem 2rem;
+            position: relative;
+            z-index: 3;
+            margin-top: auto;
         }
         
         /* Modal */
@@ -928,7 +447,6 @@
             justify-content: center;
             align-items: center;
             z-index: 10000;
-            backdrop-filter: blur(0px);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -949,8 +467,6 @@
             width: 90%;
             position: relative;
             box-shadow: 0 20px 60px var(--shadow-heavy);
-            max-height: 90vh;
-            overflow-y: auto;
             transform: scale(0.7) translateY(20px);
             transition: all 0.3s ease;
         }
@@ -959,237 +475,8 @@
             transform: scale(1) translateY(0);
         }
         
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .close-modal:hover {
-            color: var(--text-primary);
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: var(--text-primary);
-        }
-        
-        .modal-description {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.4;
-        }
-        
-        .signup-form {
-            margin-bottom: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-            background: var(--card-bg);
-            color: var(--text-primary);
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: #007AFF;
-        }
-        
-        .password-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            margin: 0;
-        }
-        
-        .checkbox-group label {
-            color: var(--text-secondary);
-            margin: 0;
-            font-weight: 400;
-        }
-        
-        .forgot-password {
-            color: #007AFF;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-        
-        .social-signup {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .social-text {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--border-color);
-            background: var(--card-bg);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            color: var(--text-primary);
-        }
-        
-        .social-btn:hover {
-            border-color: #007AFF;
-        }
-        
-        .continue-btn {
-            width: 100%;
-            background: #007AFF;
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 1rem;
-        }
-        
-        .continue-btn:hover {
-            background: #0056CC;
-        }
-        
-        .login-link {
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        .login-link a {
-            color: #007AFF;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--bg-tertiary);
-            color: var(--bg-primary);
-            padding: 3rem 2rem 2rem;
-        }
-        
-        [data-theme="dark"] .footer {
-            background: #000000;
-            color: #ffffff;
-        }
-        
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-        
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            line-height: 2;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--bg-primary);
-        }
-        
-        [data-theme="dark"] .footer-section a {
-            color: #cccccc;
-        }
-        
-        [data-theme="dark"] .footer-section a:hover {
-            color: #ffffff;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            margin-top: 2rem;
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-        
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links,
-            .nav-buttons .search-btn,
-            .nav-buttons .theme-toggle,
-            .nav-buttons .signup-btn,
-            .nav-buttons .login-btn {
+            .nav-links {
                 display: none;
             }
             
@@ -1201,179 +488,12 @@
                 font-size: 2.5rem;
             }
             
-            .hero-content .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .stats-container {
+            .stats-container,
+            .community-container,
+            .professional-container,
+            .social-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-                padding: 2rem 1rem;
-            }
-            
-            .stats-content h2 {
-                font-size: 2rem;
-                text-align: center;
-            }
-            
-            .stats-numbers {
-                align-items: center;
-                text-align: center;
-            }
-            
-            .counter {
-                font-size: 3rem;
-            }
-            
-            .carousel-section {
-                padding: 4rem 0;
-            }
-            
-            .carousel-header {
-                padding: 0 1rem;
-            }
-            
-            .carousel-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .carousel-controls {
-                gap: 0.5rem;
-            }
-            
-            .carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-            
-            .carousel-card {
-                width: 280px;
-                height: 420px;
-                padding: 1.2rem;
-            }
-            
-            .card-title {
-                font-size: 1.1rem;
-                margin: 2rem 0 1rem 0;
-            }
-            
-            .card-description {
-                font-size: 0.8rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .card-image {
-                height: 160px;
-            }
-            
-            .full-bleed-hero {
-                height: 60vh;
-            }
-            
-            .full-bleed-content {
-                padding: 0 2rem;
-            }
-            
-            .full-bleed-hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .full-bleed-hero p {
-                font-size: 1rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .professional-container, .community-container, .social-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .professional-content, .community-content, .social-content {
-                padding: 0 2rem;
-                order: 2;
-            }
-            
-            .professional-content h2, .community-content h2, .social-content h2 {
-                font-size: 2rem;
-            }
-            
-            .professional-image, .community-image, .social-image {
-                margin-left: 2rem;
-                margin-right: 2rem;
-                height: 300px;
-                order: 1;
-            }
-            
-            .professional-image {
-                order: 1;
-            }
-            
-            .signup-modal {
-                margin: 1rem;
-                padding: 2rem;
-            }
-            
-            .modal-title {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-content .tagline {
-                font-size: 1rem;
-            }
-            
-            .stats {
-                padding: 3rem 1rem;
-            }
-            
-            .carousel-card {
-                width: 260px;
-                height: 400px;
-                padding: 1rem;
-            }
-            
-            .card-title {
-                font-size: 1rem;
-                margin: 1.5rem 0 0.8rem 0;
-            }
-            
-            .card-description {
-                font-size: 0.75rem;
-                margin-bottom: 1rem;
-            }
-            
-            .card-image {
-                height: 140px;
-            }
-            
-            .full-bleed-hero h2 {
-                font-size: 2rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .signup-modal {
-                padding: 1.5rem;
-            }
-            
-            .modal-title {
-                font-size: 1.3rem;
-            }
-            
-            .form-group input {
-                padding: 0.6rem;
             }
         }
     </style>
@@ -1404,7 +524,6 @@
                 <button class="login-btn">Login</button>
                 <button class="signup-btn">Sign Up</button>
                 
-                <!-- Burger Menu -->
                 <div class="burger-menu" id="burgerMenu">
                     <div class="burger-line"></div>
                     <div class="burger-line"></div>
@@ -1412,9 +531,6 @@
                 </div>
             </div>
         </nav>
-        
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
         
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
@@ -1427,11 +543,6 @@
             </ul>
             
             <div class="mobile-auth-buttons">
-                <button class="theme-toggle" style="margin-bottom: 1rem; align-self: center;">
-                    <svg class="theme-icon" viewBox="0 0 24 24">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
                 <button class="mobile-signup-btn">Sign Up</button>
                 <button class="mobile-login-btn">Login</button>
             </div>
@@ -1452,17 +563,11 @@
         <div class="stats-container">
             <div class="stats-content">
                 <h2>Develop your skills today.</h2>
-                <p>Learn from industry professionals with our comprehensive courses designed specifically for architects. From software mastery to design theory, we've got everything you need to advance your career.</p>
+                <p>Learn from industry professionals with our comprehensive courses designed specifically for architects.</p>
             </div>
             <div class="stats-numbers">
                 <div class="counter">£11.50</div>
                 <div class="counter-label">per month</div>
-                <div class="pricing-features">
-                    <div>Download and watch tutorials offline</div>
-                    <div>Optimised for desktop, phone, & tablet</div>
-                    <div>New classes added every month</div>
-                    <div>Join aspiring and qualified professionals</div>
-                </div>
                 <button class="cta-btn">Sign up today for FREE</button>
             </div>
         </div>
@@ -1485,57 +590,26 @@
                         <div class="card-badge">Intermediate</div>
                         <div class="card-duration">1hr 30min</div>
                         <h3 class="card-title">Space by Sir Norman Foster</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23e8f4fd%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%234a90e2%22/></svg>');"></div>
+                        <p class="card-description">Learn architectural design principles from one of the world's leading architects.</p>
+                        <div class="card-image" style="background: #4a90e2; height: 180px; border-radius: 12px;"></div>
                     </div>
                     
                     <div class="carousel-card">
                         <div class="card-badge">Beginner</div>
                         <div class="card-duration">1hr 30min</div>
                         <h3 class="card-title">The Life and Work of Zaha Hadid</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23f5f5f5%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23333%22/></svg>');"></div>
+                        <p class="card-description">Explore the revolutionary designs and philosophy of Dame Zaha Hadid.</p>
+                        <div class="card-image" style="background: #333; height: 180px; border-radius: 12px;"></div>
                     </div>
                     
                     <div class="carousel-card">
                         <div class="card-badge">Beginner</div>
                         <div class="card-duration">1hr</div>
                         <h3 class="card-title">Tall Buildings with Paul Falconer</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23f4a261%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23e76f51%22/></svg>');"></div>
-                    </div>
-                    
-                    <div class="carousel-card">
-                        <div class="card-badge">Intermediate</div>
-                        <div class="card-duration">2hr</div>
-                        <h3 class="card-title">Contemporary Architecture</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%2343aa8b%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23277da1%22/></svg>');"></div>
-                    </div>
-                    
-                    <div class="carousel-card">
-                        <div class="card-badge">Advanced</div>
-                        <div class="card-duration">3hr 15min</div>
-                        <h3 class="card-title">Sustainable Design Principles</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%2390c695%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%235a8a3a%22/></svg>');"></div>
-                    </div>
-                    
-                    <div class="carousel-card">
-                        <div class="card-badge">Beginner</div>
-                        <div class="card-duration">45min</div>
-                        <h3 class="card-title">Introduction to BIM</h3>
-                        <p class="card-description">Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea Ita doluptus perem autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea</p>
-                        <div class="card-image" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22260%22 height=%22160%22 viewBox=%220 0 260 160%22><rect width=%22260%22 height=%22160%22 fill=%22%23ffeaa7%22/><rect x=%2230%22 y=%2230%22 width=%22200%22 height=%22100%22 fill=%22%23fdcb6e%22/></svg>');"></div>
+                        <p class="card-description">Master the art of designing skyscrapers and high-rise structures.</p>
+                        <div class="card-image" style="background: #e76f51; height: 180px; border-radius: 12px;"></div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="carousel-pagination">
-                <div class="pagination-dot active"></div>
-                <div class="pagination-dot"></div>
-                <div class="pagination-dot"></div>
-                <div class="pagination-dot"></div>
             </div>
         </div>
     </section>
@@ -1543,591 +617,18 @@
     <!-- Full Bleed Hero Section -->
     <section class="full-bleed-hero">
         <div class="hero-slider" id="heroSlider">
-            <!-- Lightroom Slide -->
             <div class="hero-slide lightroom">
                 <div class="full-bleed-content">
-                    <div class="series-nav">
-                        <span class="series-title">in Practice Series</span>
-                        <div class="series-controls">
-                            <button class="series-btn" id="heroPrev">‹</button>
-                            <button class="series-btn" id="heroNext">›</button>
-                        </div>
-                    </div>
                     <h2>Lightroom for Photography with MVRDV</h2>
-                    <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <button class="cta-btn">Sign up today for FREE</button>
-            </div>
-            <div class="professional-image"></div>
-        </div>
-    </section>
-
-    <!-- Social Platform Section -->
-    <section class="social-section">
-        <div class="social-container">
-            <div class="social-image"></div>
-            <div class="social-content">
-                <h2>Share and inspire through our social centrepiece, The Drawing Board.</h2>
-                <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis dipsa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <button class="cta-btn">Sign up today for FREE</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Courses</h4>
-                <ul>
-                    <li><a href="#">SketchUp</a></li>
-                    <li><a href="#">Revit</a></li>
-                    <li><a href="#">AutoCAD</a></li>
-                    <li><a href="#">Rhino</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Community</h4>
-                <ul>
-                    <li><a href="#">Discussion Board</a></li>
-                    <li><a href="#">Project Gallery</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Jobs</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ArchAdemia. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Signup Modal -->
-    <div class="modal-overlay" id="signupModal">
-        <div class="signup-modal">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <h2 class="modal-title">Welcome to ArchAdemia.</h2>
-            <p class="modal-description">Join thousands of architects advancing their careers through expert-led training and community collaboration.</p>
-            
-            <form class="signup-form" onsubmit="handleSignup(event)">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Create Password</label>
-                    <input type="password" id="password" name="password" required>
-                    <div class="password-options">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="keepSignedIn">
-                            <label for="keepSignedIn">Keep me signed in</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgotten password?</a>
-                    </div>
-                </div>
-            </form>
-            
-            <div class="social-signup">
-                <p class="social-text">Or continue with</p>
-                <div class="social-buttons">
-                    <button class="social-btn" onclick="socialLogin('facebook')">f</button>
-                    <button class="social-btn" onclick="socialLogin('apple')">🍎</button>
-                    <button class="social-btn" onclick="socialLogin('google')">G</button>
+                    <p>Master architectural photography and presentation techniques.</p>
+                    <button class="cta-btn">Explore today for FREE</button>
                 </div>
             </div>
             
-            <button class="continue-btn" onclick="handleSignup(event)">Continue</button>
-            
-            <p class="login-link">Already a member? <a href="#" onclick="switchToLogin()">Sign in here</a></p>
-        </div>
-    </div>
-
-    <script>
-        // Add scroll detection for frosted glass navigation
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Modal functionality
-        function openModal() {
-            const modal = document.getElementById('signupModal');
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('signupModal');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-        
-        function handleSignup(event) {
-            if (event) event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            if (email && password) {
-                alert('Welcome to ArchAdemia! Your account has been created successfully.');
-                closeModal();
-                // Reset form
-                document.getElementById('email').value = '';
-                document.getElementById('password').value = '';
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-        
-        function socialLogin(provider) {
-            alert(`Signing up with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`);
-            closeModal();
-        }
-        
-        function switchToLogin() {
-            alert('Switching to login form...');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Initialize all functionality when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Dark mode functionality
-            const themeToggle = document.getElementById('themeToggle');
-            const mobileThemeToggle = document.querySelector('.mobile-menu .theme-toggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            
-            // Apply saved theme
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            updateThemeIcon(currentTheme);
-            
-            function updateThemeIcon(theme) {
-                const toggles = [themeToggle, mobileThemeToggle];
-                toggles.forEach(toggle => {
-                    if (toggle) {
-                        const icon = toggle.querySelector('.theme-icon path');
-                        if (icon) {
-                            if (theme === 'dark') {
-                                // Sun icon
-                                icon.setAttribute('d', 'M12 1v2M12 21v2m11-10h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L16.95 6.05M6.05 17.95l-1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z');
-                            } else {
-                                // Moon icon
-                                icon.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
-                            }
-                        }
-                    }
-                });
-            }
-            
-            function toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            }
-            
-            // Add event listeners to both theme toggles
-            if (themeToggle) {
-                themeToggle.addEventListener('click', toggleTheme);
-            }
-            
-            if (mobileThemeToggle) {
-                mobileThemeToggle.addEventListener('click', function() {
-                    toggleTheme();
-                    closeMobileMenu();
-                });
-            }
-            
-            // Check system preference on first visit
-            if (!localStorage.getItem('theme')) {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const systemTheme = prefersDark ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', systemTheme);
-                updateThemeIcon(systemTheme);
-            }
-            
-            // Apple-style Mobile Menu
-            const burgerMenu = document.getElementById('burgerMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-            const mobileSignupBtn = document.querySelector('.mobile-signup-btn');
-            const mobileLoginBtn = document.querySelector('.mobile-login-btn');
-            
-            function openMobileMenu() {
-                burgerMenu.classList.add('active');
-                mobileMenu.classList.add('active');
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            function closeMobileMenu() {
-                burgerMenu.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            if (burgerMenu) {
-                burgerMenu.addEventListener('click', function() {
-                    if (mobileMenu.classList.contains('active')) {
-                        closeMobileMenu();
-                    } else {
-                        openMobileMenu();
-                    }
-                });
-            }
-            
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-            }
-            
-            // Mobile menu CTA buttons
-            if (mobileSignupBtn) {
-                mobileSignupBtn.addEventListener('click', function() {
-                    closeMobileMenu();
-                    openModal();
-                });
-            }
-            
-            if (mobileLoginBtn) {
-                mobileLoginBtn.addEventListener('click', function() {
-                    closeMobileMenu();
-                    // Add login functionality here
-                });
-            }
-            
-            // Close mobile menu when clicking nav links
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-            mobileNavLinks.forEach(function(link) {
-                link.addEventListener('click', closeMobileMenu);
-            });
-            
-            // Full-bleed hero slider functionality
-            let heroCurrentSlide = 0;
-            const heroSlider = document.getElementById('heroSlider');
-            const heroPrevBtns = document.querySelectorAll('#heroPrev, #heroPrev2');
-            const heroNextBtns = document.querySelectorAll('#heroNext, #heroNext2');
-            
-            function updateHeroSlider() {
-                if (heroSlider) {
-                    const translateX = -heroCurrentSlide * 50; // 50% for each slide
-                    heroSlider.style.transform = `translateX(${translateX}%)`;
-                }
-            }
-            
-            function nextHeroSlide() {
-                heroCurrentSlide = heroCurrentSlide >= 1 ? 0 : heroCurrentSlide + 1;
-                updateHeroSlider();
-            }
-            
-            function prevHeroSlide() {
-                heroCurrentSlide = heroCurrentSlide <= 0 ? 1 : heroCurrentSlide - 1;
-                updateHeroSlider();
-            }
-            
-            // Add event listeners for hero slider buttons
-            heroPrevBtns.forEach(function(btn) {
-                if (btn) {
-                    btn.addEventListener('click', prevHeroSlide);
-                }
-            });
-            
-            heroNextBtns.forEach(function(btn) {
-                if (btn) {
-                    btn.addEventListener('click', nextHeroSlide);
-                }
-            });
-            
-            // Enhanced carousel functionality with momentum and touch support
-            let currentIndex = 0;
-            const originalCards = 6;
-            const cardWidth = 342; // 320px card + 22px gap
-            let isAnimating = false;
-            let startX = 0;
-            let currentX = 0;
-            let isDragging = false;
-            
-            // Clone cards for infinite effect
-            const track = document.getElementById('carouselTrack');
-            if (track) {
-                const cards = track.children;
-                const cardArray = Array.from(cards);
-                
-                // Clone all cards and append to create seamless loop
-                cardArray.forEach(card => {
-                    const clone = card.cloneNode(true);
-                    track.appendChild(clone);
-                });
-                
-                // Also prepend clones for smooth backward navigation
-                cardArray.reverse().forEach(card => {
-                    const clone = card.cloneNode(true);
-                    track.insertBefore(clone, track.firstChild);
-                });
-                
-                // Set initial position to show original cards
-                currentIndex = originalCards;
-                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-                
-                // Touch/swipe support
-                track.addEventListener('touchstart', handleTouchStart, { passive: true });
-                track.addEventListener('touchmove', handleTouchMove, { passive: false });
-                track.addEventListener('touchend', handleTouchEnd, { passive: true });
-                
-                // Mouse drag support for desktop
-                track.addEventListener('mousedown', handleMouseDown);
-                track.addEventListener('mousemove', handleMouseMove);
-                track.addEventListener('mouseup', handleMouseUp);
-                track.addEventListener('mouseleave', handleMouseUp);
-            }
-            
-            function handleTouchStart(e) {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-                track.style.transition = 'none';
-            }
-            
-            function handleTouchMove(e) {
-                if (!isDragging) return;
-                e.preventDefault();
-                currentX = e.touches[0].clientX;
-                const deltaX = currentX - startX;
-                const currentTransform = -currentIndex * cardWidth;
-                track.style.transform = `translateX(${currentTransform + deltaX}px)`;
-            }
-            
-            function handleTouchEnd(e) {
-                if (!isDragging) return;
-                isDragging = false;
-                
-                const deltaX = currentX - startX;
-                const threshold = cardWidth * 0.2;
-                
-                if (Math.abs(deltaX) > threshold) {
-                    if (deltaX > 0) {
-                        prevSlide();
-                    } else {
-                        nextSlide();
-                    }
-                } else {
-                    updateCarousel(true);
-                }
-            }
-            
-            function handleMouseDown(e) {
-                startX = e.clientX;
-                isDragging = true;
-                track.style.transition = 'none';
-                track.style.cursor = 'grabbing';
-            }
-            
-            function handleMouseMove(e) {
-                if (!isDragging) return;
-                e.preventDefault();
-                currentX = e.clientX;
-                const deltaX = currentX - startX;
-                const currentTransform = -currentIndex * cardWidth;
-                track.style.transform = `translateX(${currentTransform + deltaX}px)`;
-            }
-            
-            function handleMouseUp(e) {
-                if (!isDragging) return;
-                isDragging = false;
-                track.style.cursor = 'grab';
-                
-                const deltaX = currentX - startX;
-                const threshold = cardWidth * 0.15;
-                
-                if (Math.abs(deltaX) > threshold) {
-                    if (deltaX > 0) {
-                        prevSlide();
-                    } else {
-                        nextSlide();
-                    }
-                } else {
-                    updateCarousel(true);
-                }
-            }
-            
-            function updateCarousel(smooth = true) {
-                if (isAnimating && smooth) return;
-                
-                if (track) {
-                    track.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)' : 'none';
-                    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-                    
-                    if (smooth) {
-                        isAnimating = true;
-                        setTimeout(() => {
-                            isAnimating = false;
-                        }, 600);
-                    }
-                    
-                    // Handle infinite loop reset
-                    setTimeout(() => {
-                        if (currentIndex >= originalCards * 2) {
-                            currentIndex = originalCards;
-                            track.style.transition = 'none';
-                            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-                        } else if (currentIndex <= 0) {
-                            currentIndex = originalCards;
-                            track.style.transition = 'none';
-                            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-                        }
-                    }, smooth ? 600 : 0);
-                    
-                    // Update dots
-                    const dots = document.querySelectorAll('.pagination-dot');
-                    const actualPosition = ((currentIndex - originalCards) % originalCards + originalCards) % originalCards;
-                    dots.forEach(function(dot, index) {
-                        dot.classList.toggle('active', index === (actualPosition % 4));
-                    });
-                }
-            }
-            
-            function nextSlide() {
-                if (isAnimating) return;
-                currentIndex++;
-                updateCarousel(true);
-            }
-            
-            function prevSlide() {
-                if (isAnimating) return;
-                currentIndex--;
-                updateCarousel(true);
-            }
-            
-            // Button controls
-            const prevBtn = document.querySelector('.carousel-btn.prev');
-            const nextBtn = document.querySelector('.carousel-btn.next');
-            
-            if (prevBtn) {
-                prevBtn.onclick = prevSlide;
-            }
-            
-            if (nextBtn) {
-                nextBtn.onclick = nextSlide;
-            }
-            
-            // Dot clicks
-            const dots = document.querySelectorAll('.pagination-dot');
-            dots.forEach(function(dot, index) {
-                dot.onclick = function() {
-                    if (isAnimating) return;
-                    currentIndex = originalCards + index;
-                    updateCarousel(true);
-                };
-            });
-            
-            // Initialize carousel
-            updateCarousel(false);
-            
-            // Add cursor styles for drag
-            if (track) {
-                track.style.cursor = 'grab';
-            }
-            
-            // Modal event listeners - target all CTA buttons
-            const modal = document.getElementById('signupModal');
-            const closeBtn = document.getElementById('closeModal');
-            
-            // Get all CTA buttons
-            const allCtaButtons = [
-                document.querySelector('.hero .cta-btn'),
-                document.querySelector('.stats .cta-btn'),
-                ...document.querySelectorAll('.explore-btn'),
-                document.querySelector('.signup-btn'),
-                document.querySelector('.community-content .cta-btn'),
-                document.querySelector('.professional-content .cta-btn'),
-                document.querySelector('.social-content .cta-btn')
-            ];
-            
-            // Add click handlers to each CTA button
-            allCtaButtons.forEach(function(btn) {
-                if (btn) {
-                    btn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        openModal();
-                    });
-                }
-            });
-            
-            // Close modal events
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
-            }
-            
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
-            
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        });
-    </script>
-</body>
-</html> nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autnndae ea estia cus et dolorem tiatia conemprci quia idest, temol.</p>
-                    <button class="explore-btn">Explore today for FREE</button>
-                </div>
-            </div>
-            
-            <!-- SketchUp Slide -->
             <div class="hero-slide sketchup">
                 <div class="full-bleed-content">
-                    <div class="series-nav">
-                        <span class="series-title">in Practice Series</span>
-                        <div class="series-controls">
-                            <button class="series-btn" id="heroPrev2">‹</button>
-                            <button class="series-btn" id="heroNext2">›</button>
-                        </div>
-                    </div>
                     <h2>Master SketchUp for Architectural Design</h2>
-                    <p>Learn advanced SketchUp techniques from industry professionals. Master 3D modeling, rendering workflows, and presentation methods that will transform your architectural visualization process and client presentations.</p>
+                    <p>Learn advanced 3D modeling and visualization.</p>
                     <button class="explore-btn">Explore today for FREE</button>
                 </div>
             </div>
@@ -2137,18 +638,111 @@
     <!-- Community Section -->
     <section class="community-section">
         <div class="community-container">
-            <div class="community-image"></div>
+            <div class="community-image" style="background: #4a90e2; height: 400px; border-radius: 16px;"></div>
             <div class="community-content">
                 <h2>Community based learning for aspiring and qualified architects.</h2>
-                <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
+                <p>Connect with fellow architects, share your work, and collaborate on exciting projects.</p>
                 <button class="cta-btn">Sign up today for FREE</button>
             </div>
         </div>
     </section>
 
-    <!-- Professional Development Section -->
+    <!-- Professional Section -->
     <section class="professional-section">
         <div class="professional-container">
             <div class="professional-content">
                 <h2>Track and maintain your continued professional development.</h2>
-                <p>Ita doluptus perum autentibusae
+                <p>Advance your career with industry-recognized certifications and portfolio development.</p>
+                <button class="cta-btn">Sign up today for FREE</button>
+            </div>
+            <div class="professional-image" style="background: #28a745; height: 400px; border-radius: 16px;"></div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section">
+        <div class="social-container">
+            <div class="social-image" style="background: #ffc107; height: 400px; border-radius: 16px;"></div>
+            <div class="social-content">
+                <h2>Share and inspire through our social centrepiece, The Drawing Board.</h2>
+                <p>Showcase your progress and build your professional network.</p>
+                <button class="cta-btn">Sign up today for FREE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 ArchAdemia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="signup-modal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="modal-title">Welcome to ArchAdemia.</h2>
+            <p class="modal-description">Join thousands of architects advancing their careers.</p>
+            
+            <form class="signup-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="continue-btn">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // All JavaScript functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu
+            const burgerMenu = document.getElementById('burgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            burgerMenu.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Modal functionality
+            const modal = document.getElementById('signupModal');
+            const allCtaButtons = document.querySelectorAll('.cta-btn, .signup-btn');
+            
+            allCtaButtons.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            });
+            
+            document.getElementById('closeModal').addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+            
+            // Hero slider
+            const heroSlider = document.getElementById('heroSlider');
+            let heroCurrentSlide = 0;
+            
+            function updateHeroSlider() {
+                heroSlider.style.transform = `translateX(-${heroCurrentSlide * 50}%)`;
+            }
+            
+            // Carousel functionality
+            const track = document.getElementById('carouselTrack');
+            let currentIndex = 0;
+            
+            document.querySelector('.carousel-btn.next').addEventListener('click', function() {
+                currentIndex++;
+                track.style.transform = `translateX(-${currentIndex * 342}px)`;
+            });
+            
+            document.querySelector('.carousel-btn.prev').addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    track.style.transform = `translateX(-${currentIndex * 342}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
