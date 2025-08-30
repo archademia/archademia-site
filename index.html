@@ -82,7 +82,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* Apple-style Centered Navigation */
+        /* Apple- Centered Navigation */
         .nav {
             display: flex;
             justify-content: center;
@@ -1375,6 +1375,116 @@
                 padding: 0.6rem;
             }
         }
+
+/* Mega Menu Styles - ADD TO EXISTING CSS */
+.nav-item {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    max-width: 90vw;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    z-index: 9999;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+[data-theme="dark"] .mega-menu {
+    background: rgba(31, 31, 31, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+}
+
+.mega-menu-column {
+    min-height: 200px;
+}
+
+.mega-menu-column h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column li {
+    margin-bottom: 0.75rem;
+}
+
+.mega-menu-column a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 0.25rem 0;
+    border-radius: 6px;
+}
+
+.mega-menu-column a:hover {
+    color: #007AFF;
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments for mega menu */
+@media (max-width: 1280px) {
+    .mega-menu {
+        width: 1000px;
+        padding: 2.5rem;
+        gap: 2rem;
+    }
+    
+    .mega-menu-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mega-menu {
+        display: none !important;
+    }
+}
+
+/* Ensure mega menu doesn't interfere with mobile */
+@media (max-width: 768px) {
+    .mega-menu {
+        display: none !important;
+    }
+}        
     </style>
 </head>
 <body>
@@ -1383,13 +1493,132 @@
         <nav class="nav">
             <div class="logo">ArchAdemia.</div>
             
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="lessons.html">Lessons</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-            </ul>
+<ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-item">
+        <a href="lessons.html">Lessons</a>
+        
+        <!-- MEGA MENU - INSERT THIS ENTIRE DIV -->
+        <div class="mega-menu">
+            <div class="mega-menu-grid">
+                <!-- Drafting Column -->
+                <div class="mega-menu-column">
+                    <h3>Drafting</h3>
+                    <ul>
+                        <li><a href="#">AutoCAD Essentials</a></li>
+                        <li><a href="#">AutoCAD Architecture 3D Essentials</a></li>
+                        <li><a href="#">Complete Guide to AutoCAD</a></li>
+                        <li><a href="#">Site Plan Essentials</a></li>
+                        <li><a href="#">SketchUp Layout Essentials</a></li>
+                        <li><a href="#">The Perfect Floor Plan</a></li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Design + Practice</h3>
+                    <ul>
+                        <li><a href="#">Architectural Design in Practice Vol.1</a></li>
+                        <li><a href="#">Architectural Design in Practice Vol.2</a></li>
+                        <li><a href="#">Architectural Detailing Basics Vol.1</a></li>
+                        <li><a href="#">Co-ordination with a Structural Engineer</a></li>
+                        <li><a href="#">How To Setup Your Own Studio</a></li>
+                        <li><a href="#">Introduction to Sustainable Architecture</a></li>
+                        <li><a href="#">The Project Guide</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Graphics + Presentation Column -->
+                <div class="mega-menu-column">
+                    <h3>Graphics + Presentation</h3>
+                    <ul>
+                        <li><a href="#">InDesign Essentials</a></li>
+                        <li><a href="#">Guide to Architectural Short Films</a></li>
+                        <li><a href="#">Photoshop Essentials</a></li>
+                        <li><a href="#">The Perfect Portfolio</a></li>
+                        <li><a href="#">The Perfect Presentation</a></li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Studies + Career</h3>
+                    <ul>
+                        <li><a href="#">RIBA Part 3 Masterclass</a></li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Hand Drawing + Illustration</h3>
+                    <ul>
+                        <li><a href="#">Adobe Illustrator for Beginners</a></li>
+                        <li><a href="#">Adobe Illustrator for Architects</a></li>
+                        <li><a href="#">Architectural Diagrams in Blender</a></li>
+                        <li><a href="#">Sketch Like an Architect</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Parametric Column -->
+                <div class="mega-menu-column">
+                    <h3>Parametric</h3>
+                    <ul>
+                        <li><a href="#">Autodesk Maya for Architects</a></li>
+                        <li><a href="#">Complete Guide to Grasshopper</a></li>
+                        <li><a href="#">Complete Guide to Dynamo for Revit</a></li>
+                        <li><a href="#">Parametric Architecture Masterclass</a></li>
+                        <li><a href="#">Rhino to Revit Workflow</a></li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">BIM</h3>
+                    <ul>
+                        <li><a href="#">Area Plans & Schedules in Revit</a></li>
+                        <li><a href="#">Autodesk Revit - Beginner Guide</a></li>
+                        <li><a href="#">Autodesk Revit - Intermediate Guide</a></li>
+                        <li><a href="#">Autodesk Revit - Complex Modelling Guide</a></li>
+                        <li><a href="#">BIM Collaboration in Revit</a></li>
+                        <li><a href="#">Essential Guide to Archicad</a></li>
+                        <li><a href="#">Mastering Navisworks Manage</a></li>
+                        <li><a href="#">Vectorworks for Beginners</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Archviz Column -->
+                <div class="mega-menu-column">
+                    <h3>Archviz</h3>
+                    <ul>
+                        <li><a href="#">Chaos Corona Exteriors</a></li>
+                        <li><a href="#">Chaos Corona Interiors</a></li>
+                        <li><a href="#">Chaos Corona for Cinema 4D</a></li>
+                        <li><a href="#">Complete Guide to Vray for SketchUp</a></li>
+                        <li><a href="#">Complete Guide to Vray for 3ds Max</a></li>
+                        <li><a href="#">Enscape to Vray Workflow</a></li>
+                        <li><a href="#">Furniture & Product Rendering</a></li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">3D Modelling</h3>
+                    <ul>
+                        <li><a href="#">Cinema 4D for Beginners</a></li>
+                        <li><a href="#">Complete Beginner Guide to Rhino</a></li>
+                        <li><a href="#">Complete Guide to SketchUp</a></li>
+                        <li><a href="#">Complex Geometry in SketchUp</a></li>
+                        <li><a href="#">Rhino & Vray</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Realtime Rendering Column -->
+                <div class="mega-menu-column">
+                    <h3>Realtime Rendering</h3>
+                    <ul>
+                        <li><a href="#">Complete Guide to D5 Render</a></li>
+                        <li><a href="#">Complete Guide to Enscape</a></li>
+                        <li><a href="#">Complete Guide to Lumion</a></li>
+                        <li><a href="#">Enscape for Revit Essentials</a></li>
+                        <li><a href="#">Lumion Raytracing & Advanced Techniques</a></li>
+                        <li><a href="#">Twinmotion for Beginners</a></li>
+                        <li><a href="#">Twinmotion Advanced Guide</a></li>
+                        <li><a href="#">Unreal Engine Interiors</a></li>
+                        <li><a href="#">Unreal Engine Exteriors & Environments</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+</ul>
             
             <div class="nav-buttons">
                 <button class="search-btn">
@@ -2111,6 +2340,7 @@
     </script>
 </body>
 </html>
+
 
 
 
