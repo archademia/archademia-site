@@ -19,116 +19,117 @@ function loadHeader() {
                                     <a href="lessons/" class="browse-all-link">Browse all courses →</a>
                                 </div>
                                 <div class="mega-menu-grid">
-                                <!-- Drafting Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Drafting</h3>
-                                    <ul>
-                                        <li><a href="#">AutoCAD Essentials</a></li>
-                                        <li><a href="#">AutoCAD Architecture 3D Essentials</a></li>
-                                        <li><a href="#">Complete Guide to AutoCAD</a></li>
-                                        <li><a href="#">Site Plan Essentials</a></li>
-                                        <li><a href="#">SketchUp Layout Essentials</a></li>
-                                        <li><a href="#">The Perfect Floor Plan</a></li>
-                                    </ul>
+                                    <!-- Drafting Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Drafting</h3>
+                                        <ul>
+                                            <li><a href="#">AutoCAD Essentials</a></li>
+                                            <li><a href="#">AutoCAD Architecture 3D Essentials</a></li>
+                                            <li><a href="#">Complete Guide to AutoCAD</a></li>
+                                            <li><a href="#">Site Plan Essentials</a></li>
+                                            <li><a href="#">SketchUp Layout Essentials</a></li>
+                                            <li><a href="#">The Perfect Floor Plan</a></li>
+                                        </ul>
+                                        
+                                        <h3 style="margin-top: 2rem;">Design + Practice</h3>
+                                        <ul>
+                                            <li><a href="#">Architectural Design in Practice Vol.1</a></li>
+                                            <li><a href="#">Architectural Design in Practice Vol.2</a></li>
+                                            <li><a href="#">Architectural Detailing Basics Vol.1</a></li>
+                                            <li><a href="#">Co-ordination with a Structural Engineer</a></li>
+                                            <li><a href="#">How To Setup Your Own Studio</a></li>
+                                            <li><a href="#">Introduction to Sustainable Architecture</a></li>
+                                            <li><a href="#">The Project Guide</a></li>
+                                        </ul>
+                                    </div>
                                     
-                                    <h3 style="margin-top: 2rem;">Design + Practice</h3>
-                                    <ul>
-                                        <li><a href="#">Architectural Design in Practice Vol.1</a></li>
-                                        <li><a href="#">Architectural Design in Practice Vol.2</a></li>
-                                        <li><a href="#">Architectural Detailing Basics Vol.1</a></li>
-                                        <li><a href="#">Co-ordination with a Structural Engineer</a></li>
-                                        <li><a href="#">How To Setup Your Own Studio</a></li>
-                                        <li><a href="#">Introduction to Sustainable Architecture</a></li>
-                                        <li><a href="#">The Project Guide</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Graphics + Presentation Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Graphics + Presentation</h3>
-                                    <ul>
-                                        <li><a href="#">InDesign Essentials</a></li>
-                                        <li><a href="#">Guide to Architectural Short Films</a></li>
-                                        <li><a href="#">Photoshop Essentials</a></li>
-                                        <li><a href="#">The Perfect Portfolio</a></li>
-                                        <li><a href="#">The Perfect Presentation</a></li>
-                                    </ul>
+                                    <!-- Graphics + Presentation Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Graphics + Presentation</h3>
+                                        <ul>
+                                            <li><a href="#">InDesign Essentials</a></li>
+                                            <li><a href="#">Guide to Architectural Short Films</a></li>
+                                            <li><a href="#">Photoshop Essentials</a></li>
+                                            <li><a href="#">The Perfect Portfolio</a></li>
+                                            <li><a href="#">The Perfect Presentation</a></li>
+                                        </ul>
+                                        
+                                        <h3 style="margin-top: 2rem;">Studies + Career</h3>
+                                        <ul>
+                                            <li><a href="#">RIBA Part 3 Masterclass</a></li>
+                                        </ul>
+                                        
+                                        <h3 style="margin-top: 2rem;">Hand Drawing + Illustration</h3>
+                                        <ul>
+                                            <li><a href="#">Adobe Illustrator for Beginners</a></li>
+                                            <li><a href="#">Adobe Illustrator for Architects</a></li>
+                                            <li><a href="#">Architectural Diagrams in Blender</a></li>
+                                            <li><a href="#">Sketch Like an Architect</a></li>
+                                        </ul>
+                                    </div>
                                     
-                                    <h3 style="margin-top: 2rem;">Studies + Career</h3>
-                                    <ul>
-                                        <li><a href="#">RIBA Part 3 Masterclass</a></li>
-                                    </ul>
+                                    <!-- Parametric Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Parametric</h3>
+                                        <ul>
+                                            <li><a href="#">Autodesk Maya for Architects</a></li>
+                                            <li><a href="#">Complete Guide to Grasshopper</a></li>
+                                            <li><a href="#">Complete Guide to Dynamo for Revit</a></li>
+                                            <li><a href="#">Parametric Architecture Masterclass</a></li>
+                                            <li><a href="#">Rhino to Revit Workflow</a></li>
+                                        </ul>
+                                        
+                                        <h3 style="margin-top: 2rem;">BIM</h3>
+                                        <ul>
+                                            <li><a href="#">Area Plans & Schedules in Revit</a></li>
+                                            <li><a href="#">Autodesk Revit - Beginner Guide</a></li>
+                                            <li><a href="#">Autodesk Revit - Intermediate Guide</a></li>
+                                            <li><a href="#">Autodesk Revit - Complex Modelling Guide</a></li>
+                                            <li><a href="#">BIM Collaboration in Revit</a></li>
+                                            <li><a href="#">Essential Guide to Archicad</a></li>
+                                            <li><a href="#">Mastering Navisworks Manage</a></li>
+                                            <li><a href="#">Vectorworks for Beginners</a></li>
+                                        </ul>
+                                    </div>
                                     
-                                    <h3 style="margin-top: 2rem;">Hand Drawing + Illustration</h3>
-                                    <ul>
-                                        <li><a href="#">Adobe Illustrator for Beginners</a></li>
-                                        <li><a href="#">Adobe Illustrator for Architects</a></li>
-                                        <li><a href="#">Architectural Diagrams in Blender</a></li>
-                                        <li><a href="#">Sketch Like an Architect</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Parametric Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Parametric</h3>
-                                    <ul>
-                                        <li><a href="#">Autodesk Maya for Architects</a></li>
-                                        <li><a href="#">Complete Guide to Grasshopper</a></li>
-                                        <li><a href="#">Complete Guide to Dynamo for Revit</a></li>
-                                        <li><a href="#">Parametric Architecture Masterclass</a></li>
-                                        <li><a href="#">Rhino to Revit Workflow</a></li>
-                                    </ul>
+                                    <!-- Archviz Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Archviz</h3>
+                                        <ul>
+                                            <li><a href="#">Chaos Corona Exteriors</a></li>
+                                            <li><a href="#">Chaos Corona Interiors</a></li>
+                                            <li><a href="#">Chaos Corona for Cinema 4D</a></li>
+                                            <li><a href="#">Complete Guide to Vray for SketchUp</a></li>
+                                            <li><a href="#">Complete Guide to Vray for 3ds Max</a></li>
+                                            <li><a href="#">Enscape to Vray Workflow</a></li>
+                                            <li><a href="#">Furniture & Product Rendering</a></li>
+                                        </ul>
+                                        
+                                        <h3 style="margin-top: 2rem;">3D Modelling</h3>
+                                        <ul>
+                                            <li><a href="#">Cinema 4D for Beginners</a></li>
+                                            <li><a href="#">Complete Beginner Guide to Rhino</a></li>
+                                            <li><a href="#">Complete Guide to SketchUp</a></li>
+                                            <li><a href="#">Complex Geometry in SketchUp</a></li>
+                                            <li><a href="#">Rhino & Vray</a></li>
+                                        </ul>
+                                    </div>
                                     
-                                    <h3 style="margin-top: 2rem;">BIM</h3>
-                                    <ul>
-                                        <li><a href="#">Area Plans & Schedules in Revit</a></li>
-                                        <li><a href="#">Autodesk Revit - Beginner Guide</a></li>
-                                        <li><a href="#">Autodesk Revit - Intermediate Guide</a></li>
-                                        <li><a href="#">Autodesk Revit - Complex Modelling Guide</a></li>
-                                        <li><a href="#">BIM Collaboration in Revit</a></li>
-                                        <li><a href="#">Essential Guide to Archicad</a></li>
-                                        <li><a href="#">Mastering Navisworks Manage</a></li>
-                                        <li><a href="#">Vectorworks for Beginners</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Archviz Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Archviz</h3>
-                                    <ul>
-                                        <li><a href="#">Chaos Corona Exteriors</a></li>
-                                        <li><a href="#">Chaos Corona Interiors</a></li>
-                                        <li><a href="#">Chaos Corona for Cinema 4D</a></li>
-                                        <li><a href="#">Complete Guide to Vray for SketchUp</a></li>
-                                        <li><a href="#">Complete Guide to Vray for 3ds Max</a></li>
-                                        <li><a href="#">Enscape to Vray Workflow</a></li>
-                                        <li><a href="#">Furniture & Product Rendering</a></li>
-                                    </ul>
-                                    
-                                    <h3 style="margin-top: 2rem;">3D Modelling</h3>
-                                    <ul>
-                                        <li><a href="#">Cinema 4D for Beginners</a></li>
-                                        <li><a href="#">Complete Beginner Guide to Rhino</a></li>
-                                        <li><a href="#">Complete Guide to SketchUp</a></li>
-                                        <li><a href="#">Complex Geometry in SketchUp</a></li>
-                                        <li><a href="#">Rhino & Vray</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Realtime Rendering Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Realtime Rendering</h3>
-                                    <ul>
-                                        <li><a href="#">Complete Guide to D5 Render</a></li>
-                                        <li><a href="#">Complete Guide to Enscape</a></li>
-                                        <li><a href="#">Complete Guide to Lumion</a></li>
-                                        <li><a href="#">Enscape for Revit Essentials</a></li>
-                                        <li><a href="#">Lumion Raytracing & Advanced Techniques</a></li>
-                                        <li><a href="#">Twinmotion for Beginners</a></li>
-                                        <li><a href="#">Twinmotion Advanced Guide</a></li>
-                                        <li><a href="#">Unreal Engine Interiors</a></li>
-                                        <li><a href="#">Unreal Engine Exteriors & Environments</a></li>
-                                    </ul>
+                                    <!-- Realtime Rendering Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Realtime Rendering</h3>
+                                        <ul>
+                                            <li><a href="#">Complete Guide to D5 Render</a></li>
+                                            <li><a href="#">Complete Guide to Enscape</a></li>
+                                            <li><a href="#">Complete Guide to Lumion</a></li>
+                                            <li><a href="#">Enscape for Revit Essentials</a></li>
+                                            <li><a href="#">Lumion Raytracing & Advanced Techniques</a></li>
+                                            <li><a href="#">Twinmotion for Beginners</a></li>
+                                            <li><a href="#">Twinmotion Advanced Guide</a></li>
+                                            <li><a href="#">Unreal Engine Interiors</a></li>
+                                            <li><a href="#">Unreal Engine Exteriors & Environments</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,52 +144,53 @@ function loadHeader() {
                                     <a href="resources/" class="browse-all-link">Browse all resources →</a>
                                 </div>
                                 <div class="mega-menu-grid resources-grid">
-                                <!-- In Practice Column -->
-                                <div class="mega-menu-column">
-                                    <h3>In Practice</h3>
-                                    <ul>
-                                        <li><a href="#">Architects Tool Kit</a></li>
-                                        <li><a href="#">Architect in Practice</a></li>
-                                        <li><a href="#">CAD Drawings & Details</a></li>
-                                        <li><a href="#">Access For All Tool Kit</a></li>
-                                        <li><a href="#">CDM & Principal Designer Pack</a></li>
-                                        <li><a href="#">The Planning Tool Kit [coming soon]</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Presentation, Design & Studies Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Presentation, Design & Studies</h3>
-                                    <ul>
-                                        <li><a href="#">Ultimate Diagram Tool Kit</a></li>
-                                        <li><a href="#">Presentation Boards</a></li>
-                                        <li><a href="#">CAD Sheets & Title Blocks</a></li>
-                                        <li><a href="#">Technical Design Pack</a></li>
-                                        <li><a href="#">RIBA Part 3 Toolkit</a></li>
-                                        <li><a href="#">Architecture Student Bundle [coming soon]</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Project & Software Examples Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Project & Software Examples</h3>
-                                    <ul>
-                                        <li><a href="#">Revit Pack</a></li>
-                                        <li><a href="#">SketchUp Model Set</a></li>
-                                        <li><a href="#">Project Pack Vol. 1</a></li>
-                                        <li><a href="#">Project Pack Vol. 2</a></li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Archviz & CGI Column -->
-                                <div class="mega-menu-column">
-                                    <h3>Archviz & CGI</h3>
-                                    <ul>
-                                        <li><a href="#">Twinmotion Render Scenes</a></li>
-                                        <li><a href="#">Lumion Render Scenes</a></li>
-                                        <li><a href="#">D5 Render Scenes</a></li>
-                                        <li><a href="#">Vray for SketchUp Render Scenes</a></li>
-                                    </ul>
+                                    <!-- In Practice Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>In Practice</h3>
+                                        <ul>
+                                            <li><a href="#">Architects Tool Kit</a></li>
+                                            <li><a href="#">Architect in Practice</a></li>
+                                            <li><a href="#">CAD Drawings & Details</a></li>
+                                            <li><a href="#">Access For All Tool Kit</a></li>
+                                            <li><a href="#">CDM & Principal Designer Pack</a></li>
+                                            <li><a href="#">The Planning Tool Kit [coming soon]</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Presentation, Design & Studies Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Presentation, Design & Studies</h3>
+                                        <ul>
+                                            <li><a href="#">Ultimate Diagram Tool Kit</a></li>
+                                            <li><a href="#">Presentation Boards</a></li>
+                                            <li><a href="#">CAD Sheets & Title Blocks</a></li>
+                                            <li><a href="#">Technical Design Pack</a></li>
+                                            <li><a href="#">RIBA Part 3 Toolkit</a></li>
+                                            <li><a href="#">Architecture Student Bundle [coming soon]</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Project & Software Examples Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Project & Software Examples</h3>
+                                        <ul>
+                                            <li><a href="#">Revit Pack</a></li>
+                                            <li><a href="#">SketchUp Model Set</a></li>
+                                            <li><a href="#">Project Pack Vol. 1</a></li>
+                                            <li><a href="#">Project Pack Vol. 2</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Archviz & CGI Column -->
+                                    <div class="mega-menu-column">
+                                        <h3>Archviz & CGI</h3>
+                                        <ul>
+                                            <li><a href="#">Twinmotion Render Scenes</a></li>
+                                            <li><a href="#">Lumion Render Scenes</a></li>
+                                            <li><a href="#">D5 Render Scenes</a></li>
+                                            <li><a href="#">Vray for SketchUp Render Scenes</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +209,7 @@ function loadHeader() {
                         </svg>
                     </button>
                     <button class="login-btn">Login</button>
-                    <a href="pricing.html" class="signup-btn">Sign Up</a>
+                    <a href="pricing/" class="signup-btn">Sign Up</a>
                     
                     <!-- Burger Menu -->
                     <div class="burger-menu" id="burgerMenu">
@@ -475,10 +477,10 @@ function initializeHeaderFunctionality() {
         mobileCloseBtn.addEventListener('click', closeMobileMenu);
     }
     
-    // Mobile menu signup button - still links to pricing
+    // Mobile menu signup button - links to pricing
     if (mobileSignupBtn) {
         mobileSignupBtn.addEventListener('click', function() {
-            window.location.href = 'pricing.html';
+            window.location.href = 'pricing/';
         });
     }
     
