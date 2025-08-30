@@ -8,15 +8,15 @@ function loadHeader() {
                 </a>
                 
                 <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about/">About</a></li>
                     <li class="nav-item">
-                        <a href="lessons.html">Lessons <span class="dropdown-arrow">▼</span></a>
+                        <a href="lessons/">Lessons <span class="dropdown-arrow">▼</span></a>
                         
                         <!-- LESSONS MEGA MENU -->
                         <div class="mega-menu">
                             <div class="mega-menu-container">
                                 <div class="mega-menu-browse">
-                                    <a href="lessons.html" class="browse-all-link">Browse all courses →</a>
+                                    <a href="lessons/" class="browse-all-link">Browse all courses →</a>
                                 </div>
                                 <div class="mega-menu-grid">
                                 <!-- Drafting Column -->
@@ -134,13 +134,13 @@ function loadHeader() {
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="resources.html">Resources <span class="dropdown-arrow">▼</span></a>
+                        <a href="resources/">Resources <span class="dropdown-arrow">▼</span></a>
                         
                         <!-- RESOURCES MEGA MENU -->
                         <div class="mega-menu resources-menu">
                             <div class="mega-menu-container">
                                 <div class="mega-menu-browse">
-                                    <a href="resources.html" class="browse-all-link">Browse all resources →</a>
+                                    <a href="resources/" class="browse-all-link">Browse all resources →</a>
                                 </div>
                                 <div class="mega-menu-grid resources-grid">
                                 <!-- In Practice Column -->
@@ -193,8 +193,8 @@ function loadHeader() {
                             </div>
                         </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog/">Blog</a></li>
+                    <li><a href="pricing/">Pricing</a></li>
                 </ul>
                 
                 <div class="nav-buttons">
@@ -225,11 +225,11 @@ function loadHeader() {
             <div class="mobile-menu" id="mobileMenu">
                 <button class="mobile-close-btn" id="mobileCloseBtn">&times;</button>
                 <ul class="mobile-nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="lessons.html">Lessons</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about/">About</a></li>
+                    <li><a href="lessons/">Lessons</a></li>
+                    <li><a href="resources/">Resources</a></li>
+                    <li><a href="blog/">Blog</a></li>
+                    <li><a href="pricing/">Pricing</a></li>
                 </ul>
                 
                 <div class="mobile-auth-buttons">
@@ -238,7 +238,7 @@ function loadHeader() {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
-                    <a href="pricing.html" class="mobile-signup-btn">Sign Up</a>
+                    <a href="pricing/" class="mobile-signup-btn">Sign Up</a>
                     <button class="mobile-login-btn">Login</button>
                 </div>
             </div>
@@ -272,7 +272,7 @@ function loadHeader() {
                 
                 <button class="continue-btn" onclick="handleLogin(event)">Sign In</button>
                 
-                <p class="login-link">Don't have an account? <a href="pricing.html">Sign up here</a></p>
+                <p class="login-link">Don't have an account? <a href="pricing/">Sign up here</a></p>
             </div>
         </div>
     `;
