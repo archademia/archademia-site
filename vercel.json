@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/lessons", "destination": "/lessons.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/pricing", "destination": "/pricing.html" }
+  ]
+}
