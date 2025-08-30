@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - ArchAdemia</title>
+    <title>Pricing - ArchAdemia</title>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -17,6 +17,8 @@
             --modal-bg: #ffffff;
             --shadow: rgba(0,0,0,0.1);
             --shadow-heavy: rgba(0,0,0,0.3);
+            --accent-blue: #007AFF;
+            --accent-blue-hover: #0056CC;
         }
         
         [data-theme="dark"] {
@@ -48,7 +50,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* Header - Identical to main site */
+        /* Apple-inspired Header with Frosted Glass */
         .header {
             position: fixed;
             top: 0;
@@ -82,6 +84,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
+        /* Apple-style Centered Navigation */
         .nav {
             display: flex;
             justify-content: center;
@@ -97,7 +100,6 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-primary);
-            text-decoration: none;
         }
         
         .nav-links {
@@ -121,6 +123,11 @@
             color: #007AFF;
         }
         
+        .nav-links a.active {
+            color: #007AFF;
+            font-weight: 600;
+        }
+        
         .nav-buttons {
             position: absolute;
             right: 0;
@@ -136,6 +143,10 @@
             padding: 0.5rem;
             color: var(--text-primary);
             transition: color 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            color: #007AFF;
         }
         
         .search-icon {
@@ -188,6 +199,7 @@
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
+            text-decoration: none;
             font-weight: 500;
             font-size: 0.875rem;
             transition: all 0.3s ease;
@@ -206,6 +218,7 @@
             border: 1.5px solid var(--text-primary);
             padding: 0.5rem 1rem;
             border-radius: 20px;
+            text-decoration: none;
             font-weight: 500;
             font-size: 0.875rem;
             transition: all 0.3s ease;
@@ -245,26 +258,7 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
         
-        /* Mobile Menu */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0,0,0,0);
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .mobile-menu-overlay.active {
-            background: rgba(0,0,0,0.2);
-            opacity: 1;
-            visibility: visible;
-        }
-        
+        /* Apple-style Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: -70%;
@@ -279,7 +273,7 @@
             padding: 6rem 2rem 3rem;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            overflow-y: auto;
             opacity: 0;
             visibility: hidden;
             border-bottom-left-radius: 20px;
@@ -299,7 +293,7 @@
         .mobile-nav-links {
             list-style: none;
             margin-bottom: auto;
-            text-align: center;
+            text-align: left;
             flex-shrink: 0;
         }
         
@@ -314,12 +308,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
         
         .mobile-nav-links a {
             color: var(--text-primary);
@@ -360,7 +348,7 @@
         .mobile-auth-buttons {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.2rem;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -379,6 +367,7 @@
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 25px;
+            text-decoration: none;
             font-weight: 600;
             text-align: center;
             transition: all 0.3s ease;
@@ -397,6 +386,7 @@
             border: 1.5px solid var(--text-primary);
             padding: 0.75rem 1.5rem;
             border-radius: 25px;
+            text-decoration: none;
             font-weight: 500;
             text-align: center;
             transition: all 0.3s ease;
@@ -409,83 +399,336 @@
             color: var(--bg-primary);
         }
         
-        /* Page-specific styles */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+        /* Main Content Styles */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
         }
         
-        .hero h1 {
-            font-size: 4rem;
+        /* Pricing Hero Section */
+        .pricing-hero {
+            background: var(--bg-primary);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .pricing-hero h1 {
+            font-size: 3.5rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
             letter-spacing: -2px;
         }
         
-        .content {
+        .pricing-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.5;
+        }
+        
+        /* Billing Toggle */
+        .billing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        
+        .toggle-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        .toggle-label.active {
+            color: var(--text-primary);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 56px;
+            height: 28px;
+            background: var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .toggle-switch.active {
+            background: var(--accent-blue);
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(28px);
+        }
+        
+        /* Pricing Cards Section */
+        .pricing-section {
+            background: var(--bg-secondary);
+            padding: 4rem 2rem 6rem;
+        }
+        
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 20px var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--accent-blue);
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 122, 255, 0.2);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-4px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .plan-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .price-container {
+            margin-bottom: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-left: 0.5rem;
+        }
+        
+        .price-note {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+        
+        .plan-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .plan-features li.unavailable {
+            color: var(--text-light);
+        }
+        
+        .plan-features li.unavailable::before {
+            content: '–';
+            color: var(--text-light);
+        }
+        
+        .plan-button {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            margin-top: auto;
+        }
+        
+        .plan-button.primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        .plan-button.primary:hover {
+            background: var(--accent-blue-hover);
+            transform: translateY(-2px);
+        }
+        
+        .plan-button.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        .plan-button.secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-primary);
             padding: 6rem 2rem;
+        }
+        
+        .faq-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--bg-primary);
         }
         
-        .content h2 {
+        .faq-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .faq-header h2 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
             font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
         
-        .content p {
+        .faq-header p {
             font-size: 1.1rem;
-            line-height: 1.6;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links,
-            .nav-buttons .search-btn,
-            .nav-buttons .theme-toggle,
-            .nav-buttons .signup-btn,
-            .nav-buttons .login-btn {
-                display: none;
-            }
-            
-            .burger-menu {
-                display: flex;
-            }
-            
-            .header {
-                padding: 1.5rem 2.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .content {
-                padding: 4rem 2rem;
-            }
-            
-            .content h2 {
-                font-size: 2rem;
-            }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
         }
-
-        /* Footer Styles */
+        
+        .faq-item.active {
+            border-color: var(--accent-blue);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--accent-blue);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--card-bg);
+        }
+        
+        .faq-answer.active {
+            max-height: 200px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        /* Footer */
         .footer {
             background: var(--bg-tertiary);
             color: var(--bg-primary);
             padding: 3rem 2rem 2rem;
             position: relative;
             z-index: 3;
-            clear: both;
         }
         
         [data-theme="dark"] .footer {
@@ -538,34 +781,228 @@
             color: var(--text-secondary);
         }
         
-        /* Mobile Footer */
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(0px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .signup-modal {
+            background: var(--modal-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px var(--shadow-heavy);
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.7) translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active .signup-modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .modal-description {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+        
+        .signup-form {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: var(--card-bg);
+            color: var(--text-primary);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #007AFF;
+        }
+        
+        .continue-btn {
+            width: 100%;
+            background: #007AFF;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .continue-btn:hover {
+            background: #0056CC;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                gap: 2rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-4px);
+            }
+        }
+        
         @media (max-width: 768px) {
+            .nav-links,
+            .nav-buttons .search-btn,
+            .nav-buttons .theme-toggle,
+            .nav-buttons .signup-btn,
+            .nav-buttons .login-btn {
+                display: none;
+            }
+            
+            .burger-menu {
+                display: flex;
+            }
+            
+            .header {
+                padding: 1.5rem 2.5rem;
+            }
+            
+            .pricing-hero {
+                padding: 4rem 1rem 3rem;
+            }
+            
+            .pricing-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-hero p {
+                font-size: 1rem;
+            }
+            
+            .pricing-section {
+                padding: 3rem 1rem 4rem;
+            }
+            
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .plan-name {
+                font-size: 1.3rem;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+            
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (max-width: 480px) {
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+            
             .footer-container {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+            }
+            
+            .billing-toggle {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
-        
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="logo">ArchAdemia.</a>
+            <div class="logo">ArchAdemia.</div>
             
             <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">About</a></li>
                 <li><a href="lessons.html">Lessons</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
             </ul>
             
             <div class="nav-buttons">
@@ -580,6 +1017,7 @@
                 <button class="login-btn">Login</button>
                 <button class="signup-btn">Sign Up</button>
                 
+                <!-- Burger Menu -->
                 <div class="burger-menu" id="burgerMenu">
                     <div class="burger-line"></div>
                     <div class="burger-line"></div>
@@ -588,14 +1026,11 @@
             </div>
         </nav>
         
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-        
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <button class="mobile-close-btn" id="mobileCloseBtn">&times;</button>
             <ul class="mobile-nav-links">
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">About</a></li>
                 <li><a href="lessons.html">Lessons</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -603,7 +1038,7 @@
             </ul>
             
             <div class="mobile-auth-buttons">
-                <button class="theme-toggle">
+                <button class="theme-toggle" style="margin-bottom: 1rem; align-self: center;">
                     <svg class="theme-icon" viewBox="0 0 24 24">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
@@ -614,35 +1049,243 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Architecture Courses</h1>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Pricing Hero -->
+        <section class="pricing-hero">
+            <h1>Choose your plan</h1>
+            <p>Start for free, upgrade when you need more advanced features. All plans include access to our core learning platform and community features.</p>
+            
 
-    <!-- Content Section -->
-    <section class="content">
-        <h2>Our Story</h2>
-        <p>ArchAdemia was founded by architects, for architects. We understand the unique challenges and opportunities in architectural education and professional development.</p>
-        <p>Our mission is to bridge the gap between academic learning and real-world practice, providing architects at every stage of their career with the tools, knowledge, and community they need to excel.</p>
-        <p>From software mastery to design theory, sustainability practices to project management, we offer comprehensive learning experiences that reflect the evolving nature of architectural practice in the 21st century.</p>
-        <p>Join thousands of architects who are already advancing their careers through our expert-led training and collaborative community platform.</p>
-    </section>
+        </section>
+        
+        <!-- Pricing Cards -->
+        <section class="pricing-section">
+            <div class="pricing-container">
+                <!-- Monthly Plan -->
+                <div class="pricing-card">
+                    <h3 class="plan-name">Monthly</h3>
+                    <p class="plan-description">Perfect for trying out our platform with full access to courses and community features.</p>
+                    
+                    <div class="price-container">
+                        <span class="price">£39</span>
+                        <span class="price-period">/month</span>
+                        <div class="price-note">No commitment, cancel anytime</div>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        <li>Access to all courses and tutorials</li>
+                        <li>Download content for offline viewing</li>
+                        <li>Community access & discussion boards</li>
+                        <li>Monthly live Q&A sessions</li>
+                        <li>Email support</li>
+                        <li>Mobile app access</li>
+                        <li class="unavailable">Priority support</li>
+                        <li class="unavailable">Early access to new content</li>
+                        <li class="unavailable">CPD certificate tracking</li>
+                    </ul>
+                    
+                    <button class="plan-button secondary">Get Started</button>
+                </div>
+                
+                <!-- Annual Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="plan-name">Annual</h3>
+                    <p class="plan-description">Best value for committed learners. Get a full year of premium access with significant savings.</p>
+                    
+                    <div class="price-container">
+                        <span class="price">£139</span>
+                        <span class="price-period">/year</span>
+                        <div class="price-note">£11.58/month - Save 70%</div>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        <li>Everything in Monthly plan</li>
+                        <li>Priority email support</li>
+                        <li>Early access to new courses</li>
+                        <li>Exclusive webinars with industry experts</li>
+                        <li>CPD certificate tracking</li>
+                        <li>Advanced project templates</li>
+                        <li>Quarterly progress reports</li>
+                        <li>Access to archived live sessions</li>
+                        <li class="unavailable">1-on-1 mentorship sessions</li>
+                    </ul>
+                    
+                    <button class="plan-button primary">Start Annual Plan</button>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="pricing-card">
+                    <h3 class="plan-name">Pro</h3>
+                    <p class="plan-description">For professionals seeking comprehensive career development with personalized mentorship and advanced features.</p>
+                    
+                    <div class="price-container">
+                        <span class="price">£299</span>
+                        <span class="price-period">/year</span>
+                        <div class="price-note">£24.92/month + premium benefits</div>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        <li>Everything in Annual plan</li>
+                        <li>Monthly 1-on-1 mentorship calls</li>
+                        <li>Portfolio review sessions</li>
+                        <li>Custom learning paths</li>
+                        <li>Direct instructor access</li>
+                        <li>White-label CPD certificates</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Priority feature requests</li>
+                        <li>Exclusive Pro-only masterclasses</li>
+                    </ul>
+                    
+                    <button class="plan-button secondary">Contact Sales</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <div class="faq-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Have questions about our pricing? We're here to help.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I switch between plans?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments on your next invoice.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What's included in the free trial?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            All new users get a 7-day free trial with full access to our Annual plan features. No credit card required to start your trial.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you offer student discounts?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! Students with valid .edu email addresses receive 50% off all plans. Contact support with your student verification for discount codes.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We accept all major credit cards, PayPal, and bank transfers for annual subscriptions. All payments are processed securely through Stripe.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I cancel my subscription anytime?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. You can cancel your subscription at any time from your account settings. You'll continue to have access until the end of your current billing period.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="#">SketchUp</a></li>
+                    <li><a href="#">Revit</a></li>
+                    <li><a href="#">AutoCAD</a></li>
+                    <li><a href="#">Rhino</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Discussion Board</a></li>
+                    <li><a href="#">Project Gallery</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ArchAdemia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="signup-modal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 class="modal-title">Welcome to ArchAdemia.</h2>
+            <p class="modal-description">Join thousands of architects advancing their careers through expert-led training and community collaboration.</p>
+            
+            <form class="signup-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </form>
+            
+            <button class="continue-btn" onclick="handleSignup(event)">Continue</button>
+        </div>
+    </div>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
         // Theme functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Dark mode functionality
             const themeToggle = document.getElementById('themeToggle');
             const mobileThemeToggle = document.querySelector('.mobile-menu .theme-toggle');
             const currentTheme = localStorage.getItem('theme') || 'light';
@@ -689,20 +1332,17 @@
             // Mobile menu functionality
             const burgerMenu = document.getElementById('burgerMenu');
             const mobileMenu = document.getElementById('mobileMenu');
-            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
             const mobileCloseBtn = document.getElementById('mobileCloseBtn');
             
             function openMobileMenu() {
                 burgerMenu.classList.add('active');
                 mobileMenu.classList.add('active');
-                mobileMenuOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
             
             function closeMobileMenu() {
                 burgerMenu.classList.remove('active');
                 mobileMenu.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
             }
             
@@ -716,63 +1356,190 @@
                 });
             }
             
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-            }
-            
             if (mobileCloseBtn) {
                 mobileCloseBtn.addEventListener('click', closeMobileMenu);
             }
             
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-            mobileNavLinks.forEach(function(link) {
-                link.addEventListener('click', closeMobileMenu);
+            // Mobile auth buttons
+            const mobileSignupBtn = document.querySelector('.mobile-signup-btn');
+            const mobileLoginBtn = document.querySelector('.mobile-login-btn');
+            
+            if (mobileSignupBtn) {
+                mobileSignupBtn.addEventListener('click', function() {
+                    closeMobileMenu();
+                    openModal();
+                });
+            }
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             });
+            
+            // Modal functionality
+            const modal = document.getElementById('signupModal');
+            const closeBtn = document.getElementById('closeModal');
+            const allSignupButtons = document.querySelectorAll('.signup-btn, .mobile-signup-btn, .plan-button');
+            
+            function openModal() {
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            
+            function closeModal() {
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Add click handlers to signup buttons
+            allSignupButtons.forEach(function(btn) {
+                if (btn && !btn.textContent.includes('Contact Sales')) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openModal();
+                    });
+                }
+            });
+            
+            // Close modal events
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            // Contact Sales functionality
+            const contactSalesBtn = document.querySelector('.plan-button.secondary:last-child');
+            if (contactSalesBtn && contactSalesBtn.textContent.includes('Contact Sales')) {
+                contactSalesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest in our Pro plan! Please email us at sales@archacademia.com or call +44 20 1234 5678 to discuss your requirements.');
+                });
+            }
         });
+        
+        // Billing toggle functionality
+        let isAnnual = false;
+        
+        function updatePricing() {
+            const monthlyCard = document.querySelector('.pricing-card:first-child');
+            const annualCard = document.querySelector('.pricing-card.popular');
+            const proCard = document.querySelector('.pricing-card:last-child');
+            
+            if (isAnnual) {
+                // Show annual pricing
+                monthlyCard.querySelector('.price').textContent = '£39';
+                monthlyCard.querySelector('.price-period').textContent = '/month';
+                monthlyCard.querySelector('.price-note').textContent = 'Billed annually';
+                
+                annualCard.querySelector('.price').textContent = '£139';
+                annualCard.querySelector('.price-period').textContent = '/year';
+                annualCard.querySelector('.price-note').textContent = '£11.58/month - Save 70%';
+                
+                proCard.querySelector('.price').textContent = '£299';
+                proCard.querySelector('.price-period').textContent = '/year';
+                proCard.querySelector('.price-note').textContent = '£24.92/month + premium benefits';
+            } else {
+                // Show monthly pricing
+                monthlyCard.querySelector('.price').textContent = '£39';
+                monthlyCard.querySelector('.price-period').textContent = '/month';
+                monthlyCard.querySelector('.price-note').textContent = 'No commitment, cancel anytime';
+                
+                annualCard.querySelector('.price').textContent = '£139';
+                annualCard.querySelector('.price-period').textContent = '/year';
+                annualCard.querySelector('.price-note').textContent = '£11.58/month - Save 70%';
+                
+                proCard.querySelector('.price').textContent = '£299';
+                proCard.querySelector('.price-period').textContent = '/year';
+                proCard.querySelector('.price-note').textContent = '£24.92/month + premium benefits';
+            }
+        }
+        
+        // FAQ functionality
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const faqAnswer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-icon').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            faqAnswer.classList.toggle('active');
+            icon.textContent = faqItem.classList.contains('active') ? '+' : '+';
+        }
+        
+        // Billing toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const billingToggle = document.getElementById('billingToggle');
+            const monthlyLabel = document.getElementById('monthlyLabel');
+            const annualLabel = document.getElementById('annualLabel');
+            
+            if (billingToggle) {
+                billingToggle.addEventListener('click', function() {
+                    isAnnual = !isAnnual;
+                    billingToggle.classList.toggle('active', isAnnual);
+                    monthlyLabel.classList.toggle('active', !isAnnual);
+                    annualLabel.classList.toggle('active', isAnnual);
+                    updatePricing();
+                });
+            }
+            
+            // Initialize with annual view
+            updatePricing();
+        });
+        
+        // Signup form functionality
+        function handleSignup(event) {
+            if (event) event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Welcome to ArchAdemia! Your account has been created successfully.');
+                closeModal();
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('signupModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
     </script>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Courses</h4>
-                <ul>
-                    <li><a href="#">SketchUp</a></li>
-                    <li><a href="#">Revit</a></li>
-                    <li><a href="#">AutoCAD</a></li>
-                    <li><a href="#">Rhino</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Community</h4>
-                <ul>
-                    <li><a href="#">Discussion Board</a></li>
-                    <li><a href="#">Project Gallery</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Jobs</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ArchAdemia. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
