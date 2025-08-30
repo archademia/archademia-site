@@ -1382,8 +1382,8 @@
 }
 
 .mega-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: calc(100% + 1rem);
     left: 0;
     right: 0;
     width: 100vw;
@@ -1399,7 +1399,6 @@
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     z-index: 9999;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
 }
 
 [data-theme="dark"] .mega-menu {
@@ -1411,6 +1410,11 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    top: 100%;
+}
+
+.header .nav-item:hover .mega-menu {
+    top: calc(100% + 1rem);
 }
 
 .mega-menu-grid {
@@ -2339,6 +2343,7 @@
     </script>
 </body>
 </html>
+
 
 
 
