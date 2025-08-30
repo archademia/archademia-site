@@ -262,15 +262,6 @@ function loadHeader() {
                     </div>
                 </form>
                 
-                <div class="social-signup">
-                    <p class="social-text">Or sign in with</p>
-                    <div class="social-buttons">
-                        <button class="social-btn" onclick="socialLogin('facebook')">f</button>
-                        <button class="social-btn" onclick="socialLogin('apple')">🍎</button>
-                        <button class="social-btn" onclick="socialLogin('google')">G</button>
-                    </div>
-                </div>
-                
                 <button class="continue-btn" onclick="handleLogin(event)">Sign In</button>
                 
                 <p class="login-link">Don't have an account? <a href="pricing.html">Sign up here</a></p>
