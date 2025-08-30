@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - ArchAdemia</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         /* Page-specific styles only */
         .hero {
@@ -63,14 +63,12 @@
 <body>
     <!-- Header Component Container -->
     <div id="header-container"></div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Blog</h1>
         </div>
     </section>
-
     <!-- Content Section -->
     <section class="content">
         <h2>Our Story</h2>
@@ -79,13 +77,11 @@
         <p>From software mastery to design theory, sustainability practices to project management, we offer comprehensive learning experiences that reflect the evolving nature of architectural practice in the 21st century.</p>
         <p>Join thousands of architects who are already advancing their careers through our expert-led training and collaborative community platform.</p>
     </section>
-
     <!-- Footer Component Container -->
     <div id="footer-container"></div>
-
     <!-- Load Components -->
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
+    <script src="../header.js"></script>
+    <script src="../footer.js"></script>
     
     <!-- Initialize Components -->
     <script>
@@ -93,6 +89,13 @@
             // Load header and footer
             loadHeader();
             loadFooter();
+            
+            // Fix logo paths for subdirectory
+            const logoLight = document.querySelector('.logo-light');
+            const logoDark = document.querySelector('.logo-dark');
+            
+            if (logoLight) logoLight.src = '../logo-light.png';
+            if (logoDark) logoDark.src = '../logo-dark.png';
         });
     </script>
 </body>
