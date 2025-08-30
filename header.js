@@ -1,6 +1,6 @@
 function loadHeader() {
     document.getElementById('header-container').innerHTML = `
-        <header class="header">
+        <header class="header"> 
             <nav class="nav">
                 <a href="index.html" class="logo">
                     <img class="logo-light" src="logo-light.png" alt="ArchAdemia" style="height: 28px;">
