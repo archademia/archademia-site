@@ -2,7 +2,10 @@ function loadHeader() {
     document.getElementById('header-container').innerHTML = `
         <header class="header">
             <nav class="nav">
-                <div class="logo">ArchAdemia.</div>
+                <div class="logo">
+                    <img class="logo-light" src="logo-light.png" alt="ArchAdemia" style="height: 28px;">
+                    <img class="logo-dark" src="logo-dark.png" alt="ArchAdemia" style="height: 28px; display: none;">
+                </div>
                 
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
@@ -196,7 +199,7 @@ function loadHeader() {
                         </svg>
                     </button>
                     <button class="login-btn">Login</button>
-                    <button class="signup-btn">Sign Up</button>
+                    <a href="pricing.html" class="signup-btn">Sign Up</a>
                     
                     <!-- Burger Menu -->
                     <div class="burger-menu" id="burgerMenu">
@@ -227,11 +230,52 @@ function loadHeader() {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
-                    <button class="mobile-signup-btn">Sign Up</button>
+                    <a href="pricing.html" class="mobile-signup-btn">Sign Up</a>
                     <button class="mobile-login-btn">Login</button>
                 </div>
             </div>
         </header>
+        
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="loginModal">
+            <div class="signup-modal">
+                <button class="close-modal" id="closeLoginModal">&times;</button>
+                <h2 class="modal-title">Welcome back!</h2>
+                <p class="modal-description">Sign in to continue your architectural learning journey with ArchAdemia.</p>
+                
+                <form class="signup-form" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                        <div class="password-options">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgotten password?</a>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="social-signup">
+                    <p class="social-text">Or sign in with</p>
+                    <div class="social-buttons">
+                        <button class="social-btn" onclick="socialLogin('facebook')">f</button>
+                        <button class="social-btn" onclick="socialLogin('apple')">🍎</button>
+                        <button class="social-btn" onclick="socialLogin('google')">G</button>
+                    </div>
+                </div>
+                
+                <button class="continue-btn" onclick="handleLogin(event)">Sign In</button>
+                
+                <p class="login-link">Don't have an account? <a href="pricing.html">Sign up here</a></p>
+            </div>
+        </div>
     `;
     
     // Initialize header functionality after DOM insertion
@@ -249,6 +293,20 @@ function initializeHeaderFunctionality() {
         }
     });
 
+    // Logo switching for dark/light mode
+    function updateLogoVisibility(theme) {
+        const logoLight = document.querySelector('.logo-light');
+        const logoDark = document.querySelector('.logo-dark');
+        
+        if (theme === 'dark') {
+            if (logoLight) logoLight.style.display = 'none';
+            if (logoDark) logoDark.style.display = 'block';
+        } else {
+            if (logoLight) logoLight.style.display = 'block';
+            if (logoDark) logoDark.style.display = 'none';
+        }
+    }
+
     // Dark mode functionality
     const themeToggle = document.getElementById('themeToggle');
     const mobileThemeToggle = document.querySelector('.mobile-menu .theme-toggle');
@@ -257,6 +315,7 @@ function initializeHeaderFunctionality() {
     // Apply saved theme
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
+    updateLogoVisibility(currentTheme);
     
     function updateThemeIcon(theme) {
         const toggles = [themeToggle, mobileThemeToggle];
@@ -265,10 +324,10 @@ function initializeHeaderFunctionality() {
                 const icon = toggle.querySelector('.theme-icon path');
                 if (icon) {
                     if (theme === 'dark') {
-                        // Sun icon
+                        // Sun icon for dark mode
                         icon.setAttribute('d', 'M12 1v2M12 21v2m11-10h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L16.95 6.05M6.05 17.95l-1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z');
                     } else {
-                        // Moon icon
+                        // Moon icon for light mode  
                         icon.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
                     }
                 }
@@ -283,6 +342,7 @@ function initializeHeaderFunctionality() {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
+        updateLogoVisibility(newTheme);
     }
     
     // Add event listeners to both theme toggles
@@ -297,12 +357,90 @@ function initializeHeaderFunctionality() {
         });
     }
     
+    // Login Modal functionality
+    const loginBtn = document.querySelector('.nav-buttons .login-btn');
+    const mobileLoginBtn = document.querySelector('.mobile-login-btn');
+    const loginModal = document.getElementById('loginModal');
+    const closeLoginBtn = document.getElementById('closeLoginModal');
+    
+    function openLoginModal() {
+        if (loginModal) {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeLoginModal() {
+        if (loginModal) {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    // Login button event listeners
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openLoginModal();
+        });
+    }
+    
+    if (mobileLoginBtn) {
+        mobileLoginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeMobileMenu();
+            openLoginModal();
+        });
+    }
+    
+    // Close login modal
+    if (closeLoginBtn) {
+        closeLoginBtn.addEventListener('click', closeLoginModal);
+    }
+    
+    if (loginModal) {
+        loginModal.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                closeLoginModal();
+            }
+        });
+    }
+    
+    // Close login modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
+            closeLoginModal();
+        }
+    });
+    
+    // Make login functions globally available
+    window.openLoginModal = openLoginModal;
+    window.closeLoginModal = closeLoginModal;
+    window.handleLogin = function(event) {
+        if (event) event.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        
+        if (email && password) {
+            alert('Welcome back! You have been logged in successfully.');
+            closeLoginModal();
+            document.getElementById('loginEmail').value = '';
+            document.getElementById('loginPassword').value = '';
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    };
+    
+    window.socialLogin = function(provider) {
+        alert(`Signing in with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`);
+        closeLoginModal();
+    };
+    
     // Apple-style Mobile Menu
     const burgerMenu = document.getElementById('burgerMenu');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
     const mobileSignupBtn = document.querySelector('.mobile-signup-btn');
-    const mobileLoginBtn = document.querySelector('.mobile-login-btn');
     
     function openMobileMenu() {
         burgerMenu.classList.add('active');
@@ -338,17 +476,10 @@ function initializeHeaderFunctionality() {
         mobileCloseBtn.addEventListener('click', closeMobileMenu);
     }
     
-    // Mobile menu CTA buttons - connect to global modal
+    // Mobile menu signup button - still links to pricing
     if (mobileSignupBtn) {
         mobileSignupBtn.addEventListener('click', function() {
-            closeMobileMenu();
-            if (window.openModal) window.openModal();
-        });
-    }
-    
-    if (mobileLoginBtn) {
-        mobileLoginBtn.addEventListener('click', function() {
-            closeMobileMenu();
+            window.location.href = 'pricing.html';
         });
     }
     
@@ -357,13 +488,4 @@ function initializeHeaderFunctionality() {
     mobileNavLinks.forEach(function(link) {
         link.addEventListener('click', closeMobileMenu);
     });
-    
-    // Header signup button - connect to global modal
-    const headerSignupBtn = document.querySelector('.nav-buttons .signup-btn');
-    if (headerSignupBtn) {
-        headerSignupBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (window.openModal) window.openModal();
-        });
-    }
 }
