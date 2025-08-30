@@ -48,7 +48,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* Header */
+        /* Apple-inspired Header with Frosted Glass */
         .header {
             position: fixed;
             top: 0;
@@ -82,6 +82,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
+        /* Apple-style Centered Navigation */
         .nav {
             display: flex;
             justify-content: center;
@@ -222,6 +223,173 @@
             color: var(--bg-primary);
         }
         
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            justify-content: space-around;
+        }
+        
+        .burger-line {
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Apple-style Mobile Menu - Slide Down */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu-overlay.active {
+            background: rgba(0,0,0,0.2);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            z-index: 10001;
+            padding: 8rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        [data-theme="dark"] .mobile-menu {
+            background: rgba(20, 20, 20, 0.95);
+        }
+        
+        .mobile-menu.active {
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            margin-bottom: auto;
+            text-align: center;
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-nav-links li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
+        
+        .mobile-nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: block;
+            padding: 1rem 0;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-nav-links a:hover {
+            color: #007AFF;
+        }
+        
+        .mobile-auth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition-delay: 0.6s;
+        }
+        
+        .mobile-menu.active .mobile-auth-buttons {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-signup-btn {
+            background: #007AFF;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .mobile-signup-btn:hover {
+            background: #0056CC;
+        }
+        
+        .mobile-login-btn {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .mobile-login-btn:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+        
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -331,7 +499,7 @@
             margin-bottom: 0.3rem;
         }
         
-        /* Simple Carousel Section */
+        /* Full-Bleed Carousel Section */
         .carousel-section {
             padding: 6rem 0;
             background: var(--bg-secondary);
@@ -339,9 +507,7 @@
         }
         
         .carousel-container {
-            max-width: none;
-            margin: 0;
-            padding: 0;
+            width: 100%;
             overflow: hidden;
         }
         
@@ -401,7 +567,7 @@
         .carousel-track {
             display: flex;
             gap: 2rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
             width: fit-content;
             padding-left: 2rem;
         }
@@ -527,14 +693,12 @@
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23333"/><rect x="0" y="400" width="1920" height="400" fill="%23222"/><circle cx="400" cy="400" r="200" fill="%23444" opacity="0.5"/><rect x="600" y="200" width="800" height="400" fill="%23555" opacity="0.3"/></svg>');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
         
         .hero-slide.sketchup {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23f39c12"/><rect x="0" y="400" width="1920" height="400" fill="%23e67e22"/><circle cx="1200" cy="300" r="150" fill="%23d35400" opacity="0.6"/><rect x="200" y="150" width="600" height="300" fill="%23e74c3c" opacity="0.4"/></svg>');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
         
         .full-bleed-content {
@@ -752,7 +916,7 @@
             margin-bottom: 3rem;
         }
         
-        /* Modal Overlay */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -962,172 +1126,6 @@
             font-weight: 600;
         }
         
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            width: 24px;
-            height: 24px;
-            justify-content: space-around;
-        }
-        
-        .burger-line {
-            width: 100%;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-        
-        .burger-menu.active .burger-line:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .burger-menu.active .burger-line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .burger-menu.active .burger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: -100%;
-            left: 0;
-            right: 0;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-            z-index: 10001;
-            padding: 8rem 2rem 2rem;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        [data-theme="dark"] .mobile-menu {
-            background: rgba(20, 20, 20, 0.95);
-        }
-        
-        .mobile-menu.active {
-            top: 0;
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0,0,0,0);
-            z-index: 10000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .mobile-menu-overlay.active {
-            background: rgba(0,0,0,0.2);
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .mobile-nav-links {
-            list-style: none;
-            margin-bottom: auto;
-            text-align: center;
-        }
-        
-        .mobile-nav-links li {
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .mobile-menu.active .mobile-nav-links li {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
-        
-        .mobile-nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: 600;
-            display: block;
-            padding: 1rem 0;
-            transition: color 0.3s ease;
-        }
-        
-        .mobile-nav-links a:hover {
-            color: #007AFF;
-        }
-        
-        .mobile-auth-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            transition-delay: 0.6s;
-        }
-        
-        .mobile-menu.active .mobile-auth-buttons {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mobile-signup-btn {
-            background: #007AFF;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .mobile-signup-btn:hover {
-            background: #0056CC;
-        }
-        
-        .mobile-login-btn {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1.5px solid var(--text-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .mobile-login-btn:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-        }
-        
         /* Footer */
         .footer {
             background: var(--bg-tertiary);
@@ -1229,10 +1227,6 @@
             
             .carousel-section {
                 padding: 4rem 0;
-            }
-            
-            .carousel-container {
-                padding: 0 1rem;
             }
             
             .carousel-header {
@@ -1474,7 +1468,7 @@
         </div>
     </section>
 
-    <!-- Simple Carousel Section -->
+    <!-- Carousel Section -->
     <section class="carousel-section">
         <div class="carousel-container">
             <div class="carousel-header">
@@ -1749,7 +1743,7 @@
                         const icon = toggle.querySelector('.theme-icon path');
                         if (icon) {
                             if (theme === 'dark') {
-                                // Sun icon - larger and more detailed
+                                // Sun icon
                                 icon.setAttribute('d', 'M12 1v2M12 21v2m11-10h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05L4.636 4.636m12.728 0L16.95 6.05M6.05 17.95l-1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z');
                             } else {
                                 // Moon icon
@@ -1777,7 +1771,7 @@
             if (mobileThemeToggle) {
                 mobileThemeToggle.addEventListener('click', function() {
                     toggleTheme();
-                    closeMobileMenu(); // Close mobile menu after theme change
+                    closeMobileMenu();
                 });
             }
             
@@ -1789,7 +1783,7 @@
                 updateThemeIcon(systemTheme);
             }
             
-            // Apple-style Mobile Menu - Slide Down from Top
+            // Apple-style Mobile Menu
             const burgerMenu = document.getElementById('burgerMenu');
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
@@ -1944,7 +1938,7 @@
                 isDragging = false;
                 
                 const deltaX = currentX - startX;
-                const threshold = cardWidth * 0.2; // 20% of card width to trigger slide
+                const threshold = cardWidth * 0.2;
                 
                 if (Math.abs(deltaX) > threshold) {
                     if (deltaX > 0) {
@@ -2019,7 +2013,7 @@
                         }
                     }, smooth ? 600 : 0);
                     
-                    // Update dots with smooth animation
+                    // Update dots
                     const dots = document.querySelectorAll('.pagination-dot');
                     const actualPosition = ((currentIndex - originalCards) % originalCards + originalCards) % originalCards;
                     dots.forEach(function(dot, index) {
@@ -2040,23 +2034,19 @@
                 updateCarousel(true);
             }
             
-            // Previous button
+            // Button controls
             const prevBtn = document.querySelector('.carousel-btn.prev');
-            if (prevBtn) {
-                prevBtn.onclick = function() {
-                    prevSlide();
-                };
-            }
-            
-            // Next button
             const nextBtn = document.querySelector('.carousel-btn.next');
-            if (nextBtn) {
-                nextBtn.onclick = function() {
-                    nextSlide();
-                };
+            
+            if (prevBtn) {
+                prevBtn.onclick = prevSlide;
             }
             
-            // Dot clicks with smooth animation
+            if (nextBtn) {
+                nextBtn.onclick = nextSlide;
+            }
+            
+            // Dot clicks
             const dots = document.querySelectorAll('.pagination-dot');
             dots.forEach(function(dot, index) {
                 dot.onclick = function() {
@@ -2099,12 +2089,11 @@
                 }
             });
             
-            // Close modal when clicking X button
+            // Close modal events
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeModal);
             }
             
-            // Close modal when clicking outside
             if (modal) {
                 modal.addEventListener('click', function(e) {
                     if (e.target === modal) {
@@ -2122,7 +2111,7 @@
         });
     </script>
 </body>
-</html> autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autnndae ea estia cus et dolorem tiatia conemprci quia idest, temol.</p>
+</html> nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autnndae ea estia cus et dolorem tiatia conemprci quia idest, temol.</p>
                     <button class="explore-btn">Explore today for FREE</button>
                 </div>
             </div>
@@ -2162,4 +2151,4 @@
         <div class="professional-container">
             <div class="professional-content">
                 <h2>Track and maintain your continued professional development.</h2>
-                <p>Ita doluptus perum
+                <p>Ita doluptus perum autentibusae
