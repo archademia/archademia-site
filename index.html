@@ -1005,6 +1005,8 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
         }
         
         [data-theme="dark"] .mobile-menu {
@@ -1013,6 +1015,8 @@
         
         .mobile-menu.active {
             top: 0;
+            opacity: 1;
+            visibility: visible;
         }
         
         .mobile-menu-overlay {
