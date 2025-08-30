@@ -2,7 +2,7 @@ function loadHeader() {
     document.getElementById('header-container').innerHTML = `
         <header class="header"> 
             <nav class="nav">
-                <a href="/index.html" class="logo">
+                <a href="/" class="logo">
                     <img class="logo-light" src="logo-light.png" alt="ArchAdemia" style="height: 28px;">
                     <img class="logo-dark" src="logo-dark.png" alt="ArchAdemia" style="height: 28px; display: none;">
                 </a>
