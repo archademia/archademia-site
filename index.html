@@ -1465,6 +1465,10 @@
     transform: translateX(4px);
 }
 
+.resources-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 /* Responsive adjustments for mega menu */
 @media (max-width: 1280px) {
     .mega-menu {
@@ -1501,7 +1505,7 @@
     <li class="nav-item">
         <a href="lessons.html">Lessons</a>
         
-        <!-- MEGA MENU - INSERT THIS ENTIRE DIV -->
+        <!-- LESSONS MEGA MENU -->
         <div class="mega-menu">
             <div class="mega-menu-grid">
                 <!-- Drafting Column -->
@@ -1618,7 +1622,62 @@
             </div>
         </div>
     </li>
-    <li><a href="resources.html">Resources</a></li>
+    <li class="nav-item">
+        <a href="resources.html">Resources</a>
+        
+        <!-- RESOURCES MEGA MENU -->
+        <div class="mega-menu resources-menu">
+            <div class="mega-menu-grid resources-grid">
+                <!-- In Practice Column -->
+                <div class="mega-menu-column">
+                    <h3>In Practice</h3>
+                    <ul>
+                        <li><a href="#">Architects Tool Kit</a></li>
+                        <li><a href="#">Architect in Practice</a></li>
+                        <li><a href="#">CAD Drawings & Details</a></li>
+                        <li><a href="#">Access For All Tool Kit</a></li>
+                        <li><a href="#">CDM & Principal Designer Pack</a></li>
+                        <li><a href="#">The Planning Tool Kit [coming soon]</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Presentation, Design & Studies Column -->
+                <div class="mega-menu-column">
+                    <h3>Presentation, Design & Studies</h3>
+                    <ul>
+                        <li><a href="#">Ultimate Diagram Tool Kit</a></li>
+                        <li><a href="#">Presentation Boards</a></li>
+                        <li><a href="#">CAD Sheets & Title Blocks</a></li>
+                        <li><a href="#">Technical Design Pack</a></li>
+                        <li><a href="#">RIBA Part 3 Toolkit</a></li>
+                        <li><a href="#">Architecture Student Bundle [coming soon]</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Project & Software Examples Column -->
+                <div class="mega-menu-column">
+                    <h3>Project & Software Examples</h3>
+                    <ul>
+                        <li><a href="#">Revit Pack</a></li>
+                        <li><a href="#">SketchUp Model Set</a></li>
+                        <li><a href="#">Project Pack Vol. 1</a></li>
+                        <li><a href="#">Project Pack Vol. 2</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Archviz & CGI Column -->
+                <div class="mega-menu-column">
+                    <h3>Archviz & CGI</h3>
+                    <ul>
+                        <li><a href="#">Twinmotion Render Scenes</a></li>
+                        <li><a href="#">Lumion Render Scenes</a></li>
+                        <li><a href="#">D5 Render Scenes</a></li>
+                        <li><a href="#">Vray for SketchUp Render Scenes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="pricing.html">Pricing</a></li>
 </ul>
@@ -2343,6 +2402,7 @@
     </script>
 </body>
 </html>
+
 
 
 
