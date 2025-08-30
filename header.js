@@ -14,10 +14,11 @@ function loadHeader() {
                         
                         <!-- LESSONS MEGA MENU -->
                         <div class="mega-menu">
-                            <div class="mega-menu-browse">
-                                <a href="lessons.html" class="browse-all-link">Browse all courses →</a>
-                            </div>
-                            <div class="mega-menu-grid">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-browse">
+                                    <a href="lessons.html" class="browse-all-link">Browse all courses →</a>
+                                </div>
+                                <div class="mega-menu-grid">
                                 <!-- Drafting Column -->
                                 <div class="mega-menu-column">
                                     <h3>Drafting</h3>
@@ -137,10 +138,11 @@ function loadHeader() {
                         
                         <!-- RESOURCES MEGA MENU -->
                         <div class="mega-menu resources-menu">
-                            <div class="mega-menu-browse">
-                                <a href="resources.html" class="browse-all-link">Browse all resources →</a>
-                            </div>
-                            <div class="mega-menu-grid resources-grid">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-browse">
+                                    <a href="resources.html" class="browse-all-link">Browse all resources →</a>
+                                </div>
+                                <div class="mega-menu-grid resources-grid">
                                 <!-- In Practice Column -->
                                 <div class="mega-menu-column">
                                     <h3>In Practice</h3>
