@@ -201,13 +201,15 @@ function loadInstructorModule(instructorData) {
 
 function loadWhyArchademiaModule() {
     return `
-        <h3>Why ArchAdemia?</h3>
-        <ul class="benefits-list">
-            <li>100% positive reviews</li>
-            <li>Downloadable files with each course</li>
-            <li>Access another 50+ courses</li>
-            <li>On desktop, laptop, tablet & mobile app</li>
-        </ul>
+        <div class="why-archademia">
+            <h3>Why ArchAdemia?</h3>
+            <ul>
+                <li>100% positive reviews</li>
+                <li>Downloadable files with each course</li>
+                <li>Access another 50+ courses</li>
+                <li>On desktop, laptop, tablet & mobile app</li>
+            </ul>
+        </div>
     `;
 }
 
