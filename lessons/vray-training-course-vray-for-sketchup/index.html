@@ -352,7 +352,16 @@
     <script>
         // Load header and footer
         loadHeader();
-        // loadFooter(); // Uncomment when footer.js is ready
+        loadFooter();
+        
+        // Update logo paths for nested directory
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoLight = document.querySelector('.logo-light');
+            const logoDark = document.querySelector('.logo-dark');
+            
+            if (logoLight) logoLight.src = '../../logo-light.png';
+            if (logoDark) logoDark.src = '../../logo-dark.png';
+        });
         
         // Course page functionality
         function toggleChapter(element) {
