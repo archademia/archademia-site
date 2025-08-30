@@ -1747,29 +1747,35 @@ body {
 /* CTA Section */
 .cta-section {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #007AFF, #0056CC);
+    background: var(--bg-secondary);
     text-align: center;
-    color: white;
+}
+
+[data-theme="dark"] .cta-section {
+    background: #2a2a2a;
 }
 
 .cta-container h2 {
-    color: white;
+    color: var(--text-primary);
     font-size: 2.2rem;
     margin-bottom: 2rem;
     font-weight: 700;
 }
 
 .cta-section .course-cta-btn {
-    background: white;
-    color: var(--primary-color);
+    background: #007AFF;
+    color: white;
     padding: 1rem 3rem;
     border-radius: 30px;
     font-size: 1.1rem;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .cta-section .course-cta-btn:hover {
-    background: var(--bg-secondary);
+    background: #0056CC;
     transform: translateY(-3px);
 }
 
