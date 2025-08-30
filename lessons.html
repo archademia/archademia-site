@@ -477,6 +477,81 @@
                 font-size: 2rem;
             }
         }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--bg-tertiary);
+            color: var(--bg-primary);
+            padding: 3rem 2rem 2rem;
+            position: relative;
+            z-index: 3;
+            clear: both;
+        }
+        
+        [data-theme="dark"] .footer {
+            background: #000000;
+            color: #ffffff;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--bg-primary);
+        }
+        
+        [data-theme="dark"] .footer-section a {
+            color: #cccccc;
+        }
+        
+        [data-theme="dark"] .footer-section a:hover {
+            color: #ffffff;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        /* Mobile Footer */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -542,16 +617,17 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Online Courses for Architects, Designers & Artists.</h1>
+            <h1>Architecture Courses</h1>
         </div>
     </section>
 
     <!-- Content Section -->
     <section class="content">
-        <h2>Bespoke architectural courses at your fingertips</h2>
-        <p>Expert-led online architecture courses provide the essential design, architecture, and project management skills you need to</p>
-        <p>thrive as a Student, Architect, or CG Artist. Learn at your own pace, using cutting-edge software and technology, with flexible</p>
-        <p>online options available.</p>
+        <h2>Our Story</h2>
+        <p>ArchAdemia was founded by architects, for architects. We understand the unique challenges and opportunities in architectural education and professional development.</p>
+        <p>Our mission is to bridge the gap between academic learning and real-world practice, providing architects at every stage of their career with the tools, knowledge, and community they need to excel.</p>
+        <p>From software mastery to design theory, sustainability practices to project management, we offer comprehensive learning experiences that reflect the evolving nature of architectural practice in the 21st century.</p>
+        <p>Join thousands of architects who are already advancing their careers through our expert-led training and collaborative community platform.</p>
     </section>
 
     <script>
@@ -654,5 +730,49 @@
             });
         });
     </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="#">SketchUp</a></li>
+                    <li><a href="#">Revit</a></li>
+                    <li><a href="#">AutoCAD</a></li>
+                    <li><a href="#">Rhino</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Discussion Board</a></li>
+                    <li><a href="#">Project Gallery</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ArchAdemia. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
