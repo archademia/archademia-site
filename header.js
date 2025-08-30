@@ -3,8 +3,8 @@ function loadHeader() {
         <header class="header"> 
             <nav class="nav">
                 <a href="/" class="logo">
-                    <img class="logo-light" src="logo-light.png" alt="ArchAdemia" style="height: 28px;">
-                    <img class="logo-dark" src="logo-dark.png" alt="ArchAdemia" style="height: 28px; display: none;">
+                    <img class="logo-light" src="/logo-light.png" alt="ArchAdemia" style="height: 28px;">
+                    <img class="logo-dark" src="/logo-dark.png" alt="ArchAdemia" style="height: 28px; display: none;">
                 </a>
                 
                 <ul class="nav-links">
