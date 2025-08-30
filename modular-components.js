@@ -7,7 +7,7 @@ function loadCTAModule() {
             <div class="cta-container">
                 <h2>Unlimited Content & Support with an ArchAdemia Membership.</h2>
                 <p>Includes 200+ hours & 56 courses, community access, weekly architectural design & specification forums, exclusive monthly online lectures & more.</p>
-                <button class="membership-cta-btn" onclick="window.location.href='../../pricing.html'">Membership today</button>
+                <button class="membership-cta-btn" onclick="window.location.href='../../pricing/'">Membership today</button>
             </div>
         </section>
     `;
@@ -132,6 +132,29 @@ function loadReviewsModule(category) {
                 text: 'The parametric courses have given our team a competitive edge. We can now tackle projects that would have been impossible before.',
                 avatar: 'ST',
                 color: '#20c997'
+            }
+        ],
+        'realtime': [
+            {
+                name: 'Jake Morrison',
+                title: 'Visualization Specialist',
+                text: 'The real-time rendering courses completely changed how we present to clients. Interactive walkthroughs have become our signature.',
+                avatar: 'JM',
+                color: '#007AFF'
+            },
+            {
+                name: 'Nina Patel',
+                title: 'Design Director',
+                text: 'D5 Render and Enscape training gave us the speed we needed for tight project deadlines. Game-changing workflow improvements.',
+                avatar: 'NP',
+                color: '#28a745'
+            },
+            {
+                name: 'Ryan O\'Connor',
+                title: 'Project Architect',
+                text: 'Real-time rendering has revolutionized our design process. We can now iterate and present ideas faster than ever before.',
+                avatar: 'RO',
+                color: '#ffc107'
             }
         ],
         'default': [
@@ -353,6 +376,30 @@ function initializeCoursePageFunctionality() {
             dots[n-1].classList.add('active');
         }
     };
+    
+    // Read more functionality
+    window.toggleReadMore = function(element) {
+        const aboutSection = element.closest('.course-about');
+        const hiddenText = aboutSection.querySelector('.hidden-text');
+        
+        if (hiddenText) {
+            hiddenText.style.display = hiddenText.style.display === 'none' ? 'block' : 'none';
+            element.textContent = hiddenText.style.display === 'none' ? 'Read More' : 'Read Less';
+        }
+    };
+}
+
+// Global CTA button functionality
+function redirectToMembership() {
+    window.location.href = '../../pricing/';
+}
+
+function redirectToLessons() {
+    window.location.href = '../../lessons/';
+}
+
+function redirectToResources() {
+    window.location.href = '../../resources/';
 }
 
 // Helper function for testimonial rotation (if you want dynamic reviews)
@@ -363,17 +410,4 @@ function rotateTestimonials(category, containerId) {
     // This could be expanded to cycle through different review sets
     const reviews = loadReviewsModule(category);
     container.innerHTML = reviews;
-}
-
-// Global CTA button functionality
-function redirectToMembership() {
-    window.location.href = '../../pricing.html';
-}
-
-function redirectToLessons() {
-    window.location.href = '../../lessons.html';
-}
-
-function redirectToResources() {
-    window.location.href = '../../resources.html';
 }
