@@ -273,21 +273,23 @@
         
         .mobile-menu {
             position: fixed;
-            top: -100%;
+            top: -70%;
             left: 0;
             right: 0;
-            height: 100vh;
+            height: 70vh;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
             z-index: 10001;
-            padding: 8rem 2rem 2rem;
+            padding: 6rem 2rem 3rem;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
             opacity: 0;
             visibility: hidden;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
         
         [data-theme="dark"] .mobile-menu {
@@ -307,7 +309,7 @@
         }
         
         .mobile-nav-links li {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -327,15 +329,37 @@
         .mobile-nav-links a {
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
             display: block;
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             transition: color 0.3s ease;
         }
         
         .mobile-nav-links a:hover {
             color: #007AFF;
+        }
+        
+        .mobile-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-close-btn:hover {
+            background: var(--border-color);
         }
         
         .mobile-auth-buttons {
@@ -1392,8 +1416,9 @@
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
         
-        <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-close-btn" id="mobileCloseBtn">&times;</button>
             <ul class="mobile-nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#lessons">Lessons</a></li>
@@ -1787,6 +1812,12 @@
             if (mobileMenuOverlay) {
                 mobileMenuOverlay.addEventListener('click', closeMobileMenu);
             }
+
+            // Mobile close button
+            const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+            if (mobileCloseBtn) {
+                mobileCloseBtn.addEventListener('click', closeMobileMenu);
+            }
             
             // Mobile menu CTA buttons
             if (mobileSignupBtn) {
@@ -2081,6 +2112,7 @@
     </script>
 </body>
 </html>
+
 
 
 
