@@ -10,6 +10,8 @@
     --modal-bg: #ffffff;
     --shadow: rgba(0,0,0,0.1);
     --shadow-heavy: rgba(0,0,0,0.3);
+    --primary-color: #007AFF;
+    --primary-hover: #0056CC;
 }
 
 [data-theme="dark"] {
@@ -24,6 +26,8 @@
     --modal-bg: #1f1f1f;
     --shadow: rgba(0,0,0,0.4);
     --shadow-heavy: rgba(0,0,0,0.7);
+    --primary-color: #007AFF;
+    --primary-hover: #0056CC;
 }
 
 * {
@@ -75,7 +79,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Apple- Centered Navigation */
+/* Navigation */
 .nav {
     display: flex;
     justify-content: center;
@@ -92,6 +96,7 @@ body {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
+    text-decoration: none;
 }
 
 .logo img {
@@ -266,26 +271,18 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Apple-style Mobile Menu - Slide Down */
-.mobile-menu {
+/* Mobile Menu */
+.mobile-menu-overlay {
     position: fixed;
-    top: -70%;
+    top: 0;
     left: 0;
-    right: 0;
-    height: 70vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-    z-index: 10001;
-    padding: 6rem 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 10000;
     opacity: 0;
     visibility: hidden;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    transition: all 0.3s ease;
 }
 
 .mobile-menu-overlay.active {
@@ -555,7 +552,7 @@ body {
     margin-bottom: 0.3rem;
 }
 
-/* Full-Bleed Carousel Section */
+/* Carousel Section */
 .carousel-section {
     padding: 6rem 0;
     background: var(--bg-secondary);
@@ -686,7 +683,7 @@ body {
     background: var(--text-primary);
 }
 
-/* Full Bleed Hero Section - FIXED STRUCTURE */
+/* Full Bleed Hero Section */
 .full-bleed-hero {
     height: 80vh;
     position: relative;
@@ -806,7 +803,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Community Section - FIXED */
+/* Community Section */
 .community-section {
     padding: 6rem 2rem;
     background: var(--bg-primary);
@@ -918,7 +915,7 @@ body {
 .social-image {
     width: 100%;
     height: 500px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><circle cx="100" cy="100" r="20" fill="%23dee2e6"/><rect x="140" y="85" width="120" height="12" fill="%23333" rx="4"/><rect x="140" y="105" width="80" height="8" fill="%23999" rx="4"/><rect x="70" y="140" width="240" height="80" fill="%234a90e2" rx="8"/><rect x="320" y="140" width="110" height="80" fill="%23e76f51" rx="8"/><rect x="440" y="140" width="110" height="80" fill="%2328a745" rx="8"/><rect x="70" y="240" width="110" height="80" fill="%23ffc107" rx="8"/><rect x="190" y="240" width="120" height="80" fill="%2317a2b8" rx="8"/><rect x="320" y="240" width="230" height="80" fill="%23fd7e14" rx="8"/></svg>') center/cover no-repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500"><rect width="600" height="500" fill="%23f8f9fa"/><rect x="50" y="50" width="500" height="400" fill="%23fff" rx="12" stroke="%23ddd" stroke-width="2"/><rect x="70" y="70" width="200" height="150" fill="%234a90e2" rx="8"/><rect x="290" y="80" width="240" height="15" fill="%23e9ecef" rx="4"/><rect x="290" y="110" width="180" height="12" fill="%23e9ecef" rx="4"/><rect x="290" y="140" width="200" height="12" fill="%23e9ecef" rx="4"/><rect x="70" y="240" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="300" width="460" height="40" fill="%23f8f9fa" rx="8"/><rect x="70" y="360" width="460" height="40" fill="%23f8f9fa" rx="8"/></svg>') center/cover no-repeat;
     border-radius: 16px;
     margin-left: -2rem;
     box-shadow: 0 8px 40px rgba(0,0,0,0.1);
@@ -943,7 +940,7 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Modal - COMPLETE STYLING */
+/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1087,42 +1084,6 @@ body {
     text-decoration: underline;
 }
 
-.social-signup {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.social-text {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.social-btn {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--border-color);
-    background: var(--card-bg);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-    color: var(--text-primary);
-}
-
-.social-btn:hover {
-    border-color: #007AFF;
-}
-
 .continue-btn {
     width: 100%;
     background: #007AFF;
@@ -1153,7 +1114,7 @@ body {
     font-weight: 600;
 }
 
-/* Footer - ENSURE PROPER POSITIONING */
+/* Footer */
 .footer {
     background: var(--bg-tertiary);
     color: var(--bg-primary);
@@ -1261,10 +1222,6 @@ body {
     top: 100%;
 }
 
-.header .nav-item:hover .mega-menu {
-    top: 100%;
-}
-
 .mega-menu-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1342,213 +1299,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.resources-grid .mega-menu-browse {
-    grid-column: 1 / -1;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links,
-    .nav-buttons .search-btn,
-    .nav-buttons .theme-toggle,
-    .nav-buttons .signup-btn,
-    .nav-buttons .login-btn {
-        display: none;
-    }
-    
-    .burger-menu {
-        display: flex;
-    }
-
-    .header {
-        padding: 1.5rem 2.5rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content .tagline {
-        font-size: 1.2rem;
-    }
-    
-    .stats-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem 1rem;
-    }
-    
-    .stats-content h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    .stats-numbers {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .counter {
-        font-size: 3rem;
-    }
-    
-   .carousel-section {
-    padding: 6rem 0 8rem 0;
-    background: var(--bg-secondary);
-    overflow: hidden;
-}
-    
-    .carousel-header {
-        padding: 0 1rem;
-    }
-    
-    .carousel-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .carousel-controls {
-        gap: 0.5rem;
-    }
-    
-    .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-  .carousel-card {
-        width: 280px;
-        height: 420px;
-        padding: 0;
-        overflow: hidden;
-    }
-    
-    .card-title {
-        font-size: 1.1rem;
-        margin: 2rem 0 1rem 0;
-    }
-    
-    .full-bleed-hero {
-        height: 60vh;
-    }
-    
-    .full-bleed-content {
-        padding: 0 2rem;
-    }
-    
-    .full-bleed-hero h2 {
-        font-size: 2.5rem;
-    }
-    
-    .full-bleed-hero p {
-        font-size: 1rem;
-    }
-    
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .professional-container, .community-container, .social-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .professional-content, .community-content, .social-content {
-        padding: 0 2rem;
-        order: 2;
-    }
-    
-    .professional-content h2, .community-content h2, .social-content h2 {
-        font-size: 2rem;
-    }
-    
-    .professional-image, .community-image, .social-image {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        height: 300px;
-        order: 1;
-    }
-    
-    .professional-image {
-        order: 1;
-    }
-    
-    .signup-modal {
-        margin: 1rem;
-        padding: 2rem;
-    }
-    
-    .modal-title {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 1280px) {
-    .mega-menu {
-        padding: 2rem 0;
-    }
-    
-    .mega-menu-container {
-        padding: 0 3rem;
-    }
-    
-    .mega-menu-grid {
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .mega-menu {
-        display: none !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content .tagline {
-        font-size: 1rem;
-    }
-    
-    .stats {
-        padding: 3rem 1rem;
-    }
-    
-    .carousel-card {
-        width: 260px;
-        height: 400px;
-        padding: 0;
-        overflow: hidden;
-    }
-    
-    .card-title {
-        font-size: 1rem;
-        margin: 1.5rem 0 0.8rem 0;
-    }
-    
-    .full-bleed-hero h2 {
-        font-size: 2rem;
-    }
-    
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .signup-modal {
-        padding: 1.5rem;
-    }
-    
-    .modal-title {
-        font-size: 1.3rem;
-    }
-    
-    .form-group input {
-        padding: 0.6rem;
-
-        /* =======================
+/* =======================
    COURSE PAGE STYLES
    ======================= */
 
@@ -1658,6 +1409,7 @@ body {
     justify-content: center;
     background: var(--primary-color);
     border-radius: 50%;
+    color: white;
 }
 
 .info-text {
@@ -1802,7 +1554,6 @@ body {
 
 .module-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .module-title {
@@ -2054,8 +1805,138 @@ body {
     max-height: 200px;
 }
 
-/* Mobile Responsiveness for Course Pages */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
+    .nav-links,
+    .nav-buttons .search-btn,
+    .nav-buttons .theme-toggle,
+    .nav-buttons .signup-btn,
+    .nav-buttons .login-btn {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: flex;
+    }
+
+    .header {
+        padding: 1.5rem 2.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .stats-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .stats-numbers {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .counter {
+        font-size: 3rem;
+    }
+    
+    .carousel-section {
+        padding: 6rem 0 8rem 0;
+        background: var(--bg-secondary);
+        overflow: hidden;
+    }
+    
+    .carousel-header {
+        padding: 0 1rem;
+    }
+    
+    .carousel-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-controls {
+        gap: 0.5rem;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .carousel-card {
+        width: 280px;
+        height: 420px;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .full-bleed-hero {
+        height: 60vh;
+    }
+    
+    .full-bleed-content {
+        padding: 0 2rem;
+    }
+    
+    .full-bleed-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .full-bleed-hero p {
+        font-size: 1rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .professional-container, .community-container, .social-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .professional-content, .community-content, .social-content {
+        padding: 0 2rem;
+        order: 2;
+    }
+    
+    .professional-content h2, .community-content h2, .social-content h2 {
+        font-size: 2rem;
+    }
+    
+    .professional-image, .community-image, .social-image {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        height: 300px;
+        order: 1;
+    }
+    
+    .professional-image {
+        order: 1;
+    }
+    
+    .signup-modal {
+        margin: 1rem;
+        padding: 2rem;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    /* Course Page Mobile Styles */
     .course-hero h1 {
         font-size: 2rem;
     }
@@ -2095,7 +1976,67 @@ body {
     }
 }
 
+@media (max-width: 1280px) {
+    .mega-menu {
+        padding: 2rem 0;
+    }
+    
+    .mega-menu-container {
+        padding: 0 3rem;
+    }
+    
+    .mega-menu-grid {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mega-menu {
+        display: none !important;
+    }
+}
+
 @media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .tagline {
+        font-size: 1rem;
+    }
+    
+    .stats {
+        padding: 3rem 1rem;
+    }
+    
+    .carousel-card {
+        width: 260px;
+        height: 400px;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .full-bleed-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .signup-modal {
+        padding: 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .form-group input {
+        padding: 0.6rem;
+    }
+    
     .course-info-container {
         grid-template-columns: 1fr;
     }
@@ -2107,7 +2048,5 @@ body {
     
     .course-hero {
         padding: 80px 0 60px;
-    }
-}
     }
 }
