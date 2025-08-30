@@ -15,7 +15,7 @@
         <div class="hero-content">
             <h1>ArchAdemia.</h1>
             <p class="tagline">for Architects, by Architects</p>
-            <button class="cta-btn">Get Started Today</button>
+            <a href="pricing.html" class="cta-btn">Get Started Today</a>
         </div>
     </section>
 
@@ -35,7 +35,7 @@
                     <div>New classes added every month</div>
                     <div>Join aspiring and qualified professionals</div>
                 </div>
-                <button class="cta-btn">Sign up today for FREE</button>
+                <a href="pricing.html" class="cta-btn">Sign up today for FREE</a>
             </div>
         </div>
     </section>
@@ -103,7 +103,7 @@
                     </div>
                     <h2>Lightroom for Photography with MVRDV</h2>
                     <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                    <button class="cta-btn">Explore today for FREE</button>
+                    <a href="pricing.html" class="cta-btn">Explore today for FREE</a>
                 </div>
             </div>
             
@@ -119,7 +119,7 @@
                     </div>
                     <h2>Master SketchUp for Architectural Design</h2>
                     <p>Learn advanced SketchUp techniques from industry professionals. Master 3D modeling, rendering workflows, and presentation methods that will transform your architectural visualization process and client presentations.</p>
-                    <button class="explore-btn">Explore today for FREE</button>
+                    <a href="pricing.html" class="explore-btn">Explore today for FREE</a>
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@
             <div class="community-content">
                 <h2>Community based learning for aspiring and qualified architects.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatiaconempon quia idest, temolut laciis diosa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <button class="cta-btn">Sign up today for FREE</button>
+                <a href="pricing.html" class="cta-btn">Sign up today for FREE</a>
             </div>
         </div>
     </section>
@@ -143,7 +143,7 @@
             <div class="professional-content">
                 <h2>Track and maintain your continued professional development.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis dipsa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <button class="cta-btn">Sign up today for FREE</button>
+                <a href="pricing.html" class="cta-btn">Sign up today for FREE</a>
             </div>
             <div class="professional-image"></div>
         </div>
@@ -156,7 +156,7 @@
             <div class="social-content">
                 <h2>Share and inspire through our social centrepiece, The Drawing Board.</h2>
                 <p>Ita doluptus perum autentibusae nobis dolut rerci ut eris int laboriam que voloremped minum ea que dolutet quodis inis ad quassintore verumqui re num autendae ea estia cus et dolorem tiatia conempon quia idest, temolut laciis dipsa nis voluptatur asperuntur autemostint prepudis pelique ma dipitasi dolorep elesit assimumque paribus dolore odi commis eribus que maio et volupis asperisim fuga.</p>
-                <button class="cta-btn">Sign up today for FREE</button>
+                <a href="pricing.html" class="cta-btn">Sign up today for FREE</a>
             </div>
         </div>
     </section>
@@ -164,51 +164,9 @@
     <!-- Footer Component Container -->
     <div id="footer-container"></div>
 
-    <!-- Signup Modal -->
-    <div class="modal-overlay" id="signupModal">
-        <div class="signup-modal">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <h2 class="modal-title">Welcome to ArchAdemia.</h2>
-            <p class="modal-description">Join thousands of architects advancing their careers through expert-led training and community collaboration.</p>
-            
-            <form class="signup-form" onsubmit="handleSignup(event)">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Create Password</label>
-                    <input type="password" id="password" name="password" required>
-                    <div class="password-options">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="keepSignedIn">
-                            <label for="keepSignedIn">Keep me signed in</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgotten password?</a>
-                    </div>
-                </div>
-            </form>
-            
-            <div class="social-signup">
-                <p class="social-text">Or continue with</p>
-                <div class="social-buttons">
-                    <button class="social-btn" onclick="socialLogin('facebook')">f</button>
-                    <button class="social-btn" onclick="socialLogin('apple')">🍎</button>
-                    <button class="social-btn" onclick="socialLogin('google')">G</button>
-                </div>
-            </div>
-            
-            <button class="continue-btn" onclick="handleSignup(event)">Continue</button>
-            
-            <p class="login-link">Already a member? <a href="#" onclick="switchToLogin()">Sign in here</a></p>
-        </div>
-    </div>
-
     <!-- Load Components -->
     <script src="header.js"></script>
     <script src="footer.js"></script>
-    <script src="modal.js"></script>
     <script src="carousel.js"></script>
     
     <!-- Initialize Components -->
