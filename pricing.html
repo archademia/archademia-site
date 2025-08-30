@@ -222,12 +222,12 @@
         }
         
         .plan-button.primary {
-            background: var(--accent-blue);
+            background: #007AFF;
             color: white;
         }
         
         .plan-button.primary:hover {
-            background: var(--accent-blue-hover);
+            background: #0056CC;
             transform: translateY(-2px);
         }
         
@@ -596,14 +596,23 @@
             // Initialize modal
             initializeModal();
             
-            // Contact Sales functionality
-            const contactSalesBtn = document.querySelector('.plan-button.secondary:last-of-type');
-            if (contactSalesBtn && contactSalesBtn.textContent.includes('Contact Sales')) {
-                contactSalesBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your interest in our Pro plan! Please email us at sales@archacademia.com or call +44 20 1234 5678 to discuss your requirements.');
-                });
-            }
+            // Add specific event listeners for pricing page buttons
+            const getPlanButtons = document.querySelectorAll('.plan-button.primary, .plan-button.secondary');
+            getPlanButtons.forEach(function(btn) {
+                if (btn.textContent.includes('Contact Sales')) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        alert('Thank you for your interest in our Pro plan! Please email us at sales@archacademia.com or call +44 20 1234 5678 to discuss your requirements.');
+                    });
+                } else {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (window.openModal) {
+                            window.openModal();
+                        }
+                    });
+                }
+            });
         });
         
         // FAQ functionality
