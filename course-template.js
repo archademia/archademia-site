@@ -8,7 +8,7 @@ function loadCourseTemplate(courseData) {
                     <p class="course-subtitle">${courseData.subtitle}</p>
                     
                     <div class="course-actions">
-                        <button class="course-cta-btn" onclick="window.location.href='../../pricing/'">Start Now</button>
+                        <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Start Now</button>
                         <button class="course-preview-btn">Play Trailer</button>
                     </div>
                 </div>
@@ -54,8 +54,7 @@ function loadCourseTemplate(courseData) {
             <div class="course-details-container">
                 <div class="course-about">
                     <h2>About this course</h2>
-                    <p>${courseData.description}</p>
-                    <p>${courseData.extendedDescription}</p>
+                    <p>${courseData.overview}</p>
                     
                     <div class="read-more-section">
                         <button class="read-more-btn">Read More</button>
@@ -65,10 +64,18 @@ function loadCourseTemplate(courseData) {
                 <div class="course-sidebar">
                     <h3>Skills you'll gain</h3>
                     <ul class="skills-list">
-                        ${courseData.skills.map(skill => `<li>${skill}</li>`).join('')}
+                        ${courseData.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
                     </ul>
                     
-                    ${loadWhyArchademiaModule()}
+                    <div class="why-archademia">
+                        <h3>Why ArchAdemia?</h3>
+                        <ul>
+                            <li>100% positive reviews</li>
+                            <li>Downloadable files with each course</li>
+                            <li>Access another 50+ courses</li>
+                            <li>On desktop, laptop, tablet & mobile app</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -78,36 +85,127 @@ function loadCourseTemplate(courseData) {
             <div class="syllabus-container">
                 <h2>Syllabus</h2>
                 
-                <div class="syllabus-chapters">
-                    ${courseData.chapters.map((chapter, index) => `
-                        <div class="chapter-item">
-                            <div class="chapter-header" onclick="toggleChapter(this)">
-                                <span class="chapter-title">${chapter.title}</span>
-                                <span class="chapter-arrow">▼</span>
-                            </div>
-                            <div class="chapter-content">
-                                <div class="chapter-lessons">
-                                    ${chapter.lessons.map(lesson => `
-                                        <div class="lesson-item">${lesson}</div>
-                                    `).join('')}
-                                </div>
+                <div class="syllabus-modules">
+                    ${courseData.modules.map((module, index) => `
+                        <div class="module-item">
+                            <div class="module-header">
+                                <span class="module-title">Lesson ${index + 1} – ${module.title} (${module.duration})</span>
                             </div>
                         </div>
                     `).join('')}
                 </div>
                 
+                ${courseData.bonusLessons ? `
+                    <div class="bonus-lessons">
+                        <h3>Bonus Lessons</h3>
+                        ${courseData.bonusLessons.map((lesson, index) => `
+                            <div class="module-item">
+                                <div class="module-header">
+                                    <span class="module-title">Bonus Lesson ${index + 1} – ${lesson.title} (${lesson.duration})</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+                
                 <div class="syllabus-cta">
-                    <button class="course-cta-btn" onclick="window.location.href='../../pricing/'">Start Now</button>
+                    <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Start Now</button>
                 </div>
             </div>
         </section>
 
-        ${loadProjectModule(courseData.project)}
-        ${loadLearningOutcomesModule(courseData.outcomes)}
-        ${loadInstructorModule(courseData.instructor)}
-        ${loadCTAModule()}
-        ${loadReviewsModule(courseData.category)}
-        ${loadFAQModule()}
+        <!-- Project Section -->
+        ${courseData.project ? `
+        <section class="project-section">
+            <div class="project-container">
+                <h2>The project you'll be working on</h2>
+                <div class="project-content">
+                    <div class="project-description">
+                        <h3>${courseData.project.name}</h3>
+                        <p>${courseData.project.description}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        ` : ''}
+
+        <!-- Instructor Section -->
+        <section class="instructor-section">
+            <div class="instructor-container">
+                <h2>Meet your tutor - ${courseData.instructor} | ${courseData.instructorTitle} | ${courseData.instructorCompany}</h2>
+                <div class="instructor-content">
+                    <div class="instructor-image">
+                        <div class="instructor-placeholder"></div>
+                    </div>
+                    <div class="instructor-bio">
+                        <p>${courseData.instructorBio}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Unlimited Content & Support with an ArchAdemia Membership</h2>
+                <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Join ArchAdemia Today</button>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-container">
+                <h2>What our members say</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <p>"ArchAdemia is an invaluable resource! The tutorials are not only clear, but linked to live projects or famous examples, making them much more engaging & interesting compared to others."</p>
+                        <div class="review-author">- Architecture Professional</div>
+                    </div>
+                    <div class="review-card">
+                        <p>"As an architecture student, I struggled getting grasp of some software such as Revit and Photoshop. I started using ArchAdemia and found my work excel to levels I did not think I could achieve."</p>
+                        <div class="review-author">- Architecture Student</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2>FAQs</h2>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What is ArchAdemia?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We're the only architectural educator that teaches all aspects of what an architect goes through each day, through architecture courses, one-off lessons, podcasts and mentoring.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How much does membership cost?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Annual memberships are £139 paid per year and monthly memberships £39 per month. Head over to our pricing page to find out exactly what's included with each.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I watch on mobile devices?</span>
+                            <span class="faq-arrow">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can watch your lessons on a desktop, mobile, or tablet. You can also download the Kajabi app and use your credentials to view lessons anywhere!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     `;
 }
 
@@ -124,23 +222,6 @@ function getCourseDataBySlug(slug) {
 
 // Course page interactive functionality
 function initializeCoursePageFunctionality() {
-    // Chapter toggle functionality
-    window.toggleChapter = function(element) {
-        const chapterItem = element.parentElement;
-        const content = chapterItem.querySelector('.chapter-content');
-        const arrow = element.querySelector('.chapter-arrow');
-        
-        chapterItem.classList.toggle('active');
-        
-        if (chapterItem.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            arrow.style.transform = 'rotate(180deg)';
-        } else {
-            content.style.maxHeight = '0';
-            arrow.style.transform = 'rotate(0deg)';
-        }
-    };
-    
     // FAQ toggle functionality
     window.toggleFAQ = function(element) {
         const faqItem = element.parentElement;
@@ -158,17 +239,12 @@ function initializeCoursePageFunctionality() {
         }
     };
     
-    // Project slide functionality
-    window.currentSlide = function(n) {
-        const slides = document.querySelectorAll('.project-slide');
-        const dots = document.querySelectorAll('.dot');
-        
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        if (slides[n-1] && dots[n-1]) {
-            slides[n-1].classList.add('active');
-            dots[n-1].classList.add('active');
-        }
-    };
+    // Read more functionality
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    if (readMoreBtn) {
+        readMoreBtn.addEventListener('click', function() {
+            // Add read more functionality here
+            this.style.display = 'none';
+        });
+    }
 }
