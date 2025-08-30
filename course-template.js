@@ -111,6 +111,17 @@ function loadCourseTemplate(courseData) {
     `;
 }
 
+// Helper function to get current course slug from URL
+function getCurrentCourseSlug() {
+    const pathParts = window.location.pathname.split('/');
+    return pathParts[pathParts.length - 2]; // Gets the folder name before index.html
+}
+
+// Helper function to get course data by URL slug
+function getCourseDataBySlug(slug) {
+    return coursesData[slug] || null;
+}
+
 // Course page interactive functionality
 function initializeCoursePageFunctionality() {
     // Chapter toggle functionality
@@ -160,15 +171,4 @@ function initializeCoursePageFunctionality() {
             dots[n-1].classList.add('active');
         }
     };
-}
-
-// Helper function to get current course slug from URL
-function getCurrentCourseSlug() {
-    const pathParts = window.location.pathname.split('/');
-    return pathParts[pathParts.length - 2]; // Gets the folder name before index.html
-}
-
-// Helper function to get course data by URL slug
-function getCourseDataBySlug(slug) {
-    return coursesData[slug] || null;
 }
