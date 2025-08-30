@@ -1,4 +1,4 @@
-// MODULAR COMPONENTS - Reusable across all course and resource pages
+// MODULAR COMPONENTS - Reusable across all course and resource pages 
 
 function loadCTAModule() {
     return `
