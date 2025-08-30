@@ -207,7 +207,7 @@ function loadHeader() {
                         </svg>
                     </button>
                     <button class="login-btn">Login</button>
-                    <a href="pricing" class="signup-btn">Sign Up</a>
+                    <a href="pricing.html" class="signup-btn">Sign Up</a>
                     
                     <!-- Burger Menu -->
                     <div class="burger-menu" id="burgerMenu">
@@ -478,7 +478,7 @@ function initializeHeaderFunctionality() {
     // Mobile menu signup button - still links to pricing
     if (mobileSignupBtn) {
         mobileSignupBtn.addEventListener('click', function() {
-            window.location.href = 'pricing';
+            window.location.href = 'pricing.html';
         });
     }
     
