@@ -5,9 +5,168 @@ function loadCTAModule() {
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-container">
-                <h2>Unlimited Content & Support with an ArchAdemia Membership.</h2>
-                <p>Includes 200+ hours & 56 courses, community access, weekly architectural design & specification forums, exclusive monthly online lectures & more.</p>
-                <button class="membership-cta-btn" onclick="window.location.href='../../pricing/'">Membership today</button>
+                <h2>Unlimited Content & Support with an ArchAdemia Membership</h2>
+                <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Join ArchAdemia Today</button>
+            </div>
+        </section>
+    `;
+}
+
+function loadReviewsModule(category) {
+    const reviewsData = {
+        'Archviz': [
+            {
+                name: 'John Martinez',
+                title: 'Architectural Designer',
+                text: 'This rendering course transformed my visualization skills completely. The step-by-step approach made complex lighting techniques easy to understand and implement.'
+            },
+            {
+                name: 'Sarah Peterson', 
+                title: 'Architecture Student',
+                text: 'Perfect course for learning rendering from scratch. Adam\'s teaching style is clear and the project-based approach helped me build portfolio pieces.'
+            },
+            {
+                name: 'Michael Kim',
+                title: 'Practice Principal', 
+                text: 'Outstanding practical course that I could apply immediately in our practice. The rendering quality we achieve now has significantly improved client presentations.'
+            }
+        ],
+        'BIM': [
+            {
+                name: 'Lisa Chen',
+                title: 'BIM Coordinator',
+                text: 'The Revit course was incredibly comprehensive. I went from beginner to confidently managing complex BIM projects in just a few weeks.'
+            },
+            {
+                name: 'David Thompson',
+                title: 'Project Architect',
+                text: 'Finally, BIM training that makes sense for architects. The workflows taught here have revolutionized how our practice approaches design coordination.'
+            },
+            {
+                name: 'Emma Wilson',
+                title: 'Architecture Student',
+                text: 'These BIM courses gave me the skills I needed to stand out in the job market. The hands-on approach made everything click.'
+            }
+        ],
+        'Drafting': [
+            {
+                name: 'Robert Chen',
+                title: 'Senior Draftsperson',
+                text: 'The AutoCAD course covered everything I needed to modernize our drafting workflows. Highly practical and immediately applicable.'
+            },
+            {
+                name: 'Maria Santos',
+                title: 'Architectural Technician', 
+                text: 'The foundational course gave me confidence in technical drafting. The instructor clearly understands real-world practice needs.'
+            },
+            {
+                name: 'Tom Williams',
+                title: 'Project Coordinator',
+                text: 'These drafting courses have improved our entire team\'s technical documentation standards. Professional development at its best.'
+            }
+        ],
+        'Realtime Rendering': [
+            {
+                name: 'Jake Morrison',
+                title: 'Visualization Specialist',
+                text: 'The real-time rendering courses completely changed how we present to clients. Interactive walkthroughs have become our signature.'
+            },
+            {
+                name: 'Nina Patel',
+                title: 'Design Director',
+                text: 'D5 Render and Enscape training gave us the speed we needed for tight project deadlines. Game-changing workflow improvements.'
+            },
+            {
+                name: 'Ryan O\'Connor',
+                title: 'Project Architect',
+                text: 'Real-time rendering has revolutionized our design process. We can now iterate and present ideas faster than ever before.'
+            }
+        ],
+        'default': [
+            {
+                name: 'Alex Rodriguez',
+                title: 'Senior Architect',
+                text: 'ArchAdemia courses are perfectly tailored for working architects. The quality of instruction and practical application is outstanding.'
+            },
+            {
+                name: 'Katie Johnson',
+                title: 'Design Director',
+                text: 'These courses have elevated our entire team\'s technical skills. The investment in ArchAdemia has paid for itself many times over.'
+            },
+            {
+                name: 'James Foster',
+                title: 'Freelance Architect',
+                text: 'The professional development I\'ve gained through these courses has directly led to new client opportunities and higher project fees.'
+            }
+        ]
+    };
+    
+    const reviews = reviewsData[category] || reviewsData['default'];
+    
+    return `
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-container">
+                <h2>What our members say</h2>
+                <div class="reviews-grid">
+                    ${reviews.map(review => `
+                        <div class="review-card">
+                            <p>"${review.text}"</p>
+                            <div class="review-author">- ${review.name}, ${review.title}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+function loadFAQModule() {
+    const faqData = [
+        {
+            question: 'What is ArchAdemia?',
+            answer: 'We\'re the only architectural educator that teaches all aspects of what an architect goes through each day, through architecture courses, one-off lessons, podcasts and mentoring.'
+        },
+        {
+            question: 'How much does membership cost?',
+            answer: 'Annual memberships are £139 paid per year and monthly memberships £39 per month. Head over to our pricing page to find out exactly what\'s included with each.'
+        },
+        {
+            question: 'Can I watch on mobile devices?',
+            answer: 'You can watch your lessons on a desktop, mobile, or tablet. You can also download the Kajabi app and use your credentials to view lessons anywhere!'
+        },
+        {
+            question: 'What are the courses like?',
+            answer: 'Our teaching style is relaxed and specific to the needs of an architect. All of our premium courses are centred around an iconic piece of architecture, providing dual benefit of learning software and design.'
+        },
+        {
+            question: 'How do I join?',
+            answer: 'Joining us is easy, simply scroll to the top of our home page and start by hitting the button in the top banner. Head over to the pricing page to find a detailed breakdown of what\'s included.'
+        },
+        {
+            question: 'How do I cancel?',
+            answer: 'Once you\'ve created your account you\'ll be taken to the members area. There, you have easy access to your account information, where you\'ll receive instructions on how to cancel if you wish to do so.'
+        }
+    ];
+    
+    return `
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2>FAQs</h2>
+                <div class="faq-items">
+                    ${faqData.map(faq => `
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>${faq.question}</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>${faq.answer}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             </div>
         </section>
     `;
@@ -17,7 +176,7 @@ function loadInstructorModule(instructorData) {
     const defaultInstructor = {
         name: 'Adam Morgan',
         title: 'Architectural Director',
-        bio: "Hi, I'm Adam - and I'm the Founder and Creator of ArchAdemia. As a Chartered Architectural Technologist with over 6 years of experience, I'm excited to have you on board with ArchAdemia to guide you through your learning journey with technology for Architecture. When we first started out in practice, we wasn't taught technology or provided guidance on how best to use it and this is something that I want to create for young and future architects.",
+        bio: "Hi, I'm Adam - and I'm the Founder and Creator of ArchAdemia. As a Chartered Architectural Technologist with over 6 years of experience, I'm excited to have you on board with ArchAdemia to guide you through your learning journey with technology for Architecture.",
         image: '../../instructor-adam.jpg'
     };
     
@@ -40,237 +199,14 @@ function loadInstructorModule(instructorData) {
     `;
 }
 
-function loadReviewsModule(category) {
-    const reviewsData = {
-        'archviz': [
-            {
-                name: 'John Martinez',
-                title: 'Architectural Designer',
-                text: 'This rendering course transformed my visualization skills completely. The step-by-step approach made complex lighting techniques easy to understand and implement.',
-                avatar: 'JM',
-                color: '#007AFF'
-            },
-            {
-                name: 'Sarah Peterson', 
-                title: 'Architecture Student',
-                text: 'Perfect course for learning rendering from scratch. Adam\'s teaching style is clear and the project-based approach helped me build portfolio pieces.',
-                avatar: 'SP',
-                color: '#28a745'
-            },
-            {
-                name: 'Michael Kim',
-                title: 'Practice Principal', 
-                text: 'Outstanding practical course that I could apply immediately in our practice. The rendering quality we achieve now has significantly improved client presentations.',
-                avatar: 'MK',
-                color: '#ffc107'
-            }
-        ],
-        'bim': [
-            {
-                name: 'Lisa Chen',
-                title: 'BIM Coordinator',
-                text: 'The Revit course was incredibly comprehensive. I went from beginner to confidently managing complex BIM projects in just a few weeks.',
-                avatar: 'LC',
-                color: '#17a2b8'
-            },
-            {
-                name: 'David Thompson',
-                title: 'Project Architect',
-                text: 'Finally, BIM training that makes sense for architects. The workflows taught here have revolutionized how our practice approaches design coordination.',
-                avatar: 'DT',
-                color: '#6f42c1'
-            },
-            {
-                name: 'Emma Wilson',
-                title: 'Architecture Student',
-                text: 'These BIM courses gave me the skills I needed to stand out in the job market. The hands-on approach made everything click.',
-                avatar: 'EW',
-                color: '#e83e8c'
-            }
-        ],
-        'drafting': [
-            {
-                name: 'Robert Chen',
-                title: 'Senior Draftsperson',
-                text: 'The AutoCAD course covered everything I needed to modernize our drafting workflows. Highly practical and immediately applicable.',
-                avatar: 'RC',
-                color: '#fd7e14'
-            },
-            {
-                name: 'Maria Santos',
-                title: 'Architectural Technician', 
-                text: 'The foundational course gave me confidence in technical drafting. The instructor clearly understands real-world practice needs.',
-                avatar: 'MS',
-                color: '#20c997'
-            },
-            {
-                name: 'Tom Williams',
-                title: 'Project Coordinator',
-                text: 'These drafting courses have improved our entire team\'s technical documentation standards. Professional development at its best.',
-                avatar: 'TW',
-                color: '#6610f2'
-            }
-        ],
-        'parametric': [
-            {
-                name: 'Jennifer Liu',
-                title: 'Design Technology Specialist',
-                text: 'The Grasshopper course opened up entirely new design possibilities for our practice. Computational design is now part of our workflow.',
-                avatar: 'JL',
-                color: '#e83e8c'
-            },
-            {
-                name: 'Carlos Rodriguez',
-                title: 'Senior Architect',
-                text: 'Parametric design seemed intimidating until this course. Now we use these tools regularly for complex geometries and design optimization.',
-                avatar: 'CR',
-                color: '#fd7e14'
-            },
-            {
-                name: 'Sophie Taylor',
-                title: 'Design Director',
-                text: 'The parametric courses have given our team a competitive edge. We can now tackle projects that would have been impossible before.',
-                avatar: 'ST',
-                color: '#20c997'
-            }
-        ],
-        'realtime': [
-            {
-                name: 'Jake Morrison',
-                title: 'Visualization Specialist',
-                text: 'The real-time rendering courses completely changed how we present to clients. Interactive walkthroughs have become our signature.',
-                avatar: 'JM',
-                color: '#007AFF'
-            },
-            {
-                name: 'Nina Patel',
-                title: 'Design Director',
-                text: 'D5 Render and Enscape training gave us the speed we needed for tight project deadlines. Game-changing workflow improvements.',
-                avatar: 'NP',
-                color: '#28a745'
-            },
-            {
-                name: 'Ryan O\'Connor',
-                title: 'Project Architect',
-                text: 'Real-time rendering has revolutionized our design process. We can now iterate and present ideas faster than ever before.',
-                avatar: 'RO',
-                color: '#ffc107'
-            }
-        ],
-        'default': [
-            {
-                name: 'Alex Rodriguez',
-                title: 'Senior Architect',
-                text: 'ArchAdemia courses are perfectly tailored for working architects. The quality of instruction and practical application is outstanding.',
-                avatar: 'AR',
-                color: '#007AFF'
-            },
-            {
-                name: 'Katie Johnson',
-                title: 'Design Director',
-                text: 'These courses have elevated our entire team\'s technical skills. The investment in ArchAdemia has paid for itself many times over.',
-                avatar: 'KJ',
-                color: '#28a745'
-            },
-            {
-                name: 'James Foster',
-                title: 'Freelance Architect',
-                text: 'The professional development I\'ve gained through these courses has directly led to new client opportunities and higher project fees.',
-                avatar: 'JF',
-                color: '#ffc107'
-            }
-        ]
-    };
-    
-    const reviews = reviewsData[category] || reviewsData['default'];
-    
-    return `
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="reviews-container">
-                <h2>What our members say.</h2>
-                <div class="reviews-grid">
-                    ${reviews.map(review => `
-                        <div class="review-card">
-                            <div class="review-header">
-                                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><circle cx='25' cy='25' r='25' fill='${review.color}'/><text x='25' y='30' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>${review.avatar}</text></svg>" alt="${review.name}" class="reviewer-avatar">
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">${review.name}</div>
-                                    <div class="reviewer-title">${review.title}</div>
-                                </div>
-                            </div>
-                            <p class="review-text">"${review.text}"</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </section>
-    `;
-}
-
-function loadFAQModule() {
-    const faqData = [
-        {
-            question: 'What is ArchAdemia?',
-            answer: 'ArchAdemia is a comprehensive online learning platform designed specifically for architects and design professionals, offering courses in architectural software, design theory, and professional practice.'
-        },
-        {
-            question: 'What\'s included with an ArchAdemia membership?',
-            answer: 'Unlimited access to all courses, exclusive monthly lectures, community forums, downloadable resources, and ongoing support from industry professionals.'
-        },
-        {
-            question: 'How much does a membership cost?',
-            answer: 'Our membership plans start from £20/month for students, with professional plans available. Visit our pricing page for full details.'
-        },
-        {
-            question: 'What are the lessons like?',
-            answer: 'Our lessons are project-based, combining theory with practical application. Each course includes video tutorials, downloadable project files, and step-by-step guides.'
-        },
-        {
-            question: 'Where can I watch the course content?',
-            answer: 'All content is accessible through your member dashboard on any device - desktop, tablet, or mobile. Download the ArchAdemia app for offline viewing.'
-        },
-        {
-            question: 'How do I join?',
-            answer: 'Simply click the "Start Now" button above or visit our pricing page to choose the membership plan that\'s right for you. You\'ll have instant access to all content.'
-        },
-        {
-            question: 'How do I cancel?',
-            answer: 'You can cancel your membership at any time through your account settings. You\'ll retain access until the end of your current billing period.'
-        }
-    ];
-    
-    return `
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="faq-container">
-                <h2>FAQs</h2>
-                
-                <div class="faq-items">
-                    ${faqData.map(faq => `
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFAQ(this)">
-                                <span>${faq.question}</span>
-                                <span class="faq-arrow">▼</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>${faq.answer}</p>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </section>
-    `;
-}
-
 function loadWhyArchademiaModule() {
     return `
         <h3>Why ArchAdemia?</h3>
         <ul class="benefits-list">
-            <li>Instructors with real industry experience</li>
-            <li>Content designed for architects</li>
-            <li>New content added each month</li>
+            <li>100% positive reviews</li>
+            <li>Downloadable files with each course</li>
+            <li>Access another 50+ courses</li>
+            <li>On desktop, laptop, tablet & mobile app</li>
         </ul>
     `;
 }
@@ -282,22 +218,12 @@ function loadProjectModule(projectData) {
         <!-- Project Section -->
         <section class="project-section">
             <div class="project-container">
-                <h2>The project you'll be working on.</h2>
-                <p>${projectData.description}</p>
-                
-                <div class="project-gallery">
-                    ${projectData.images.map((image, index) => `
-                        <div class="project-slide ${index === 0 ? 'active' : ''}">
-                            <img src="${image.url}" alt="${image.alt}">
-                            <div class="project-label">${image.label}</div>
-                        </div>
-                    `).join('')}
-                </div>
-                
-                <div class="project-pagination">
-                    ${projectData.images.map((_, index) => `
-                        <span class="dot ${index === 0 ? 'active' : ''}" onclick="currentSlide(${index + 1})"></span>
-                    `).join('')}
+                <h2>The project you'll be working on</h2>
+                <div class="project-content">
+                    <div class="project-description">
+                        <h3>${projectData.name}</h3>
+                        <p>${projectData.description}</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -312,13 +238,10 @@ function loadLearningOutcomesModule(outcomes) {
         <section class="learn-section">
             <div class="learn-container">
                 <h2>What will you learn?</h2>
-                <p>This course covers the essential skills and techniques you need to master.</p>
-                
                 <div class="learn-outcomes">
                     ${outcomes.map(outcome => `
                         <div class="outcome-item">
-                            <h3>${outcome.title}</h3>
-                            <p>${outcome.description}</p>
+                            <p>${outcome}</p>
                         </div>
                     `).join('')}
                 </div>
@@ -329,13 +252,13 @@ function loadLearningOutcomesModule(outcomes) {
 
 // Global CTA button functionality
 function redirectToMembership() {
-    window.location.href = '../../pricing/';
+    window.location.href = '/pricing/';
 }
 
 function redirectToLessons() {
-    window.location.href = '../../lessons/';
+    window.location.href = '/lessons/';
 }
 
 function redirectToResources() {
-    window.location.href = '../../resources/';
+    window.location.href = '/resources/';
 }
