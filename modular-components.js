@@ -5,7 +5,7 @@ function loadCTAModule() {
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-container">
-                <h2>🚀 TEST UPDATE: Unlimited Content & Support with an ArchAdemia Membership</h2>
+                <h2>Unlimited Content & Support with an ArchAdemia Membership</h2>
                 <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Join ArchAdemia Today</button>
             </div>
         </section>
@@ -16,9 +16,9 @@ function loadReviewsModule(category) {
     const reviewsData = {
         'Archviz': [
             {
-                name: '⭐ John Martinez - ARCHVIZ TEST',
+                name: 'John Martinez',
                 title: 'Architectural Designer',
-                text: 'TEST MARKER: This rendering course transformed my visualization skills completely. The step-by-step approach made complex lighting techniques easy to understand and implement.'
+                text: 'This rendering course transformed my visualization skills completely. The step-by-step approach made complex lighting techniques easy to understand and implement.'
             },
             {
                 name: 'Sarah Peterson', 
@@ -33,9 +33,9 @@ function loadReviewsModule(category) {
         ],
         'BIM': [
             {
-                name: '🏗️ Lisa Chen - BIM MODULE TEST',
+                name: 'Lisa Chen',
                 title: 'BIM Coordinator',
-                text: 'TEST CONFIRMED: The Revit course was incredibly comprehensive. I went from beginner to confidently managing complex BIM projects in just a few weeks.'
+                text: 'The Revit course was incredibly comprehensive. I went from beginner to confidently managing complex BIM projects in just a few weeks.'
             },
             {
                 name: 'David Thompson',
@@ -50,9 +50,9 @@ function loadReviewsModule(category) {
         ],
         'Drafting': [
             {
-                name: '📐 Robert Chen - DRAFTING UPDATE',
+                name: 'Robert Chen',
                 title: 'Senior Draftsperson',
-                text: 'TEST SUCCESS: The AutoCAD course covered everything I needed to modernize our drafting workflows. Highly practical and immediately applicable.'
+                text: 'The AutoCAD course covered everything I needed to modernize our drafting workflows. Highly practical and immediately applicable.'
             },
             {
                 name: 'Maria Santos',
@@ -67,9 +67,9 @@ function loadReviewsModule(category) {
         ],
         'Realtime Rendering': [
             {
-                name: '⚡ Jake Morrison - REALTIME TEST',
+                name: 'Jake Morrison',
                 title: 'Visualization Specialist',
-                text: 'MODULAR SYSTEM WORKING: The real-time rendering courses completely changed how we present to clients. Interactive walkthroughs have become our signature.'
+                text: 'The real-time rendering courses completely changed how we present to clients. Interactive walkthroughs have become our signature.'
             },
             {
                 name: 'Nina Patel',
@@ -84,9 +84,9 @@ function loadReviewsModule(category) {
         ],
         'default': [
             {
-                name: '✨ Alex Rodriguez - DEFAULT MODULE TEST',
+                name: 'Alex Rodriguez',
                 title: 'Senior Architect',
-                text: 'SYSTEM TEST CONFIRMED: ArchAdemia courses are perfectly tailored for working architects. The quality of instruction and practical application is outstanding.'
+                text: 'ArchAdemia courses are perfectly tailored for working architects. The quality of instruction and practical application is outstanding.'
             },
             {
                 name: 'Katie Johnson',
@@ -107,7 +107,7 @@ function loadReviewsModule(category) {
         <!-- Reviews Section -->
         <section class="reviews-section">
             <div class="reviews-container">
-                <h2>📝 TEST: What our members say about ArchAdemia</h2>
+                <h2>What our members say about ArchAdemia</h2>
                 <div class="reviews-grid">
                     ${reviews.map(review => `
                         <div class="review-card">
@@ -124,8 +124,8 @@ function loadReviewsModule(category) {
 function loadFAQModule() {
     const faqData = [
         {
-            question: '🔥 TEST: What is ArchAdemia?',
-            answer: 'MODULAR UPDATE WORKING: We\'re the only architectural educator that teaches all aspects of what an architect goes through each day, through architecture courses, one-off lessons, podcasts and mentoring.'
+            question: 'What is ArchAdemia?',
+            answer: 'We\'re the only architectural educator that teaches all aspects of what an architect goes through each day, through architecture courses, one-off lessons, podcasts and mentoring.'
         },
         {
             question: 'How much does membership cost?',
@@ -153,7 +153,7 @@ function loadFAQModule() {
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="faq-container">
-                <h2>🤔 TEST UPDATE: FAQs</h2>
+                <h2>FAQs</h2>
                 <div class="faq-items">
                     ${faqData.map(faq => `
                         <div class="faq-item">
@@ -176,7 +176,7 @@ function loadInstructorModule(instructorData) {
     const defaultInstructor = {
         name: 'Adam Morgan',
         title: 'Architectural Director',
-        bio: "🎯 INSTRUCTOR MODULE TEST: Hi, I'm Adam - and I'm the Founder and Creator of ArchAdemia. As a Chartered Architectural Technologist with over 6 years of experience, I'm excited to have you on board with ArchAdemia to guide you through your learning journey with technology for Architecture.",
+        bio: "Hi, I'm Adam - and I'm the Founder and Creator of ArchAdemia. As a Chartered Architectural Technologist with over 6 years of experience, I'm excited to have you on board with ArchAdemia to guide you through your learning journey with technology for Architecture.",
         image: '../../instructor-adam.jpg'
     };
     
@@ -202,12 +202,12 @@ function loadInstructorModule(instructorData) {
 function loadWhyArchademiaModule() {
     return `
         <div class="why-archademia">
-            <h3>🎯 TEST: Why ArchAdemia?</h3>
+            <h3>Why ArchAdemia?</h3>
             <ul>
-                <li>✅ 100% positive reviews</li>
-                <li>📁 Downloadable files with each course</li>
-                <li>🎓 Access another 50+ courses</li>
-                <li>📱 On desktop, laptop, tablet & mobile app</li>
+                <li>100% positive reviews</li>
+                <li>Downloadable files with each course</li>
+                <li>Access another 50+ courses</li>
+                <li>On desktop, laptop, tablet & mobile app</li>
             </ul>
         </div>
     `;
@@ -220,7 +220,7 @@ function loadProjectModule(projectData) {
         <!-- Project Section -->
         <section class="project-section">
             <div class="project-container">
-                <h2>🏗️ TEST: The project you'll be working on</h2>
+                <h2>The project you'll be working on</h2>
                 <div class="project-content">
                     <div class="project-description">
                         <h3>${projectData.name}</h3>
@@ -239,11 +239,11 @@ function loadLearningOutcomesModule(outcomes) {
         <!-- What You'll Learn Section -->
         <section class="learn-section">
             <div class="learn-container">
-                <h2>📚 TEST UPDATE: What will you learn?</h2>
+                <h2>What will you learn?</h2>
                 <div class="learn-outcomes">
                     ${outcomes.map(outcome => `
                         <div class="outcome-item">
-                            <p>✓ ${outcome}</p>
+                            <p>${outcome}</p>
                         </div>
                     `).join('')}
                 </div>
