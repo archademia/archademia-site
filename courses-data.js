@@ -136,6 +136,44 @@ const coursesData = {
     }
 };
 
+'vray-training-course-vray-for-sketchup': {
+    title: 'Vray Training Course | Complete Guide to Vray for SketchUp',
+    subtitle: 'Master the art of creating breathtaking, photorealistic renders and dynamic animations',
+    category: 'Archviz',
+    skillLevel: 'Beginner',
+    duration: '5 hrs',
+    lessonsCount: '12',
+    heroImage: '../../images/vray-course-hero.jpg',
+    instructor: 'Adam Morgan',
+    instructorTitle: 'Architectural Director',
+    instructorCompany: 'ThreeForm Architects',
+    instructorBio: 'Hi, I\'m Adam. I am the founder and director of ThreeForm Architects, a team of architects and artists in Liverpool, UK. The office is experienced in a wide range of building types and procurement routes, successfully winning projects with contract values of up to £20 million. We work for a broad spectrum of public and private sector clients across the country. I have always had a passion for teaching aspiring and young architects. I offer support to emerging young architects through the RIBA mentoring programme and am also a visiting architectural critic and tutor for Liverpool John Moores University.',
+    overview: 'Are you ready to take your architectural visualisation to the next level? Join the ultimate V-Ray for SketchUp course on ArchAdemia and master the art of creating breathtaking, photorealistic renders and dynamic animations. Perfect for architects, interior designers, and visualisation professionals, this course is designed to help you unleash the full power of V-Ray, transforming your SketchUp projects into stunning visual masterpieces. This comprehensive course covers everything from V-Ray basics to advanced techniques, ensuring you develop a deep understanding of the software.',
+    learningOutcomes: [
+        'A complete understanding of Vray\'s toolset',
+        'Easily create photo-realistic images & animations',
+        'Pro tips on post-production and advanced workflows'
+    ],
+    modules: [
+        { title: 'Introduction', duration: '12:08' },
+        { title: 'Asset Editor, Cosmos & Frame Buffer', duration: '17:15' },
+        { title: 'Setting the Scene, Lighting & Cameras', duration: '27:44' },
+        { title: 'Materials', duration: '25:26' },
+        { title: 'Populating the Exterior', duration: '23:32' },
+        { title: 'Populating the Interiors', duration: '55:38' },
+        { title: 'Exterior shot refinement', duration: '42:52' },
+        { title: 'Interior shot refinement', duration: '1:02:14' },
+        { title: 'Rendering', duration: '17:00' },
+        { title: 'Post-production', duration: '58:33' },
+        { title: 'Animation', duration: '16:52' },
+        { title: 'Pro Tips & Tools', duration: '33:52' }
+    ],
+    project: {
+        name: 'Architectural Visualization Project',
+        description: 'Throughout this course, you\'ll work on creating photorealistic renders and animations, applying professional V-Ray techniques for both interior and exterior architectural visualizations.'
+    }
+},
+
 // Helper function to get course data by slug
 function getCourseDataBySlug(slug) {
     return coursesData[slug] || null;
