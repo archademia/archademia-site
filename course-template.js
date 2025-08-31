@@ -22,7 +22,7 @@ function loadCourseTemplate(courseData) {
                     <div class="info-icon">📚</div>
                     <div class="info-text">
                         <div class="info-label">Skill Level</div>
-                        <div class="info-value">${courseData.level}</div>
+                        <div class="info-value">${courseData.skillLevel}</div>
                     </div>
                 </div>
                 <div class="info-item">
@@ -64,18 +64,10 @@ function loadCourseTemplate(courseData) {
                 <div class="course-sidebar">
                     <h3>Skills you'll gain</h3>
                     <ul class="skills-list">
-                        ${courseData.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                        ${courseData.learningOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
                     </ul>
                     
-                    <div class="why-archademia">
-                        <h3>Why ArchAdemia?</h3>
-                        <ul>
-                            <li>100% positive reviews</li>
-                            <li>Downloadable files with each course</li>
-                            <li>Access another 50+ courses</li>
-                            <li>On desktop, laptop, tablet & mobile app</li>
-                        </ul>
-                    </div>
+                    ${loadWhyArchademiaModule()}
                 </div>
             </div>
         </section>
@@ -115,97 +107,25 @@ function loadCourseTemplate(courseData) {
         </section>
 
         <!-- Project Section -->
-        ${courseData.project ? `
-        <section class="project-section">
-            <div class="project-container">
-                <h2>The project you'll be working on</h2>
-                <div class="project-content">
-                    <div class="project-description">
-                        <h3>${courseData.project.name}</h3>
-                        <p>${courseData.project.description}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        ` : ''}
+        ${courseData.project ? loadProjectModule(courseData.project) : ''}
 
         <!-- Instructor Section -->
-        <section class="instructor-section">
-            <div class="instructor-container">
-                <h2>Meet your tutor - ${courseData.instructor} | ${courseData.instructorTitle} | ${courseData.instructorCompany}</h2>
-                <div class="instructor-content">
-                    <div class="instructor-image">
-                        <div class="instructor-placeholder"></div>
-                    </div>
-                    <div class="instructor-bio">
-                        <p>${courseData.instructorBio}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        ${loadInstructorModule({
+            name: courseData.instructor,
+            title: courseData.instructorTitle,
+            company: courseData.instructorCompany,
+            bio: courseData.instructorBio,
+            image: courseData.instructorImage || '../../instructor-adam.jpg'
+        })}
 
         <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cta-container">
-                <h2>Unlimited Content & Support with an ArchAdemia Membership</h2>
-                <button class="course-cta-btn" onclick="window.location.href='/pricing/'">Join ArchAdemia Today</button>
-            </div>
-        </section>
+        ${loadCTAModule()}
 
         <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="reviews-container">
-                <h2>What our members say</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <p>"ArchAdemia is an invaluable resource! The tutorials are not only clear, but linked to live projects or famous examples, making them much more engaging & interesting compared to others."</p>
-                        <div class="review-author">- Architecture Professional</div>
-                    </div>
-                    <div class="review-card">
-                        <p>"As an architecture student, I struggled getting grasp of some software such as Revit and Photoshop. I started using ArchAdemia and found my work excel to levels I did not think I could achieve."</p>
-                        <div class="review-author">- Architecture Student</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        ${loadReviewsModule(courseData.category)}
 
         <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="faq-container">
-                <h2>FAQs</h2>
-                <div class="faq-items">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What is ArchAdemia?</span>
-                            <span class="faq-arrow">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We're the only architectural educator that teaches all aspects of what an architect goes through each day, through architecture courses, one-off lessons, podcasts and mentoring.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How much does membership cost?</span>
-                            <span class="faq-arrow">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Annual memberships are £139 paid per year and monthly memberships £39 per month. Head over to our pricing page to find out exactly what's included with each.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Can I watch on mobile devices?</span>
-                            <span class="faq-arrow">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>You can watch your lessons on a desktop, mobile, or tablet. You can also download the Kajabi app and use your credentials to view lessons anywhere!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        ${loadFAQModule()}
     `;
 }
 
