@@ -6,7 +6,7 @@ const coursesData = {
         title: 'AutoCAD Training Course | Autodesk AutoCAD Essentials',
         subtitle: 'Master the art of architectural drafting with this comprehensive AutoCAD course',
         category: 'Drafting',
-        skillLevel: 'Beginner', // Changed from 'level'
+        skillLevel: 'Beginner',
         duration: '3 hrs',
         lessonsCount: '10',
         heroImage: '../../images/autocad-course-hero.jpg',
@@ -15,7 +15,7 @@ const coursesData = {
         instructorCompany: 'Studio RBA',
         instructorBio: 'Hi, I\'m Jack. I am the founder and director of Studio RBA. I have a track record in the design and construction of new-build and heritage led refurbishment projects in residential and commercial sectors. My main specialisms are in high-end residential design and conservation architecture.',
         overview: 'Having graduated, many budding architects quickly realize that mastering architectural drafting is not just about knowing how to draw; it\'s about understanding best practices for detailing, annotation, and presentation. This comprehensive AutoCAD training covers real-world architectural applications using the iconic Farnsworth House as our project.',
-        learningOutcomes: [ // Changed from 'outcomes'
+        learningOutcomes: [
             'A complete understanding of Autodesk AutoCAD for architecture',
             'Basic principles of architectural drafting',
             'How to create accurate production information'
@@ -42,7 +42,7 @@ const coursesData = {
         title: 'Enscape Online Course | Complete Guide to Chaos Enscape',
         subtitle: 'Master everything needed for realistic imagery and video production with Enscape',
         category: 'Realtime Rendering',
-        skillLevel: 'Beginner', // Changed from 'level'
+        skillLevel: 'Beginner',
         duration: '6 hrs',
         lessonsCount: '21',
         heroImage: '../../images/enscape-course-hero.jpg',
@@ -51,7 +51,7 @@ const coursesData = {
         instructorCompany: 'ThreeForm Architects',
         instructorBio: 'Hi, I\'m Adam. I am the founder and director of ThreeForm Architects, a team of architects and artists in Liverpool, UK. The office is experienced in a wide range of building types and procurement routes, successfully winning projects with contract values of up to £20 million.',
         overview: 'An all round \'complete guide\' on everything needed to master Enscape for realistic imagery and video production. In 12 core lessons, plus 9 bonus videos, you\'ll learn how to perfectly light your scene, create stunning materials, populate your scene, the best render settings, post-production techniques and even AI enhancements and video editing.',
-        learningOutcomes: [ // Changed from 'outcomes'
+        learningOutcomes: [
             'A complete understanding of Enscape\'s toolset',
             'Easily create photo-realistic images & animations',
             'Pro tips on post-production, video edits & working with AI'
@@ -91,7 +91,7 @@ const coursesData = {
         title: 'Online Revit Course | Autodesk Revit for Beginners',
         subtitle: 'Get to grips with BIM in a practice setting - from complete novice to pro user',
         category: 'BIM',
-        skillLevel: 'Beginner', // Changed from 'level'
+        skillLevel: 'Beginner',
         duration: '7 hrs',
         lessonsCount: '15',
         heroImage: '../../images/revit-course-hero.jpg',
@@ -100,7 +100,7 @@ const coursesData = {
         instructorCompany: 'ThreeForm Architects',
         instructorBio: 'Hi, I\'m Adam. I am the founder and director of ThreeForm Architects, a team of architects and artists in Liverpool, UK. The office is experienced in a wide range of building types and procurement routes, successfully winning projects with contract values of up to £20 million.',
         overview: 'Starting from the basics, you\'ll learn to navigate Revit\'s interface, 2D & 3D tools, create & manage detailed floor plans, and work with families and schedules. Each lesson is designed to be beginner-friendly, guiding you through essential tasks like sheet creation, project organization, and efficient exporting techniques.',
-        learningOutcomes: [ // Changed from 'outcomes'
+        learningOutcomes: [
             'A strong foundational knowledge of Revit',
             'Working with parameters and automation',
             'How to create accurate production information'
@@ -133,46 +133,46 @@ const coursesData = {
             name: 'Contemporary Residential Design',
             description: 'Throughout this course, you\'ll work on a sophisticated residential project that demonstrates real-world BIM workflows and advanced Revit techniques used in professional practice.'
         }
+    },
+
+    'vray-training-course-vray-for-sketchup': {
+        title: 'Vray Training Course | Complete Guide to Vray for SketchUp',
+        subtitle: 'Master the art of creating breathtaking, photorealistic renders and dynamic animations',
+        category: 'Archviz',
+        skillLevel: 'Beginner',
+        duration: '5 hrs',
+        lessonsCount: '12',
+        heroImage: '../../images/vray-course-hero.jpg',
+        instructor: 'Adam Morgan',
+        instructorTitle: 'Architectural Director',
+        instructorCompany: 'ThreeForm Architects',
+        instructorBio: 'Hi, I\'m Adam. I am the founder and director of ThreeForm Architects, a team of architects and artists in Liverpool, UK. The office is experienced in a wide range of building types and procurement routes, successfully winning projects with contract values of up to £20 million. We work for a broad spectrum of public and private sector clients across the country. I have always had a passion for teaching aspiring and young architects. I offer support to emerging young architects through the RIBA mentoring programme and am also a visiting architectural critic and tutor for Liverpool John Moores University.',
+        overview: 'Are you ready to take your architectural visualisation to the next level? Join the ultimate V-Ray for SketchUp course on ArchAdemia and master the art of creating breathtaking, photorealistic renders and dynamic animations. Perfect for architects, interior designers, and visualisation professionals, this course is designed to help you unleash the full power of V-Ray, transforming your SketchUp projects into stunning visual masterpieces. This comprehensive course covers everything from V-Ray basics to advanced techniques, ensuring you develop a deep understanding of the software.',
+        learningOutcomes: [
+            'A complete understanding of Vray\'s toolset',
+            'Easily create photo-realistic images & animations',
+            'Pro tips on post-production and advanced workflows'
+        ],
+        modules: [
+            { title: 'Introduction', duration: '12:08' },
+            { title: 'Asset Editor, Cosmos & Frame Buffer', duration: '17:15' },
+            { title: 'Setting the Scene, Lighting & Cameras', duration: '27:44' },
+            { title: 'Materials', duration: '25:26' },
+            { title: 'Populating the Exterior', duration: '23:32' },
+            { title: 'Populating the Interiors', duration: '55:38' },
+            { title: 'Exterior shot refinement', duration: '42:52' },
+            { title: 'Interior shot refinement', duration: '1:02:14' },
+            { title: 'Rendering', duration: '17:00' },
+            { title: 'Post-production', duration: '58:33' },
+            { title: 'Animation', duration: '16:52' },
+            { title: 'Pro Tips & Tools', duration: '33:52' }
+        ],
+        project: {
+            name: 'Architectural Visualization Project',
+            description: 'Throughout this course, you\'ll work on creating photorealistic renders and animations, applying professional V-Ray techniques for both interior and exterior architectural visualizations.'
+        }
     }
 };
-
-'vray-training-course-vray-for-sketchup': {
-    title: 'Vray Training Course | Complete Guide to Vray for SketchUp',
-    subtitle: 'Master the art of creating breathtaking, photorealistic renders and dynamic animations',
-    category: 'Archviz',
-    skillLevel: 'Beginner',
-    duration: '5 hrs',
-    lessonsCount: '12',
-    heroImage: '../../images/vray-course-hero.jpg',
-    instructor: 'Adam Morgan',
-    instructorTitle: 'Architectural Director',
-    instructorCompany: 'ThreeForm Architects',
-    instructorBio: 'Hi, I\'m Adam. I am the founder and director of ThreeForm Architects, a team of architects and artists in Liverpool, UK. The office is experienced in a wide range of building types and procurement routes, successfully winning projects with contract values of up to £20 million. We work for a broad spectrum of public and private sector clients across the country. I have always had a passion for teaching aspiring and young architects. I offer support to emerging young architects through the RIBA mentoring programme and am also a visiting architectural critic and tutor for Liverpool John Moores University.',
-    overview: 'Are you ready to take your architectural visualisation to the next level? Join the ultimate V-Ray for SketchUp course on ArchAdemia and master the art of creating breathtaking, photorealistic renders and dynamic animations. Perfect for architects, interior designers, and visualisation professionals, this course is designed to help you unleash the full power of V-Ray, transforming your SketchUp projects into stunning visual masterpieces. This comprehensive course covers everything from V-Ray basics to advanced techniques, ensuring you develop a deep understanding of the software.',
-    learningOutcomes: [
-        'A complete understanding of Vray\'s toolset',
-        'Easily create photo-realistic images & animations',
-        'Pro tips on post-production and advanced workflows'
-    ],
-    modules: [
-        { title: 'Introduction', duration: '12:08' },
-        { title: 'Asset Editor, Cosmos & Frame Buffer', duration: '17:15' },
-        { title: 'Setting the Scene, Lighting & Cameras', duration: '27:44' },
-        { title: 'Materials', duration: '25:26' },
-        { title: 'Populating the Exterior', duration: '23:32' },
-        { title: 'Populating the Interiors', duration: '55:38' },
-        { title: 'Exterior shot refinement', duration: '42:52' },
-        { title: 'Interior shot refinement', duration: '1:02:14' },
-        { title: 'Rendering', duration: '17:00' },
-        { title: 'Post-production', duration: '58:33' },
-        { title: 'Animation', duration: '16:52' },
-        { title: 'Pro Tips & Tools', duration: '33:52' }
-    ],
-    project: {
-        name: 'Architectural Visualization Project',
-        description: 'Throughout this course, you\'ll work on creating photorealistic renders and animations, applying professional V-Ray techniques for both interior and exterior architectural visualizations.'
-    }
-},
 
 // Helper function to get course data by slug
 function getCourseDataBySlug(slug) {
